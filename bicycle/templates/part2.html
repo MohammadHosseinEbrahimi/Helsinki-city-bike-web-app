@@ -1,0 +1,2304 @@
+
+{%extends 'base.html' %}
+
+
+{%block content%}
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nimi</th>
+      <th>Osoite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Hanasaari</td>
+      <td>Hanasaarenranta 1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Keilalahti</td>
+      <td>Keilalahdentie 2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Westendinasema</td>
+      <td>Westendintie 1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Golfpolku</td>
+      <td>Golfpolku 3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Revontulentie</td>
+      <td>Revontulentie 10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Sateentie</td>
+      <td>Sateentie 2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Hakalehto</td>
+      <td>Merituulentie 18</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Oravannahkatori</td>
+      <td>Oravannahkatori 1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Länsituuli</td>
+      <td>Länsituulenkuja 3</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Tuulimäki</td>
+      <td>Itätuulenkuja 11</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Tapionaukio</td>
+      <td>Tapionaukio 9</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Kulttuuriaukio</td>
+      <td>Kulttuuriaukio 2</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ahertajantie</td>
+      <td>Ahertajantie 1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Mäntyviita</td>
+      <td>Mäntyviita 2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Otsolahti</td>
+      <td>Otsolahdentie 18</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Keilaniemi (M)</td>
+      <td>Keilaniementie 4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Keilaranta</td>
+      <td>Keilaranta 13</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Betonimies</td>
+      <td>Betonimiehenkuja 1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Tekniikantie</td>
+      <td>Tekniikantie 3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Innopoli</td>
+      <td>Tekniikantie 14</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Hagalundinpuisto</td>
+      <td>Tekniikantie 15</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Aalto-yliopisto (M), Tietot</td>
+      <td>Tietotie 4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Aalto-yliopisto (M), Korkea</td>
+      <td>Otaniementie 10</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Otaranta</td>
+      <td>Otaranta 6</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Sähkömies</td>
+      <td>Otakaari 3</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Jämeräntaival</td>
+      <td>Otakaari 18</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Maarinranta</td>
+      <td>Maarinrannantie 4</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Tietäjä</td>
+      <td>Valkjärventie 4</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Metsänneidonpolku</td>
+      <td>Metsänneidonpolku 5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Kalevalantie</td>
+      <td>Kalevalantie 7</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Louhentori</td>
+      <td>Louhentie 16</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Pohjankulma</td>
+      <td>Louhentie 2</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Koivu-Mankkaa</td>
+      <td>Urpu 6</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Mankkaanlaaksontie</td>
+      <td>Mankkaanlaaksontie 1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Mankkaanaukio</td>
+      <td>Mankkaantie 3</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Tapiolan urheilupuisto</td>
+      <td>Urheilupuistontie 3</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Urheilupuisto (M)</td>
+      <td>Jousenpuistonkatu 4</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Tontunmäentie</td>
+      <td>Tontunmäentie 25</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Olarinluoma</td>
+      <td>Olarinluoma 19</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Niittymaa</td>
+      <td>Niittymaantie 2</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Niittykumpu (M)</td>
+      <td>Merituulentie 38</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Haukilahdenkatu</td>
+      <td>Ahventie 2</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Haukilahdenaukio</td>
+      <td>Haukilahdenranta 2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Hauenkallio</td>
+      <td>Hauenkalliontie 12</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Haukilahdenranta</td>
+      <td>Haukilahdenranta 13</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Mellstenintie</td>
+      <td>Mellstenintie 17</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Toppelundintie</td>
+      <td>Toppelundintie 11</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Westendintie</td>
+      <td>Westendintie 34</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Toppelundinportti</td>
+      <td>Haukilahdenkatu 2</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Linnakepolku</td>
+      <td>Westendintie 99</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Nokkala</td>
+      <td>Nokkalanniemi 2</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Matinlahdenranta</td>
+      <td>Rantamäki 2</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Nuottaniementie</td>
+      <td>Nuottatie 1</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Sepetlahdentie</td>
+      <td>Sepetlahdentie 11</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Matinkartanontie</td>
+      <td>Matinkartanontie 2</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Matinkyläntie</td>
+      <td>Joosepinkuja 1</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Tiistiläntie</td>
+      <td>Tiistiläntie 6</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Tiistinkallio</td>
+      <td>Kalastajantie 29</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Etuniementie</td>
+      <td>Kalastajantie 6</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Hauenkalliontie</td>
+      <td>Hauenkalliontie 22</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Nelikkotie</td>
+      <td>Nelikkotie 14</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>Suomenlahdentie</td>
+      <td>Suomenlahdentie 2</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Piispansilta</td>
+      <td>Piispansilta 11</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Piispanportti</td>
+      <td>Piispanportti 4</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>Friisilänaukio</td>
+      <td>Friisiläntie 2</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Avaruuskatu</td>
+      <td>Avaruuskatu 1</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>Kuunkatu</td>
+      <td>Kuunkatu 3</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>Ruomelantie</td>
+      <td>Ruomelantie 19</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Itäportti</td>
+      <td>Ruomelantie 5</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>Komeetankatu</td>
+      <td>Komeetankatu 2</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Auringonkatu</td>
+      <td>Auringonkatu 2</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>Piispankallio</td>
+      <td>Piispankallio 2</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Lystimäki</td>
+      <td>Lystimäentie 2</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Lystimäensilta</td>
+      <td>Vuosikuja 2</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Suurpellonaukio</td>
+      <td>Suurpellon puistokatu 4</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Lukutori</td>
+      <td>Suurpellon puistokatu 18</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Gallen-Kallelan tie</td>
+      <td>Gallen-Kallelan tie 29</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Elfvik</td>
+      <td>Elfvikintie 4</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Laajalahden keskus</td>
+      <td>Kirvuntie 22</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Majurinkulma</td>
+      <td>Itsehallintotie 8</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Yhdyskunnankuja</td>
+      <td>Yhdyskunnankuja 1</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Kirjurinkuja</td>
+      <td>Kirjurinkuja 1</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Upseerinkatu</td>
+      <td>Upseerinkatu 3</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Komentajankatu</td>
+      <td>Perkkaantie 5</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Säteri</td>
+      <td>Säterinkatu 6</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Säterinrinne</td>
+      <td>Ruusutorpantie 1</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Säterinniitty</td>
+      <td>Säterinpuistontie 16</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>Rummunlyöjänkatu</td>
+      <td>Leppävaarankatu 13</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Ratsutori</td>
+      <td>Leppävaarankatu 1</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Leppävaaranaukio</td>
+      <td>Hevosenkenkä 3</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Leppävaarankäytävä</td>
+      <td>Läkkisepänkuja 3</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Läkkitori</td>
+      <td>Läkkisepänkuja 3</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Armas Launiksen katu</td>
+      <td>Armas Launiksen katu 8</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>Muurarinkuja</td>
+      <td>Muurarinkuja 4</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Postipuun koulu</td>
+      <td>Mäkkylän puistotie 14</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Gransinmäki</td>
+      <td>Vanha maantie 6</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Leppävaaran urheilupuisto</td>
+      <td>Veräjäpellonkatu 17</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Leppävaaran uimahalli</td>
+      <td>Veräjäpellonkatu 12</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Vallikatu</td>
+      <td>Vallikatu 19</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Vallipolku</td>
+      <td>Vallikatu 12</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>Linnuntie</td>
+      <td>Linnuntie 2</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Kutsuntatie</td>
+      <td>Lintulaaksontie 2</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Painiitty</td>
+      <td>Lotankatu 1</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Mäkkylän asema</td>
+      <td>Perkkaantie 20</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Kalkkipellonmäki</td>
+      <td>Turuntie 22</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Ruutikatu</td>
+      <td>Ruutikatu 10</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Tiurintie</td>
+      <td>Kurkijoentie 1</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Orionintie</td>
+      <td>Orionintie 3-5</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>O'Bike Station</td>
+      <td>Rauhalanpuisto 11</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Derby Business Park</td>
+      <td>Tarvonsalmenkatu 17</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Kaivopuisto</td>
+      <td>Meritori 1</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Laivasillankatu</td>
+      <td>Laivasillankatu 14</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>Kapteeninpuistikko</td>
+      <td>Tehtaankatu 13</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>Viiskulma</td>
+      <td>Fredrikinkatu 19</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>Sepänkatu</td>
+      <td>Tehtaankatu 25</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Hietalahdentori</td>
+      <td>Hietalahdenkatu 2</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>Designmuseo</td>
+      <td>Korkeavuorenkatu 23</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>Vanha kirkkopuisto</td>
+      <td>Annankatu 16</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>Erottajan aukio</td>
+      <td>Eteläesplanadi 22</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>Kasarmitori</td>
+      <td>Fabianinkatu 13</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>Unioninkatu</td>
+      <td>Eteläesplanadi 1</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Kanavaranta</td>
+      <td>Kanavaranta 1</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>Merisotilaantori</td>
+      <td>Merisotilaantori</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>Senaatintori</td>
+      <td>Aleksanterinkatu 22</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>Ritarikatu</td>
+      <td>Ritarikatu 7</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>Liisanpuistikko</td>
+      <td>Liisankatu 1</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>Varsapuistikko</td>
+      <td>Yrjö-Koskisen katu 1</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>Porthania</td>
+      <td>Yliopistonkatu 3</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>Rautatientori / itä</td>
+      <td>Rautatientori 1</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>Kaisaniemenpuisto</td>
+      <td>Bergbominkuja 1</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>Töölönlahdenkatu</td>
+      <td>Elielinaukio 5</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>Rautatientori / länsi</td>
+      <td>Kaivokatu 1</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>Kiasma</td>
+      <td>Mannerheiminaukio 1</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Mannerheimintie</td>
+      <td>Mannerheiminitie 18</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Narinkka</td>
+      <td>Narinkka 1</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Kamppi (M)</td>
+      <td>Fredrikinkatu 44</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>Eerikinkatu</td>
+      <td>Eerikinkatu 3</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Lastenlehto</td>
+      <td>Lapinrinne</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Baana</td>
+      <td>Ruoholahdenkatu 23</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Itämerentori</td>
+      <td>Itämerentori 1</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Marian sairaala</td>
+      <td>Pohjoinen Rautatiekatu 33</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>Eläinmuseo</td>
+      <td>Pohjoinen Rautatiekatu 13</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>Kauppakorkeakoulu</td>
+      <td>Lapuankatu 1</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>Kansallismuseo</td>
+      <td>Mannerheimintie 30</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>Cygnaeuksenkatu</td>
+      <td>Cygnaeuksenkatu 1</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>Apollonkatu</td>
+      <td>Runeberginkatu 43</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>Töölönkatu</td>
+      <td>Pohjoinen Hesperiankatu 3</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>Töölöntori</td>
+      <td>Töölöntorinkatu 11</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>Ooppera</td>
+      <td>Mannerheimintie 62</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>Hakaniemi (M)</td>
+      <td>John Stenberginranta 6</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>Ympyrätalo</td>
+      <td>Porthaninrinne 1</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>Haapaniemenkatu</td>
+      <td>Haapaniemenkatu 2</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>Karhupuisto</td>
+      <td>Agricolankatu 11</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>Sörnäinen (M)</td>
+      <td>Vaasanpuistikko 1a</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>Brahen kenttä</td>
+      <td>Helsinginkatu 22</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>Diakoniapuisto</td>
+      <td>Josafatinkatu 12</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Vanha Kauppahalli</td>
+      <td>Pakkahuoneenlaituri</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>Mastokatu</td>
+      <td>Mastokatu 2</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>Annankatu</td>
+      <td>Annankatu 5</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>Melkonkuja</td>
+      <td>Melkonkuja 1</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>Itälahdenkatu</td>
+      <td>Itälahdenkatu 15</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Heikkilänaukio</td>
+      <td>Heikkilänaukio 1</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>Heikkiläntie</td>
+      <td>Heikkiläntie 7</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>Gyldenintie</td>
+      <td>Gyldenintie 2</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>Puistokaari</td>
+      <td>Isokaari 30</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>Luoteisväylä</td>
+      <td>Luoteisväylä 17</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>Lauttasaaren ostoskeskus</td>
+      <td>Lauttasaarentie 26</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>Lauttasaarensilta</td>
+      <td>Lauttasaarentie 5</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>Salmisaarenranta</td>
+      <td>Salmisaarenranta 9</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>Kaapelitehdas</td>
+      <td>Tammasaarenlaituri 7</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>Länsisatamankatu</td>
+      <td>Länsisatamankatu 19</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>Välimerenkatu</td>
+      <td>Välimerenkatu 9</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Jätkäsaarenlaituri</td>
+      <td>Jätkäsaarenlaituri 1</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>Tyynenmerenkatu</td>
+      <td>Rionkatu 6</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>Hernesaarenranta</td>
+      <td>Hylkeenpyytäjänkatu 1a</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Ehrenströmintie</td>
+      <td>Ehrenströmintie 3</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Perämiehenkatu</td>
+      <td>Punavuorenkatu 22</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>Albertinkatu</td>
+      <td>Albertinkatu 17</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>Kalevankatu</td>
+      <td>Lapinlahdenkatu 1</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>Sammonpuistikko</td>
+      <td>Sammonkatu 3</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>Hietaniemenkatu</td>
+      <td>Hiekkarannantie 9</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Eteläinen Hesperiankatu</td>
+      <td>Eteläinen Hesperiankatu 38</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>Kesäkatu</td>
+      <td>Kesäkatu 8</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Rajasaarentie</td>
+      <td>Rajasaarentie 6</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>Korjaamo</td>
+      <td>Töölönkatu 51a</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Olympiastadion</td>
+      <td>Toivonkatu 3</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Nordenskiöldinaukio</td>
+      <td>Linnankoskenkatu 15-17</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Messeniuksenkatu</td>
+      <td>Messeniuksenkatu 1a</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Uimastadion</td>
+      <td>Hammarskjöldintie 5</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Jäähalli</td>
+      <td>Nordenskiöldinkatu 11</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Stenbäckinkatu</td>
+      <td>Stenbäckinkatu 9</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Töölöntulli</td>
+      <td>Mannerheimintie 112</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Meilahden sairaala</td>
+      <td>Haartmaninkatu 4</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Paciuksenkatu</td>
+      <td>Mäntytie 2</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Jalavatie</td>
+      <td>Jalavatie 10</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Kuusitie</td>
+      <td>Mannerheimintie 152</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>Kustaankatu</td>
+      <td>Kustaankatu 4b</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Kiskontie</td>
+      <td>Mannerheimintie 99</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Tilkanvierto</td>
+      <td>Tilkankatu 41</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>Paciuksenkaari</td>
+      <td>Johannesbergintie 6</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>Seurasaari</td>
+      <td>Seurasaarentie 15</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>Saunalahdentie</td>
+      <td>Saunalahdentie 1</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>Torpanranta</td>
+      <td>Laajalahdentie 1</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>Laajalahden aukio</td>
+      <td>Munkkiniemen puistotie 21</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>Munkkiniemen aukio</td>
+      <td>Munkkiniemen puistotie 1</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>Huopalahdentie</td>
+      <td>Huopalahdentie 13</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Ulvilantie</td>
+      <td>Porintie 1</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>Muusantori</td>
+      <td>Muusantori 5</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>Teljäntie</td>
+      <td>Ulvilantie 21</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>Munkkivuoren ostoskeskus</td>
+      <td>Huopalahdentie 20b</td>
+    </tr>
+    <tr>
+      <th>210</th>
+      <td>Vihdintie</td>
+      <td>Vihdintie 2</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>Kriikunakuja</td>
+      <td>Korppaanmäentie 26</td>
+    </tr>
+    <tr>
+      <th>212</th>
+      <td>Tilkantori</td>
+      <td>Tilkantori 3</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>Korppaanmäentie</td>
+      <td>Mannerheimintie 170</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>Tenholantie</td>
+      <td>Kiskontie 22</td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>Radiokatu</td>
+      <td>Kuuluttajankatu 2</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>Hertanmäenkatu</td>
+      <td>Radiokuja 2</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>Maistraatintori</td>
+      <td>Pasilanraitio 10</td>
+    </tr>
+    <tr>
+      <th>218</th>
+      <td>Esterinportti</td>
+      <td>Pasilanraitio 5</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>Rautatieläisenkatu</td>
+      <td>Ratapihantie 13</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>Pasilan asema</td>
+      <td>Pasilan asema-aukio</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>Ratapihantie</td>
+      <td>Ratapihantie 1</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>Venttiilikuja</td>
+      <td>Venttiilikuja  1 &amp; 2</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>Linnanmäki</td>
+      <td>Viipurinkatu 20</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>Brahen puistikko</td>
+      <td>Sturenkatu 12</td>
+    </tr>
+    <tr>
+      <th>225</th>
+      <td>Fleminginkatu</td>
+      <td>Aleksis Kiven katu 30</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>Gebhardinaukio</td>
+      <td>Teollisuuskatu 3</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Mäkelänkatu</td>
+      <td>Mäkelänkatu 2</td>
+    </tr>
+    <tr>
+      <th>228</th>
+      <td>Vilhonvuorenkatu</td>
+      <td>Vilhonvuorenkatu 12</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>Lintulahdenkatu</td>
+      <td>Lintulahdenkuja 6</td>
+    </tr>
+    <tr>
+      <th>230</th>
+      <td>Näkinsilta</td>
+      <td>Sörnäisten rantatie 9</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>Isoisänsilta</td>
+      <td>Capellan puistotie 2</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Arielinkatu</td>
+      <td>Englantilaisaukio</td>
+    </tr>
+    <tr>
+      <th>233</th>
+      <td>Kalasatama (M)</td>
+      <td>Hermannin rantatie 2b</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>Teurastamo</td>
+      <td>Työpajankatu 2a</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Päijänteentie</td>
+      <td>Päijänteentie 1</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Pernajantie</td>
+      <td>Mäkelänkatu 25</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Teollisuuskatu</td>
+      <td>Teollisuuskatu 16</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>Elimäenkatu</td>
+      <td>Elimäenkatu 24</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>Hollolantie</td>
+      <td>Hollolantie 2</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>Paavalinpuisto</td>
+      <td>Hämeentie 96</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>Haukilahdenkatu</td>
+      <td>Haukilahdenkatu 6</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>Velodrominrinne</td>
+      <td>Mäkelänkatu 70</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>Sofianlehdonkatu</td>
+      <td>Isonniitynkatu 7</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>Arabian kauppakeskus</td>
+      <td>Hämeentie 111</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>Arabiankatu</td>
+      <td>Arabiankatu 7</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>Muotoilijankatu</td>
+      <td>Arabiankatu 21</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Verkatehtaanpuisto</td>
+      <td>Hämeentie 159</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Intiankatu</td>
+      <td>Intiankatu 20</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Koskelantie</td>
+      <td>Sofianlehdonkatu 13</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Kuikkarinne</td>
+      <td>Isokaari 10</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Käpyläntie</td>
+      <td>Käpyläntie 1</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>Pohjolankatu</td>
+      <td>Pohjolankatu 1</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Pohjolanaukio</td>
+      <td>Pohjolankatu 40</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>Käpylän asema</td>
+      <td>Panuntie 4</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Juhana Herttuan tie</td>
+      <td>Antti Korpin tie 3a</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Toinen linja</td>
+      <td>Toinen linja 25</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>Töölönlahden puisto</td>
+      <td>Karamzininranta 4</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Eteläesplanadi</td>
+      <td>Eteläesplanadi 14</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Leppäsuonaukio</td>
+      <td>Leppäsuonaukio 1</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>Lehtisaarentie</td>
+      <td>Liljasaarentie 1a</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>Länsiterminaali</td>
+      <td>Sammonlaituri</td>
+    </tr>
+    <tr>
+      <th>262</th>
+      <td>Länsisatamankuja</td>
+      <td>Länsisatamankatu 26</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>Merihaka</td>
+      <td>Hakaniemenranta 10</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>Opastinsilta</td>
+      <td>Opastinsilta 10</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>A.I. Virtasen aukio</td>
+      <td>Gustaf Hällströmin katu 1</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>Ilmalan asema</td>
+      <td>Ilmalantori 1</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>Ruskeasuon varikko</td>
+      <td>Mannerheimintie 117</td>
+    </tr>
+    <tr>
+      <th>268</th>
+      <td>Vanha Viertotie</td>
+      <td>Vanha Viertotie 23</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>Valimotie</td>
+      <td>Valimotie 1</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>Takomotie</td>
+      <td>Takomotie 29</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>Pajamäki</td>
+      <td>Pajamäentie 12</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>Haagan tori</td>
+      <td>Haagan tori 1</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>Tunnelitie</td>
+      <td>Tunnelitie 3</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>Huopalahden asema</td>
+      <td>Huopalahden aseman itäinen raittisilta</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>Valimon asema</td>
+      <td>Valimopolku 3</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>Pitäjänmäen asema</td>
+      <td>Pitäjänmäentie 21</td>
+    </tr>
+    <tr>
+      <th>277</th>
+      <td>Jännetie</td>
+      <td>Konalantie 6</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>Marttila</td>
+      <td>Vihdintie 302</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>Pohjois-Haagan asema</td>
+      <td>Pennikuja 2</td>
+    </tr>
+    <tr>
+      <th>280</th>
+      <td>Näyttelijäntie</td>
+      <td>Kaupintie 3</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>Ida Aalbergin tie</td>
+      <td>Näyttelijäntie 14</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>Thalianaukio</td>
+      <td>Aino Ackten tie 1</td>
+    </tr>
+    <tr>
+      <th>283</th>
+      <td>Huovitie</td>
+      <td>Huovitie 10</td>
+    </tr>
+    <tr>
+      <th>284</th>
+      <td>Hämeenlinnanväylä</td>
+      <td>Teuvo Pakkalan tie 2</td>
+    </tr>
+    <tr>
+      <th>285</th>
+      <td>Vesakkotie</td>
+      <td>Männikkötie 11</td>
+    </tr>
+    <tr>
+      <th>286</th>
+      <td>Maunula</td>
+      <td>Maunulanmäki 2</td>
+    </tr>
+    <tr>
+      <th>287</th>
+      <td>Lepolantie</td>
+      <td>Lepolantie 61</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>Kylävoudintie</td>
+      <td>Kylävoudintie 6</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>Kustaankartano</td>
+      <td>Maapadontie 3</td>
+    </tr>
+    <tr>
+      <th>290</th>
+      <td>Käskynhaltijantie</td>
+      <td>Hirsipadontie 2</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>Mäkitorpantie</td>
+      <td>Kylänvanhimmantie 29</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>Siltavoudintie</td>
+      <td>Käskynhaltijantie 22</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>Oulunkylän asema</td>
+      <td>Oulunkyläntori 2</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>Kirkkoherrantie</td>
+      <td>Kirkkoherrantie 5</td>
+    </tr>
+    <tr>
+      <th>295</th>
+      <td>Otto Brandtin tie</td>
+      <td>Tulvaniityntie 2</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>Katariina Saksilaisen katu</td>
+      <td>Katariina Saksilaisen katu 6</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>Hernepellontie</td>
+      <td>Harjannetie 44</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>Aulangontie</td>
+      <td>Harjannetie 2</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>Pihlajamäki</td>
+      <td>Meripihkatie 3</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>Viikin tiedepuisto</td>
+      <td>Viikintori</td>
+    </tr>
+    <tr>
+      <th>301</th>
+      <td>Viikin normaalikoulu</td>
+      <td>Kevättori</td>
+    </tr>
+    <tr>
+      <th>302</th>
+      <td>Agronominkatu</td>
+      <td>Latokartanontori</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>Von Daehnin katu</td>
+      <td>Von Daehnin katu 14</td>
+    </tr>
+    <tr>
+      <th>304</th>
+      <td>Mustikkamaa</td>
+      <td>Mustikkamaantie 8</td>
+    </tr>
+    <tr>
+      <th>305</th>
+      <td>Relanderinaukio</td>
+      <td>Ståhlbergintie 6</td>
+    </tr>
+    <tr>
+      <th>306</th>
+      <td>Kulosaari (M)</td>
+      <td>Ukko-Pekan porras</td>
+    </tr>
+    <tr>
+      <th>307</th>
+      <td>Tupasaarentie</td>
+      <td>Risto Rytin tie 30</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>Haakoninlahdenkatu</td>
+      <td>Koirasaarentie 33</td>
+    </tr>
+    <tr>
+      <th>309</th>
+      <td>Gunillantie</td>
+      <td>Koirasaarentie 32</td>
+    </tr>
+    <tr>
+      <th>310</th>
+      <td>Isosaarentie</td>
+      <td>Köökarinkuja 3</td>
+    </tr>
+    <tr>
+      <th>311</th>
+      <td>Reiherintie</td>
+      <td>Laajasalontie 13</td>
+    </tr>
+    <tr>
+      <th>312</th>
+      <td>Laajasalon ostoskeskus</td>
+      <td>Yliskylän puistokatu 4</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>Humalniementie</td>
+      <td>Ryytikuja 2</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>Tammisalon aukio</td>
+      <td>Väylänrinne 1</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>Agnetankuja</td>
+      <td>Laivalahdenkaari 24</td>
+    </tr>
+    <tr>
+      <th>316</th>
+      <td>Laivalahden puistotie</td>
+      <td>Laivalahden puistotie 10</td>
+    </tr>
+    <tr>
+      <th>317</th>
+      <td>Herttoniemenranta</td>
+      <td>Paasivaarankatu 1</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>Margareetankuja</td>
+      <td>Margareetankuja 4</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>Abraham Wetterin tie</td>
+      <td>Sorvaajankatu 1</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>Petter Wetterin tie</td>
+      <td>Hitsaajankatu 16</td>
+    </tr>
+    <tr>
+      <th>321</th>
+      <td>Herttoniemi (M)</td>
+      <td>Hiihtäjäntie 2</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>Asentajanpuisto</td>
+      <td>Asentajankatu 8</td>
+    </tr>
+    <tr>
+      <th>323</th>
+      <td>Siilitie (M)</td>
+      <td>Siilitie 2</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>Herttoniemen kirkko</td>
+      <td>Karhutie 11</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>Eränkävijäntori</td>
+      <td>Hiihtomäentie 39</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>Siilitie 9</td>
+      <td>Siilitie 12</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>Siilitie 13</td>
+      <td>Sopulirinne 2</td>
+    </tr>
+    <tr>
+      <th>328</th>
+      <td>Roihupelto</td>
+      <td>Viilarintie 6</td>
+    </tr>
+    <tr>
+      <th>329</th>
+      <td>Porolahden koulu</td>
+      <td>Roihuvuorentie 6b</td>
+    </tr>
+    <tr>
+      <th>330</th>
+      <td>Peukaloisentie</td>
+      <td>Untuvaisentie 2</td>
+    </tr>
+    <tr>
+      <th>331</th>
+      <td>Tulisuontie</td>
+      <td>Roihuvuorentie 25</td>
+    </tr>
+    <tr>
+      <th>332</th>
+      <td>Prinsessantie</td>
+      <td>Prinsessantie 2</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>Marjaniementie</td>
+      <td>Rakettipolku 5</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>Voikukantie</td>
+      <td>Kauppakartanonkatu 10</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>Itäkeskus (M)</td>
+      <td>Tallinnanaukio 2</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>Puotinharju</td>
+      <td>Turunlinnantie 4</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>Marjaniemi</td>
+      <td>Marjaniementie 23</td>
+    </tr>
+    <tr>
+      <th>338</th>
+      <td>Puotilantie</td>
+      <td>Puotilantie 4</td>
+    </tr>
+    <tr>
+      <th>339</th>
+      <td>Puotinkylän kartano</td>
+      <td>Puotilantie 12</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Puotilan ostoskeskus</td>
+      <td>Klaavuntie 11</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>Puotila (M)</td>
+      <td>Vanhanlinnantori</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>Karhulantie</td>
+      <td>Kiviportintie 2</td>
+    </tr>
+    <tr>
+      <th>343</th>
+      <td>Alakiventie</td>
+      <td>Alakiventie 4</td>
+    </tr>
+    <tr>
+      <th>344</th>
+      <td>Myllypuro (M)</td>
+      <td>Kivensilmänkuja 1</td>
+    </tr>
+    <tr>
+      <th>345</th>
+      <td>Orpaanporras</td>
+      <td>Orpaanporras 14</td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>Mamsellimyllynkatu</td>
+      <td>Mamsellimyllynkatu 26</td>
+    </tr>
+    <tr>
+      <th>347</th>
+      <td>Vallilan varikko</td>
+      <td>Hämeentie 86</td>
+    </tr>
+    <tr>
+      <th>348</th>
+      <td>Itäkeskus Metrovarikko</td>
+      <td>Metrovarikonkuja 6</td>
+    </tr>
+    <tr>
+      <th>349</th>
+      <td>Koskelan varikko</td>
+      <td>Valtimontie 10</td>
+    </tr>
+    <tr>
+      <th>350</th>
+      <td>Korkeasaari</td>
+      <td>Mustikkamaanpolku 12</td>
+    </tr>
+    <tr>
+      <th>351</th>
+      <td>Postipuisto</td>
+      <td>Niittylänpolku 16</td>
+    </tr>
+    <tr>
+      <th>352</th>
+      <td>Aurinkotuulenkatu</td>
+      <td>Solvikinkatu 21</td>
+    </tr>
+    <tr>
+      <th>353</th>
+      <td>Sumukuja</td>
+      <td>Sumukuja 2</td>
+    </tr>
+    <tr>
+      <th>354</th>
+      <td>Leikosaarentie</td>
+      <td>Leikosaarentie 25</td>
+    </tr>
+    <tr>
+      <th>355</th>
+      <td>Aurinkolahdenaukio</td>
+      <td>Aurinkoranta 8</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>Kalkkihiekantie</td>
+      <td>Kalkkihiekantie 1</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>Kauppakeskus Columbus</td>
+      <td>Valkopaadentie 1</td>
+    </tr>
+    <tr>
+      <th>358</th>
+      <td>Vuosaaren liikuntapuisto</td>
+      <td>Pallokuja 4</td>
+    </tr>
+    <tr>
+      <th>359</th>
+      <td>Mosaiikkitori</td>
+      <td>Mosaiikkitori 1</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>Kaivonkatsojanpuisto</td>
+      <td>Kaivonkatsojantie 5</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>Halkaisijantie</td>
+      <td>Halkaisijantie 4</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>Ramsinniementie</td>
+      <td>Ramsinniementie 1</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>Meri-Rastilan tori</td>
+      <td>Meri-Rastilan kuja 2</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>Rastila (M)</td>
+      <td>Karavaanisilta 3</td>
+    </tr>
+    <tr>
+      <th>365</th>
+      <td>Lokitie</td>
+      <td>Vuosaarentie 1</td>
+    </tr>
+    <tr>
+      <th>366</th>
+      <td>Punakiventie</td>
+      <td>Punakiventie 12</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>Haapasaarentie</td>
+      <td>Marielundinaukio 1</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>Vuosaaren puistopolku</td>
+      <td>Mustalahdenpolku 2</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>Purjetie</td>
+      <td>Kallvikintie</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>Koukkusaarentie</td>
+      <td>Kallvikintie</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>Vartioharjuntie</td>
+      <td>Vartioharjuntie 13</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>Rukatunturintie</td>
+      <td>Mellunmäentie 27</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>Sallatunturintie</td>
+      <td>Sallatunturintie 2</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>Mellunmäki (M)</td>
+      <td>Pallaksentie 3</td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>Sinkilätie</td>
+      <td>Untamalantie 2</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>Humikkalankuja</td>
+      <td>Rintinpolku 2</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>Lallukankuja</td>
+      <td>Lallukankuja 1</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>Kurkimäki</td>
+      <td>Kurkimäentie 3</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>Kontula (M)</td>
+      <td>Kontulankaari 1</td>
+    </tr>
+    <tr>
+      <th>380</th>
+      <td>Tuukkalantie</td>
+      <td>Aarteenetsijäntie 10</td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>Lettopolku</td>
+      <td>Lettopolku 2</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>Kontulankaari</td>
+      <td>Kontulankaari 7</td>
+    </tr>
+    <tr>
+      <th>383</th>
+      <td>Kivikonkaari</td>
+      <td>Kontulankaari 8, toinen puoli</td>
+    </tr>
+    <tr>
+      <th>384</th>
+      <td>Varustuksentie</td>
+      <td>Varustuksentie 1</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>Kurkimäentie</td>
+      <td>Kivikonkaari 30</td>
+    </tr>
+    <tr>
+      <th>386</th>
+      <td>Kivikonlaita</td>
+      <td>Kivikonlaita 2</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>Kivikon liikuntapuisto</td>
+      <td>Savikiekontie 6</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>Jakomäentie</td>
+      <td>Jakomäentie 18</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>Jakomäki</td>
+      <td>Jakomäenkuja 2</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>Alppikylä</td>
+      <td>Tattariharjuntie 51</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>Heikinlaakso</td>
+      <td>Vanha Porvoontie 32</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>Puistolan VPK</td>
+      <td>Puistolan raitti 5</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>Puistolantori</td>
+      <td>Puistolantori 1</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>Puistolan asema</td>
+      <td>Tapulikaupungintie 1</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>Maatullinkuja</td>
+      <td>Maatullinkuja 17</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>Sateenkaarentie</td>
+      <td>Suutarilantie 60</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>Siltamäki</td>
+      <td>Jousimiehentie 3</td>
+    </tr>
+    <tr>
+      <th>398</th>
+      <td>Töyrynummentie</td>
+      <td>Töyrynummentie 2</td>
+    </tr>
+    <tr>
+      <th>399</th>
+      <td>Töyrynummi</td>
+      <td>Pertunpellontie 4</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>Kotinummentie</td>
+      <td>Kotinummentie 68</td>
+    </tr>
+    <tr>
+      <th>401</th>
+      <td>Porvarintie</td>
+      <td>Porvarintie 8-10</td>
+    </tr>
+    <tr>
+      <th>402</th>
+      <td>Helluntairaitti</td>
+      <td>Tasankotie 14</td>
+    </tr>
+    <tr>
+      <th>403</th>
+      <td>Tapanilan asema</td>
+      <td>Sompiontori 1</td>
+    </tr>
+    <tr>
+      <th>404</th>
+      <td>Saniaiskuja</td>
+      <td>Saniaiskuja 1</td>
+    </tr>
+    <tr>
+      <th>405</th>
+      <td>Halmetie</td>
+      <td>Vanha Tapaninlantie 70</td>
+    </tr>
+    <tr>
+      <th>406</th>
+      <td>Laulurastaantie</td>
+      <td>Laulurastaantie 25</td>
+    </tr>
+    <tr>
+      <th>407</th>
+      <td>Vanha Tapanilantie</td>
+      <td>Kirkonkyläntie 79</td>
+    </tr>
+    <tr>
+      <th>408</th>
+      <td>Syystie</td>
+      <td>Kirkonkyläntie 34</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>Malmin sairaala</td>
+      <td>Kirkonkyläntie 23</td>
+    </tr>
+    <tr>
+      <th>410</th>
+      <td>Malmin asema</td>
+      <td>Ylä-Malmin tori 3</td>
+    </tr>
+    <tr>
+      <th>411</th>
+      <td>Huhtakuja</td>
+      <td>Kotinummentie 5</td>
+    </tr>
+    <tr>
+      <th>412</th>
+      <td>Teerisuontie</td>
+      <td>Teerisuontie 27</td>
+    </tr>
+    <tr>
+      <th>413</th>
+      <td>Ala-Malmin tori</td>
+      <td>Pikkalankatu 5</td>
+    </tr>
+    <tr>
+      <th>414</th>
+      <td>Väärämäentie</td>
+      <td>Väärämäentie 2-4</td>
+    </tr>
+    <tr>
+      <th>415</th>
+      <td>Karviaistie</td>
+      <td>Karviaistie 3</td>
+    </tr>
+    <tr>
+      <th>416</th>
+      <td>Tilketori</td>
+      <td>Tilketori 1</td>
+    </tr>
+    <tr>
+      <th>417</th>
+      <td>Karhusuontie</td>
+      <td>Karhusuontie 27</td>
+    </tr>
+    <tr>
+      <th>418</th>
+      <td>Jokipellontie</td>
+      <td>Jokipellontie 10</td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>Pukinmäen liikuntapuisto</td>
+      <td>Kenttätie 10</td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>Pukinmäen asema</td>
+      <td>Pukinmäenaukio 4</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Rapakiventie</td>
+      <td>Lucina Hagmanin kuja 1</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Tollinpolku</td>
+      <td>Luutnantinpolku 7a</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Mikkolantie</td>
+      <td>Mikkolantie 12</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Etupellonpuisto</td>
+      <td>Yhdyskunnantie 22</td>
+    </tr>
+    <tr>
+      <th>425</th>
+      <td>Piikintie</td>
+      <td>Yhdyskunnantie 54</td>
+    </tr>
+    <tr>
+      <th>426</th>
+      <td>Torpparinmäentie</td>
+      <td>Kuusmiehenkaari 5</td>
+    </tr>
+    <tr>
+      <th>427</th>
+      <td>Paloheinän kirjasto</td>
+      <td>Paloheinäntie 22</td>
+    </tr>
+    <tr>
+      <th>428</th>
+      <td>Paloheinän maja</td>
+      <td>Pakilantie 124</td>
+    </tr>
+    <tr>
+      <th>429</th>
+      <td>Paloheinäntie</td>
+      <td>Pakilantie 91</td>
+    </tr>
+    <tr>
+      <th>430</th>
+      <td>Pirkkolan liikuntapuisto</td>
+      <td>Pirkkolan metsätie 6</td>
+    </tr>
+    <tr>
+      <th>431</th>
+      <td>Maununneva</td>
+      <td>Kaarelantie 14</td>
+    </tr>
+    <tr>
+      <th>432</th>
+      <td>Ulappasilta</td>
+      <td>Ulappasilta 1</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>Hakuninmaa</td>
+      <td>Perhekunnantie 8</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>Kuninkaantammi</td>
+      <td>Kuninkaantammenkierto 22</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>Kalannintie</td>
+      <td>Kalanninpolku</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>Kannelmäen liikuntapuisto</td>
+      <td>Kanneltie 12</td>
+    </tr>
+    <tr>
+      <th>437</th>
+      <td>Pajupillintie</td>
+      <td>Vanhaistentie 3</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>Kauppakeskus Kaari</td>
+      <td>Kantelettarentie 1</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>Kaustisentie</td>
+      <td>Pelimannintie</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>Kannelmäen asema</td>
+      <td>Sitratori 2</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>Savela</td>
+      <td>Ratavallintie 6</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>Trumpettikuja</td>
+      <td>Trumpettitie 3</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>Viljelijäntie</td>
+      <td>Viljelijäntie 5</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>Malminkartanon asema</td>
+      <td>Luutnantinaukio</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>Tuohipolku</td>
+      <td>Tuohipolku 1</td>
+    </tr>
+    <tr>
+      <th>446</th>
+      <td>Honkasuo</td>
+      <td>Naapuripellontie 27</td>
+    </tr>
+    <tr>
+      <th>447</th>
+      <td>Malminkartanonhuippu</td>
+      <td>Naapuripellontie 7</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>Hankasuontie</td>
+      <td>Malminkartanontie 2</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>Ajomiehentie</td>
+      <td>Ajomiehentie 1</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>Vähäntuvantie</td>
+      <td>Kylväjäntie 12</td>
+    </tr>
+    <tr>
+      <th>451</th>
+      <td>Kuusisaari</td>
+      <td>Kuusisaarenpolku 1</td>
+    </tr>
+    <tr>
+      <th>452</th>
+      <td>Koivusaari (M)</td>
+      <td>Sotkatie 11</td>
+    </tr>
+    <tr>
+      <th>453</th>
+      <td>Bermudankuja</td>
+      <td>Atlantinkatu 10</td>
+    </tr>
+    <tr>
+      <th>454</th>
+      <td>Verkkosaari</td>
+      <td>Tukkutorinkuja 3</td>
+    </tr>
+    <tr>
+      <th>455</th>
+      <td>Sompasaari</td>
+      <td>Sompasaarenlaituri 2</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>Jollas</td>
+      <td>Jollaksentie 33</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

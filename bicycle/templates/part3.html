@@ -1,0 +1,4584 @@
+
+{%extends 'base.html' %}
+
+
+{%block content%}
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Address</th>
+      <th>Total number of journeys starting from the station</th>
+      <th>Total number of journeys ending at the station</th>
+      <th>The average distance of a journey starting from the station</th>
+      <th>The average distance of a journey ending at the station</th>
+      <th>Top 5 most popular return stations for journeys starting from the station</th>
+      <th>Top 5 most popular departure stations for journeys ending at the station</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Hanasaari</th>
+      <td>Hanasaarenranta 1</td>
+      <td>685</td>
+      <td>677</td>
+      <td>3869.871533</td>
+      <td>4107.508124</td>
+      <td>[Lauttasaaren ostoskeskus, Westendinasema, Puistokaari, Kuikkarinne, Gyldenintie]</td>
+      <td>[Westendintie, Puistokaari, Lauttasaaren ostoskeskus, Lauttasaarensilta, Hanasaari]</td>
+    </tr>
+    <tr>
+      <th>Keilalahti</th>
+      <td>Keilalahdentie 2</td>
+      <td>382</td>
+      <td>357</td>
+      <td>3758.612565</td>
+      <td>3743.551821</td>
+      <td>[Keilaniemi (M), Tapionaukio, Niittymaa, Jämeräntaival, Lauttasaaren ostoskeskus]</td>
+      <td>[Keilaniemi (M), Hanasaari, Luoteisväylä, Lehtisaarentie, Jämeräntaival]</td>
+    </tr>
+    <tr>
+      <th>Westendinasema</th>
+      <td>Westendintie 1</td>
+      <td>628</td>
+      <td>622</td>
+      <td>3199.428344</td>
+      <td>3229.353698</td>
+      <td>[Mellstenintie, Niittykumpu (M), Westendintie, Tuulimäki, Suomenlahdentie]</td>
+      <td>[Haukilahdenaukio, Hanasaari, Westendintie, Suomenlahdentie, Länsituuli]</td>
+    </tr>
+    <tr>
+      <th>Golfpolku</th>
+      <td>Golfpolku 3</td>
+      <td>211</td>
+      <td>190</td>
+      <td>2720.033175</td>
+      <td>2760.373684</td>
+      <td>[Revontulentie, Länsituuli, Tuulimäki, Suomenlahdentie, Lauttasaaren ostoskeskus]</td>
+      <td>[Länsituuli, Revontulentie, Kulttuuriaukio, Niittymaa, Niittykumpu (M)]</td>
+    </tr>
+    <tr>
+      <th>Revontulentie</th>
+      <td>Revontulentie 10</td>
+      <td>501</td>
+      <td>505</td>
+      <td>3042.057884</td>
+      <td>2860.916832</td>
+      <td>[Revontulentie, Niittymaa, Luoteisväylä, Niittykumpu (M), Haukilahdensolmu]</td>
+      <td>[Niittymaa, Niittykumpu (M), Revontulentie, Pohjankulma, Golfpolku]</td>
+    </tr>
+    <tr>
+      <th>Sateentie</th>
+      <td>Sateentie 2</td>
+      <td>542</td>
+      <td>539</td>
+      <td>3030.038745</td>
+      <td>3102.762523</td>
+      <td>[Tapionaukio, Lauttasaaren ostoskeskus, Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Niittymaa]</td>
+      <td>[Tapionaukio, Aalto-yliopisto (M), Korkeakouluaukio, Niittymaa, Otsolahti, Kalevalantie]</td>
+    </tr>
+    <tr>
+      <th>Hakalehto</th>
+      <td>Merituulentie 18</td>
+      <td>685</td>
+      <td>659</td>
+      <td>2298.513869</td>
+      <td>2110.326252</td>
+      <td>[Länsituuli, Niittymaa, Niittykumpu (M), Urheilupuisto (M), Hakalehto]</td>
+      <td>[Länsituuli, Niittymaa, Urheilupuisto (M), Hakalehto, Niittykumpu (M)]</td>
+    </tr>
+    <tr>
+      <th>Oravannahkatori</th>
+      <td>Oravannahkatori 1</td>
+      <td>347</td>
+      <td>325</td>
+      <td>2184.491844</td>
+      <td>2140.902554</td>
+      <td>[Länsituuli, Urheilupuisto (M), Niittymaa, Revontulentie, Otaranta]</td>
+      <td>[Länsituuli, Urheilupuisto (M), Niittymaa, Tapionaukio, Kuunkatu]</td>
+    </tr>
+    <tr>
+      <th>Länsituuli</th>
+      <td>Länsituulenkuja 3</td>
+      <td>1231</td>
+      <td>1222</td>
+      <td>1972.516653</td>
+      <td>1994.653306</td>
+      <td>[Hakalehto, Niittymaa, Ahertajantie, Pohjankulma, Oravannahkatori]</td>
+      <td>[Hakalehto, Pohjankulma, Oravannahkatori, Niittymaa, Louhentori]</td>
+    </tr>
+    <tr>
+      <th>Tuulimäki</th>
+      <td>Itätuulenkuja 11</td>
+      <td>202</td>
+      <td>196</td>
+      <td>3127.960396</td>
+      <td>2824.739796</td>
+      <td>[Westendinasema, Kalevalantie, Koivu-Mankkaa, Sähkömies, Westendintie]</td>
+      <td>[Westendinasema, Westendintie, Hanasaari, Golfpolku, Kalevalantie]</td>
+    </tr>
+    <tr>
+      <th>Tapionaukio</th>
+      <td>Tapionaukio 9</td>
+      <td>1059</td>
+      <td>1066</td>
+      <td>2242.617252</td>
+      <td>2141.636651</td>
+      <td>[Mäntyviita, Otsolahti, Jämeräntaival, Sateentie, Louhentori]</td>
+      <td>[Otsolahti, Mäntyviita, Jämeräntaival, Tekniikantie, Aalto-yliopisto (M), Korkeakouluaukio]</td>
+    </tr>
+    <tr>
+      <th>Kulttuuriaukio</th>
+      <td>Kulttuuriaukio 2</td>
+      <td>665</td>
+      <td>631</td>
+      <td>2491.65815</td>
+      <td>2283.45748</td>
+      <td>[Louhentori, Kalevalantie, Pohjankulma, Mankkaanaukio, Koivu-Mankkaa]</td>
+      <td>[Louhentori, Kalevalantie, Pohjankulma, Toppelundinportti, Niittymaa]</td>
+    </tr>
+    <tr>
+      <th>Ahertajantie</th>
+      <td>Ahertajantie 1</td>
+      <td>359</td>
+      <td>369</td>
+      <td>1965.041783</td>
+      <td>2030.96206</td>
+      <td>[Länsituuli, Pohjankulma, Kalevalantie, Louhentori, Aalto-yliopisto (M), Korkeakouluaukio]</td>
+      <td>[Länsituuli, Kalevalantie, Niittymaa, Sateentie, Pohjankulma]</td>
+    </tr>
+    <tr>
+      <th>Mäntyviita</th>
+      <td>Mäntyviita 2</td>
+      <td>519</td>
+      <td>517</td>
+      <td>2348.164412</td>
+      <td>2000.73501</td>
+      <td>[Tapionaukio, Mäntyviita, Jämeräntaival, Kulttuuriaukio, Aalto-yliopisto (M), Tietotie]</td>
+      <td>[Tapionaukio, Mäntyviita, Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Aalto-yliopisto (M), Tietotie]</td>
+    </tr>
+    <tr>
+      <th>Otsolahti</th>
+      <td>Otsolahdentie 18</td>
+      <td>687</td>
+      <td>687</td>
+      <td>2001.611354</td>
+      <td>2239.240655</td>
+      <td>[Tapionaukio, Keilaniemi (M), Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Sateentie]</td>
+      <td>[Tapionaukio, Aalto-yliopisto (M), Korkeakouluaukio, Keilaniemi (M), Jämeräntaival, Otsolahti]</td>
+    </tr>
+    <tr>
+      <th>Keilaniemi (M)</th>
+      <td>Keilaniementie 4</td>
+      <td>709</td>
+      <td>649</td>
+      <td>2861.247306</td>
+      <td>2817.964052</td>
+      <td>[Otaranta, Otsolahti, Jämeräntaival, Lehtisaarentie, Keilaranta]</td>
+      <td>[Otaranta, Jämeräntaival, Otsolahti, Lehtisaarentie, Keilaranta]</td>
+    </tr>
+    <tr>
+      <th>Keilaranta</th>
+      <td>Keilaranta 13</td>
+      <td>361</td>
+      <td>349</td>
+      <td>3369.418283</td>
+      <td>3561.103152</td>
+      <td>[Keilaniemi (M), Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Lehtisaarentie, Otaranta]</td>
+      <td>[Keilaniemi (M), Jämeräntaival, Lehtisaarentie, Otaranta, Tekniikantie]</td>
+    </tr>
+    <tr>
+      <th>Betonimies</th>
+      <td>Betonimiehenkuja 1</td>
+      <td>329</td>
+      <td>317</td>
+      <td>3449.796353</td>
+      <td>3219.583596</td>
+      <td>[Jämeräntaival, Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Tapionaukio, Betonimies]</td>
+      <td>[Jämeräntaival, Otaranta, Aalto-yliopisto (M), Korkeakouluaukio, Sähkömies, Betonimies]</td>
+    </tr>
+    <tr>
+      <th>Tekniikantie</th>
+      <td>Tekniikantie 3</td>
+      <td>578</td>
+      <td>574</td>
+      <td>2108.301038</td>
+      <td>2141.658537</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Tapionaukio, Jämeräntaival, Kalevalantie, Otaranta]</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Otaranta, Tapionaukio, Kalevalantie]</td>
+    </tr>
+    <tr>
+      <th>Innopoli</th>
+      <td>Tekniikantie 14</td>
+      <td>154</td>
+      <td>153</td>
+      <td>2791.519481</td>
+      <td>2512.745098</td>
+      <td>[Majurinkulma, Aalto-yliopisto (M), Tietotie, Kulttuuriaukio, Maarinranta, Tekniikantie]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Majurinkulma, Pohjankulma, Säterinrinne, Urheilupuisto (M)]</td>
+    </tr>
+    <tr>
+      <th>Hagalundinpuisto</th>
+      <td>Tekniikantie 15</td>
+      <td>78</td>
+      <td>73</td>
+      <td>2457.346154</td>
+      <td>2075.383562</td>
+      <td>[Mäntyviita, Kulttuuriaukio, Jämeräntaival, Aalto-yliopisto (M), Tietotie, Keilalahti]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Keilalahti, Jämeräntaival, Aalto-yliopisto (M), Korkeakouluaukio, Tekniikantie]</td>
+    </tr>
+    <tr>
+      <th>Aalto-yliopisto (M), Tietot</th>
+      <td>Tietotie 4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Aalto-yliopisto (M), Korkea</th>
+      <td>Otaniementie 10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Otaranta</th>
+      <td>Otaranta 6</td>
+      <td>1167</td>
+      <td>1165</td>
+      <td>2978.927164</td>
+      <td>2795.808584</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Keilaniemi (M), Otaranta, Lehtisaarentie, Tekniikantie]</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Keilaniemi (M), Luoteisväylä, Lehtisaarentie, Otaranta]</td>
+    </tr>
+    <tr>
+      <th>Sähkömies</th>
+      <td>Otakaari 3</td>
+      <td>456</td>
+      <td>436</td>
+      <td>1979.442982</td>
+      <td>1820.694954</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Sähkömies, Tapionaukio, Betonimies]</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Sähkömies, Maarinranta, Kalevalantie]</td>
+    </tr>
+    <tr>
+      <th>Jämeräntaival</th>
+      <td>Otakaari 18</td>
+      <td>2708</td>
+      <td>2605</td>
+      <td>2016.88134</td>
+      <td>1808.448883</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Tapionaukio, Keilaniemi (M), Maarinranta]</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Jämeräntaival, Tapionaukio, Maarinranta, Keilaniemi (M)]</td>
+    </tr>
+    <tr>
+      <th>Maarinranta</th>
+      <td>Maarinrannantie 4</td>
+      <td>514</td>
+      <td>500</td>
+      <td>2426.13035</td>
+      <td>2152.73534</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Jämeräntaival, Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Sähkömies]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Jämeräntaival, Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Louhentori]</td>
+    </tr>
+    <tr>
+      <th>Tietäjä</th>
+      <td>Valkjärventie 4</td>
+      <td>265</td>
+      <td>245</td>
+      <td>2216.104415</td>
+      <td>3068.676204</td>
+      <td>[Louhentori, Aalto-yliopisto (M), Tietotie, Kalevalantie, Maarinranta, Jämeräntaival]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Aalto-yliopisto (M), Korkeakouluaukio, Ratsutori, Tilkanvierto, Maarinranta]</td>
+    </tr>
+    <tr>
+      <th>Metsänneidonpolku</th>
+      <td>Metsänneidonpolku 5</td>
+      <td>424</td>
+      <td>408</td>
+      <td>2280.819976</td>
+      <td>2233.009804</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Jämeräntaival, Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Louhentori]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Jämeräntaival, Urheilupuisto (M)]</td>
+    </tr>
+    <tr>
+      <th>Kalevalantie</th>
+      <td>Kalevalantie 7</td>
+      <td>650</td>
+      <td>633</td>
+      <td>1943.143585</td>
+      <td>2015.982622</td>
+      <td>[Pohjankulma, Kulttuuriaukio, Aalto-yliopisto (M), Korkeakouluaukio, Aalto-yliopisto (M), Tietotie, Kalevalantie]</td>
+      <td>[Kulttuuriaukio, Pohjankulma, Aalto-yliopisto (M), Korkeakouluaukio, Tapionaukio, Tekniikantie]</td>
+    </tr>
+    <tr>
+      <th>Louhentori</th>
+      <td>Louhentie 16</td>
+      <td>563</td>
+      <td>596</td>
+      <td>2132.998224</td>
+      <td>2052.964211</td>
+      <td>[Länsituuli, Kulttuuriaukio, Pohjankulma, Aalto-yliopisto (M), Tietotie, Tapionaukio]</td>
+      <td>[Kulttuuriaukio, Länsituuli, Pohjankulma, Tapionaukio, Tietäjä]</td>
+    </tr>
+    <tr>
+      <th>Pohjankulma</th>
+      <td>Louhentie 2</td>
+      <td>766</td>
+      <td>767</td>
+      <td>2062.077023</td>
+      <td>1935.456323</td>
+      <td>[Länsituuli, Louhentori, Kulttuuriaukio, Kalevalantie, Urheilupuisto (M)]</td>
+      <td>[Länsituuli, Kalevalantie, Kulttuuriaukio, Louhentori, Ahertajantie]</td>
+    </tr>
+    <tr>
+      <th>Koivu-Mankkaa</th>
+      <td>Urpu 6</td>
+      <td>243</td>
+      <td>241</td>
+      <td>2124.226337</td>
+      <td>2069.647303</td>
+      <td>[Urheilupuisto (M), Kulttuuriaukio, Niittykumpu (M), Kalevalantie, Länsituuli]</td>
+      <td>[Urheilupuisto (M), Kulttuuriaukio, Niittykumpu (M), Kalevalantie, Länsituuli]</td>
+    </tr>
+    <tr>
+      <th>Mankkaanlaaksontie</th>
+      <td>Mankkaanlaaksontie 1</td>
+      <td>257</td>
+      <td>298</td>
+      <td>3494.341128</td>
+      <td>3382.748322</td>
+      <td>[Urheilupuisto (M), Säterinniitty, Piispansilta, Mankkaanlaaksontie, Niittykumpu (M)]</td>
+      <td>[Urheilupuisto (M), Piispansilta, Säterinniitty, Mankkaanlaaksontie, Kulttuuriaukio]</td>
+    </tr>
+    <tr>
+      <th>Mankkaanaukio</th>
+      <td>Mankkaantie 3</td>
+      <td>242</td>
+      <td>271</td>
+      <td>3613.516529</td>
+      <td>3530.552288</td>
+      <td>[Urheilupuisto (M), Länsituuli, Lukutori, Pohjankulma, Mankkaanlaaksontie]</td>
+      <td>[Urheilupuisto (M), Kulttuuriaukio, Pohjankulma, Länsituuli, Mankkaanlaaksontie]</td>
+    </tr>
+    <tr>
+      <th>Tapiolan urheilupuisto</th>
+      <td>Urheilupuistontie 3</td>
+      <td>421</td>
+      <td>454</td>
+      <td>1977.173397</td>
+      <td>1859.035242</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Niittymaa, Pohjankulma, Länsituuli]</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Pohjankulma, Mäntyviita, Kalevalantie]</td>
+    </tr>
+    <tr>
+      <th>Urheilupuisto (M)</th>
+      <td>Jousenpuistonkatu 4</td>
+      <td>1708</td>
+      <td>1719</td>
+      <td>1864.611241</td>
+      <td>1784.562147</td>
+      <td>[Orionintie, Tontunmäentie, Niittykumpu (M), Niittymaa, Tapiolan urheilupuisto]</td>
+      <td>[Orionintie, Niittymaa, Tontunmäentie, Niittykumpu (M), Tapiolan urheilupuisto]</td>
+    </tr>
+    <tr>
+      <th>Tontunmäentie</th>
+      <td>Tontunmäentie 25</td>
+      <td>357</td>
+      <td>358</td>
+      <td>1554.815126</td>
+      <td>1502.167598</td>
+      <td>[Urheilupuisto (M), Kulttuuriaukio, Tapiolan urheilupuisto, Niittymaa, Tontunmäentie]</td>
+      <td>[Urheilupuisto (M), Länsituuli, Niittykumpu (M), Hakalehto, Kulttuuriaukio]</td>
+    </tr>
+    <tr>
+      <th>Olarinluoma</th>
+      <td>Olarinluoma 19</td>
+      <td>229</td>
+      <td>240</td>
+      <td>2288.419214</td>
+      <td>2482.083333</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Suurpellonaukio, Niittymaa, Hauenkalliontie]</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Suurpellonaukio, Niittymaa, Haukilahdensolmu]</td>
+    </tr>
+    <tr>
+      <th>Niittymaa</th>
+      <td>Niittymaantie 2</td>
+      <td>1240</td>
+      <td>1243</td>
+      <td>2146.645702</td>
+      <td>2361.513813</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Länsituuli, Hakalehto, Revontulentie]</td>
+      <td>[Urheilupuisto (M), Länsituuli, Niittykumpu (M), Hakalehto, Orionintie]</td>
+    </tr>
+    <tr>
+      <th>Niittykumpu (M)</th>
+      <td>Merituulentie 38</td>
+      <td>1956</td>
+      <td>1992</td>
+      <td>2076.116396</td>
+      <td>2166.26372</td>
+      <td>[Urheilupuisto (M), Haukilahdensolmu, Niittymaa, Mellstenintie, Haukilahdenaukio]</td>
+      <td>[Urheilupuisto (M), Haukilahdensolmu, Niittymaa, Mellstenintie, Lystimäensilta]</td>
+    </tr>
+    <tr>
+      <th>Haukilahdenkatu</th>
+      <td>Haukilahdenkatu 6</td>
+      <td>1921</td>
+      <td>1952</td>
+      <td>2528.398402</td>
+      <td>2565.274416</td>
+      <td>[Kalasatama (M), Arabian kauppakeskus, Koskelantie, Haukilahdenkatu, Pasilan asema]</td>
+      <td>[Kalasatama (M), Arabian kauppakeskus, Haukilahdenkatu, Pasilan asema, Arielinkatu]</td>
+    </tr>
+    <tr>
+      <th>Haukilahdenaukio</th>
+      <td>Haukilahdenranta 2</td>
+      <td>510</td>
+      <td>524</td>
+      <td>2115.696745</td>
+      <td>2026.870229</td>
+      <td>[Niittykumpu (M), Mellstenintie, Westendinasema, Linnakepolku, Haukilahdenranta]</td>
+      <td>[Niittykumpu (M), Mellstenintie, Linnakepolku, Haukilahdenaukio, Haukilahdenranta]</td>
+    </tr>
+    <tr>
+      <th>Hauenkallio</th>
+      <td>Hauenkalliontie 12</td>
+      <td>195</td>
+      <td>174</td>
+      <td>1779.8</td>
+      <td>1963.41569</td>
+      <td>[Niittykumpu (M), Suomenlahdentie, Haukilahdensolmu, Hauenkalliontie, Haukilahdenaukio]</td>
+      <td>[Niittykumpu (M), Piispansilta, Suomenlahdentie, Mellstenintie, Niittymaa]</td>
+    </tr>
+    <tr>
+      <th>Haukilahdenranta</th>
+      <td>Haukilahdenranta 13</td>
+      <td>417</td>
+      <td>489</td>
+      <td>2593.369305</td>
+      <td>2378.90593</td>
+      <td>[Niittykumpu (M), Suomenlahdentie, Haukilahdenaukio, Niittymaa, Westendintie]</td>
+      <td>[Niittykumpu (M), Suomenlahdentie, Haukilahdenaukio, Piispansilta, Haukilahdensolmu]</td>
+    </tr>
+    <tr>
+      <th>Mellstenintie</th>
+      <td>Mellstenintie 17</td>
+      <td>734</td>
+      <td>815</td>
+      <td>3083.22252</td>
+      <td>2790.952969</td>
+      <td>[Niittykumpu (M), Haukilahdenaukio, Suomenlahdentie, Haukilahdensolmu, Nokkala]</td>
+      <td>[Niittykumpu (M), Haukilahdensolmu, Haukilahdenaukio, Suomenlahdentie, Westendinasema]</td>
+    </tr>
+    <tr>
+      <th>Toppelundintie</th>
+      <td>Toppelundintie 11</td>
+      <td>234</td>
+      <td>239</td>
+      <td>2835.0</td>
+      <td>2669.431004</td>
+      <td>[Niittykumpu (M), Westendinasema, Mellstenintie, Hanasaari, Suomenlahdentie]</td>
+      <td>[Niittykumpu (M), Urheilupuisto (M), Westendinasema, Mellstenintie, Toppelundintie]</td>
+    </tr>
+    <tr>
+      <th>Westendintie</th>
+      <td>Westendintie 34</td>
+      <td>413</td>
+      <td>400</td>
+      <td>3463.316392</td>
+      <td>3436.365</td>
+      <td>[Mellstenintie, Hanasaari, Westendinasema, Haukilahdenaukio, Westendintie]</td>
+      <td>[Westendinasema, Nokkala, Hanasaari, Mellstenintie, Westendintie]</td>
+    </tr>
+    <tr>
+      <th>Toppelundinportti</th>
+      <td>Haukilahdenkatu 2</td>
+      <td>304</td>
+      <td>320</td>
+      <td>2058.225888</td>
+      <td>2290.070844</td>
+      <td>[Kulttuuriaukio, Mellstenintie, Urheilupuisto (M), Linnakepolku, Haukilahdenranta]</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Mellstenintie, Haukilahdenaukio, Westendinasema]</td>
+    </tr>
+    <tr>
+      <th>Linnakepolku</th>
+      <td>Westendintie 99</td>
+      <td>307</td>
+      <td>329</td>
+      <td>2409.009772</td>
+      <td>2334.23</td>
+      <td>[Haukilahdenaukio, Linnakepolku, Urheilupuisto (M), Haukilahdenranta, Revontulentie]</td>
+      <td>[Haukilahdenaukio, Westendinasema, Linnakepolku, Urheilupuisto (M), Toppelundinportti]</td>
+    </tr>
+    <tr>
+      <th>Nokkala</th>
+      <td>Nokkalanniemi 2</td>
+      <td>374</td>
+      <td>374</td>
+      <td>3112.713904</td>
+      <td>2791.71123</td>
+      <td>[Suomenlahdentie, Matinkyläntie, Mellstenintie, Westendintie, Piispansilta]</td>
+      <td>[Suomenlahdentie, Matinkyläntie, Mellstenintie, Piispansilta, Etuniementie]</td>
+    </tr>
+    <tr>
+      <th>Matinlahdenranta</th>
+      <td>Rantamäki 2</td>
+      <td>442</td>
+      <td>443</td>
+      <td>2491.988688</td>
+      <td>2460.356659</td>
+      <td>[Piispansilta, Suomenlahdentie, Mellstenintie, Matinkyläntie, Haukilahdenranta]</td>
+      <td>[Suomenlahdentie, Piispansilta, Matinkyläntie, Mellstenintie, Haukilahdenranta]</td>
+    </tr>
+    <tr>
+      <th>Nuottaniementie</th>
+      <td>Nuottatie 1</td>
+      <td>266</td>
+      <td>277</td>
+      <td>2829.309511</td>
+      <td>2968.592058</td>
+      <td>[Suomenlahdentie, Matinkartanontie, Friisilänaukio, Nuottaniementie, Nokkala]</td>
+      <td>[Suomenlahdentie, Friisilänaukio, Piispansilta, Nuottaniementie, Tiistiläntie]</td>
+    </tr>
+    <tr>
+      <th>Sepetlahdentie</th>
+      <td>Sepetlahdentie 11</td>
+      <td>355</td>
+      <td>348</td>
+      <td>1758.619718</td>
+      <td>1954.471264</td>
+      <td>[Suomenlahdentie, Piispansilta, Sepetlahdentie, Tiistiläntie, Piispanportti]</td>
+      <td>[Suomenlahdentie, Piispansilta, Sepetlahdentie, Tiistiläntie, Matinlahdenranta]</td>
+    </tr>
+    <tr>
+      <th>Matinkartanontie</th>
+      <td>Matinkartanontie 2</td>
+      <td>696</td>
+      <td>723</td>
+      <td>1634.672414</td>
+      <td>1733.307981</td>
+      <td>[Suomenlahdentie, Piispansilta, Matinkyläntie, Niittykumpu (M), Mellstenintie]</td>
+      <td>[Suomenlahdentie, Piispansilta, Matinkyläntie, Niittykumpu (M), Nuottaniementie]</td>
+    </tr>
+    <tr>
+      <th>Matinkyläntie</th>
+      <td>Joosepinkuja 1</td>
+      <td>446</td>
+      <td>435</td>
+      <td>1606.109865</td>
+      <td>1675.099609</td>
+      <td>[Suomenlahdentie, Piispansilta, Matinkartanontie, Matinlahdenranta, Nokkala]</td>
+      <td>[Piispansilta, Suomenlahdentie, Nokkala, Matinlahdenranta, Matinkartanontie]</td>
+    </tr>
+    <tr>
+      <th>Tiistiläntie</th>
+      <td>Tiistiläntie 6</td>
+      <td>249</td>
+      <td>242</td>
+      <td>2144.903614</td>
+      <td>2069.384298</td>
+      <td>[Suomenlahdentie, Sepetlahdentie, Piispansilta, Nuottaniementie, Piispanportti]</td>
+      <td>[Suomenlahdentie, Sepetlahdentie, Piispansilta, Piispanportti, Matinlahdenranta]</td>
+    </tr>
+    <tr>
+      <th>Tiistinkallio</th>
+      <td>Kalastajantie 29</td>
+      <td>304</td>
+      <td>356</td>
+      <td>2819.463816</td>
+      <td>3032.449438</td>
+      <td>[Suomenlahdentie, Tiistinkallio, Piispanportti, Friisilänaukio, Piispansilta]</td>
+      <td>[Suomenlahdentie, Tiistinkallio, Piispansilta, Matinlahdenranta, Friisilänaukio]</td>
+    </tr>
+    <tr>
+      <th>Etuniementie</th>
+      <td>Kalastajantie 6</td>
+      <td>238</td>
+      <td>235</td>
+      <td>2070.777311</td>
+      <td>2171.387234</td>
+      <td>[Suomenlahdentie, Etuniementie, Piispansilta, Piispanportti, Nokkala]</td>
+      <td>[Suomenlahdentie, Etuniementie, Piispansilta, Piispanportti, Nokkala]</td>
+    </tr>
+    <tr>
+      <th>Hauenkalliontie</th>
+      <td>Hauenkalliontie 22</td>
+      <td>380</td>
+      <td>425</td>
+      <td>2216.015789</td>
+      <td>2189.164706</td>
+      <td>[Suomenlahdentie, Niittykumpu (M), Piispansilta, Mellstenintie, Komeetankatu]</td>
+      <td>[Suomenlahdentie, Piispansilta, Niittykumpu (M), Mellstenintie, Komeetankatu]</td>
+    </tr>
+    <tr>
+      <th>Nelikkotie</th>
+      <td>Nelikkotie 14</td>
+      <td>306</td>
+      <td>294</td>
+      <td>2114.732026</td>
+      <td>2094.44898</td>
+      <td>[Suomenlahdentie, Piispanportti, Niittykumpu (M), Haukilahdenaukio, Piispansilta]</td>
+      <td>[Piispansilta, Suomenlahdentie, Niittykumpu (M), Niittymaa, Piispanportti]</td>
+    </tr>
+    <tr>
+      <th>Suomenlahdentie</th>
+      <td>Suomenlahdentie 2</td>
+      <td>1608</td>
+      <td>1635</td>
+      <td>1904.079397</td>
+      <td>1884.366563</td>
+      <td>[Matinkartanontie, Sepetlahdentie, Hauenkalliontie, Matinlahdenranta, Matinkyläntie]</td>
+      <td>[Matinkartanontie, Sepetlahdentie, Matinkyläntie, Tiistinkallio, Hauenkalliontie]</td>
+    </tr>
+    <tr>
+      <th>Piispansilta</th>
+      <td>Piispansilta 11</td>
+      <td>1386</td>
+      <td>1358</td>
+      <td>1875.488456</td>
+      <td>2136.177467</td>
+      <td>[Matinkartanontie, Komeetankatu, Kuunkatu, Matinkyläntie, Auringonkatu]</td>
+      <td>[Kuunkatu, Komeetankatu, Ruomelantie, Matinkartanontie, Auringonkatu]</td>
+    </tr>
+    <tr>
+      <th>Piispanportti</th>
+      <td>Piispanportti 4</td>
+      <td>417</td>
+      <td>434</td>
+      <td>2341.115108</td>
+      <td>2301.794931</td>
+      <td>[Niittykumpu (M), Kuunkatu, Piispansilta, Friisilänaukio, Suomenlahdentie]</td>
+      <td>[Piispansilta, Niittykumpu (M), Kuunkatu, Suomenlahdentie, Nelikkotie]</td>
+    </tr>
+    <tr>
+      <th>Friisilänaukio</th>
+      <td>Friisiläntie 2</td>
+      <td>398</td>
+      <td>381</td>
+      <td>2543.360126</td>
+      <td>2577.569554</td>
+      <td>[Piispansilta, Suomenlahdentie, Kuunkatu, Niittykumpu (M), Nuottaniementie]</td>
+      <td>[Suomenlahdentie, Piispansilta, Piispanportti, Kuunkatu, Nuottaniementie]</td>
+    </tr>
+    <tr>
+      <th>Avaruuskatu</th>
+      <td>Avaruuskatu 1</td>
+      <td>119</td>
+      <td>123</td>
+      <td>2245.806723</td>
+      <td>2088.162602</td>
+      <td>[Piispansilta, Tiistinkallio, Suomenlahdentie, Friisilänaukio, Avaruuskatu]</td>
+      <td>[Piispansilta, Suomenlahdentie, Friisilänaukio, Avaruuskatu, Kuunkatu]</td>
+    </tr>
+    <tr>
+      <th>Kuunkatu</th>
+      <td>Kuunkatu 3</td>
+      <td>476</td>
+      <td>472</td>
+      <td>2470.426471</td>
+      <td>2596.114407</td>
+      <td>[Piispansilta, Komeetankatu, Piispanportti, Friisilänaukio, Itäportti]</td>
+      <td>[Piispansilta, Komeetankatu, Friisilänaukio, Piispanportti, Niittykumpu (M)]</td>
+    </tr>
+    <tr>
+      <th>Ruomelantie</th>
+      <td>Ruomelantie 19</td>
+      <td>320</td>
+      <td>305</td>
+      <td>2428.86875</td>
+      <td>2412.878689</td>
+      <td>[Piispansilta, Komeetankatu, Niittykumpu (M), Friisilänaukio, Kuunkatu]</td>
+      <td>[Piispansilta, Niittykumpu (M), Komeetankatu, Friisilänaukio, Suomenlahdentie]</td>
+    </tr>
+    <tr>
+      <th>Itäportti</th>
+      <td>Ruomelantie 5</td>
+      <td>257</td>
+      <td>216</td>
+      <td>2258.252918</td>
+      <td>2407.402778</td>
+      <td>[Piispansilta, Niittykumpu (M), Komeetankatu, Kuunkatu, Lukutori]</td>
+      <td>[Niittykumpu (M), Komeetankatu, Piispansilta, Kuunkatu, Lukutori]</td>
+    </tr>
+    <tr>
+      <th>Komeetankatu</th>
+      <td>Komeetankatu 2</td>
+      <td>576</td>
+      <td>562</td>
+      <td>1799.69849</td>
+      <td>1776.548043</td>
+      <td>[Piispansilta, Kuunkatu, Lukutori, Ruomelantie, Suurpellonaukio]</td>
+      <td>[Piispansilta, Suomenlahdentie, Kuunkatu, Ruomelantie, Itäportti]</td>
+    </tr>
+    <tr>
+      <th>Auringonkatu</th>
+      <td>Auringonkatu 2</td>
+      <td>197</td>
+      <td>190</td>
+      <td>1895.172589</td>
+      <td>1680.147368</td>
+      <td>[Piispansilta, Suomenlahdentie, Komeetankatu, Kuunkatu, Orionintie]</td>
+      <td>[Piispansilta, Komeetankatu, Ruomelantie, Itäportti, Matinkyläntie]</td>
+    </tr>
+    <tr>
+      <th>Piispankallio</th>
+      <td>Piispankallio 2</td>
+      <td>241</td>
+      <td>239</td>
+      <td>2269.655602</td>
+      <td>2468.246862</td>
+      <td>[Niittykumpu (M), Länsituuli, Piispansilta, Niittymaa, Piispanportti]</td>
+      <td>[Niittykumpu (M), Piispansilta, Länsituuli, Piispanportti, Lehtisaarentie]</td>
+    </tr>
+    <tr>
+      <th>Lystimäki</th>
+      <td>Lystimäentie 2</td>
+      <td>166</td>
+      <td>169</td>
+      <td>2534.795181</td>
+      <td>2270.887574</td>
+      <td>[Niittykumpu (M), Piispansilta, Lystimäensilta, Mellstenintie, Kuunkatu]</td>
+      <td>[Niittykumpu (M), Piispansilta, Komeetankatu, Haukilahdenranta, Niittymaa]</td>
+    </tr>
+    <tr>
+      <th>Lystimäensilta</th>
+      <td>Vuosikuja 2</td>
+      <td>177</td>
+      <td>191</td>
+      <td>1800.79661</td>
+      <td>1710.544503</td>
+      <td>[Niittykumpu (M), Niittymaa, Lystimäensilta, Orionintie, Olarinluoma]</td>
+      <td>[Niittykumpu (M), Niittymaa, Lystimäki, Lystimäensilta, Kulttuuriaukio]</td>
+    </tr>
+    <tr>
+      <th>Suurpellonaukio</th>
+      <td>Suurpellon puistokatu 4</td>
+      <td>290</td>
+      <td>307</td>
+      <td>3141.603448</td>
+      <td>3224.586319</td>
+      <td>[Niittykumpu (M), Piispansilta, Komeetankatu, Suurpellonaukio, Olarinluoma]</td>
+      <td>[Komeetankatu, Niittykumpu (M), Piispansilta, Suurpellonaukio, Olarinluoma]</td>
+    </tr>
+    <tr>
+      <th>Lukutori</th>
+      <td>Suurpellon puistokatu 18</td>
+      <td>333</td>
+      <td>341</td>
+      <td>3659.444444</td>
+      <td>3415.498534</td>
+      <td>[Lukutori, Piispansilta, Niittykumpu (M), Ruomelantie, Komeetankatu]</td>
+      <td>[Lukutori, Komeetankatu, Piispansilta, Niittykumpu (M), Suurpellonaukio]</td>
+    </tr>
+    <tr>
+      <th>Gallen-Kallelan tie</th>
+      <td>Gallen-Kallelan tie 29</td>
+      <td>612</td>
+      <td>627</td>
+      <td>3147.431373</td>
+      <td>3336.432217</td>
+      <td>[Torpanranta, Ratsutori, Laajalahden aukio, Majurinkulma, Kirjurinkuja]</td>
+      <td>[Majurinkulma, Kirjurinkuja, Ratsutori, Torpanranta, Laajalahden aukio]</td>
+    </tr>
+    <tr>
+      <th>Elfvik</th>
+      <td>Elfvikintie 4</td>
+      <td>217</td>
+      <td>233</td>
+      <td>3041.829493</td>
+      <td>3256.330472</td>
+      <td>[Ratsutori, Gallen-Kallelan tie, Aalto-yliopisto (M), Korkeakouluaukio, Majurinkulma, Rummunlyöjänkatu]</td>
+      <td>[Gallen-Kallelan tie, Maarinranta, Majurinkulma, Rummunlyöjänkatu, Ratsutori]</td>
+    </tr>
+    <tr>
+      <th>Laajalahden keskus</th>
+      <td>Kirvuntie 22</td>
+      <td>287</td>
+      <td>314</td>
+      <td>3030.031359</td>
+      <td>3299.926752</td>
+      <td>[Ratsutori, Aalto-yliopisto (M), Tietotie, Laajalahden keskus, Metsänneidonpolku, Louhentori]</td>
+      <td>[Aalto-yliopisto (M), Tietotie, Aalto-yliopisto (M), Korkeakouluaukio, Ratsutori, Tietäjä, Jämeräntaival]</td>
+    </tr>
+    <tr>
+      <th>Majurinkulma</th>
+      <td>Itsehallintotie 8</td>
+      <td>653</td>
+      <td>673</td>
+      <td>2649.627871</td>
+      <td>2656.435854</td>
+      <td>[Ratsutori, Gallen-Kallelan tie, Majurinkulma, Leppävaarankäytävä, Aalto-yliopisto (M), Korkeakouluaukio]</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Gallen-Kallelan tie, Majurinkulma, Laajalahden aukio]</td>
+    </tr>
+    <tr>
+      <th>Yhdyskunnankuja</th>
+      <td>Yhdyskunnankuja 1</td>
+      <td>432</td>
+      <td>428</td>
+      <td>2471.3125</td>
+      <td>2236.563084</td>
+      <td>[Ratsutori, Yhdyskunnankuja, Säterinniitty, Majurinkulma, Säterinrinne]</td>
+      <td>[Ratsutori, Rummunlyöjänkatu, Yhdyskunnankuja, Vallikatu, Leppävaarankäytävä]</td>
+    </tr>
+    <tr>
+      <th>Kirjurinkuja</th>
+      <td>Kirjurinkuja 1</td>
+      <td>1189</td>
+      <td>1260</td>
+      <td>2124.981497</td>
+      <td>2077.752381</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Kirjurinkuja, Takomotie, Gallen-Kallelan tie]</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Mäkkylän asema, Kirjurinkuja, Takomotie]</td>
+    </tr>
+    <tr>
+      <th>Upseerinkatu</th>
+      <td>Upseerinkatu 3</td>
+      <td>253</td>
+      <td>242</td>
+      <td>1672.740435</td>
+      <td>1818.809917</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Majurinkulma, Kirjurinkuja, Rummunlyöjänkatu]</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Rummunlyöjänkatu, Kirjurinkuja, Valimon asema]</td>
+    </tr>
+    <tr>
+      <th>Komentajankatu</th>
+      <td>Perkkaantie 5</td>
+      <td>303</td>
+      <td>324</td>
+      <td>1852.513762</td>
+      <td>1743.811728</td>
+      <td>[Ratsutori, Komentajankatu, Leppävaarankäytävä, Majurinkulma, Säterinniitty]</td>
+      <td>[Ratsutori, Komentajankatu, Leppävaarankäytävä, Majurinkulma, Rummunlyöjänkatu]</td>
+    </tr>
+    <tr>
+      <th>Säteri</th>
+      <td>Säterinkatu 6</td>
+      <td>282</td>
+      <td>260</td>
+      <td>2737.173759</td>
+      <td>2786.965385</td>
+      <td>[Ratsutori, Rummunlyöjänkatu, Majurinkulma, Muurarinkuja, Kirjurinkuja]</td>
+      <td>[Ratsutori, Kirjurinkuja, Rummunlyöjänkatu, Muurarinkuja, Majurinkulma]</td>
+    </tr>
+    <tr>
+      <th>Säterinrinne</th>
+      <td>Ruusutorpantie 1</td>
+      <td>174</td>
+      <td>173</td>
+      <td>2618.971264</td>
+      <td>2282.225434</td>
+      <td>[Ratsutori, Säterinrinne, Innopoli, Leppävaarankäytävä, Säteri]</td>
+      <td>[Ratsutori, Yhdyskunnankuja, Säterinrinne, Gallen-Kallelan tie, Laajalahden keskus]</td>
+    </tr>
+    <tr>
+      <th>Säterinniitty</th>
+      <td>Säterinpuistontie 16</td>
+      <td>378</td>
+      <td>377</td>
+      <td>2407.970899</td>
+      <td>2298.534058</td>
+      <td>[Ratsutori, Leppävaarankäytävä, Rummunlyöjänkatu, Läkkitori, Leppävaaran urheilupuisto]</td>
+      <td>[Ratsutori, Rummunlyöjänkatu, Läkkitori, Yhdyskunnankuja, Komentajankatu]</td>
+    </tr>
+    <tr>
+      <th>Rummunlyöjänkatu</th>
+      <td>Leppävaarankatu 13</td>
+      <td>545</td>
+      <td>551</td>
+      <td>3001.236697</td>
+      <td>3206.958258</td>
+      <td>[Rummunlyöjänkatu, Säterinniitty, Leppävaaran urheilupuisto, Paciuksenkaari, Kirjurinkuja]</td>
+      <td>[Rummunlyöjänkatu, Leppävaaran urheilupuisto, Kirjurinkuja, Munkkivuoren ostoskeskus, Säterinniitty]</td>
+    </tr>
+    <tr>
+      <th>Ratsutori</th>
+      <td>Leppävaarankatu 1</td>
+      <td>1664</td>
+      <td>1693</td>
+      <td>1924.102362</td>
+      <td>1985.392008</td>
+      <td>[Kirjurinkuja, Majurinkulma, Yhdyskunnankuja, Komentajankatu, Säterinniitty]</td>
+      <td>[Kirjurinkuja, Majurinkulma, Yhdyskunnankuja, Komentajankatu, Säterinniitty]</td>
+    </tr>
+    <tr>
+      <th>Leppävaaranaukio</th>
+      <td>Hevosenkenkä 3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Leppävaarankäytävä</th>
+      <td>Läkkisepänkuja 3</td>
+      <td>1173</td>
+      <td>1371</td>
+      <td>1724.582549</td>
+      <td>1767.413319</td>
+      <td>[Kirjurinkuja, Muurarinkuja, Linnuntie, Vallikatu, Kalkkipellonmäki]</td>
+      <td>[Vallikatu, Muurarinkuja, Kirjurinkuja, Linnuntie, Kalkkipellonmäki]</td>
+    </tr>
+    <tr>
+      <th>Läkkitori</th>
+      <td>Läkkisepänkuja 3</td>
+      <td>401</td>
+      <td>458</td>
+      <td>2026.320873</td>
+      <td>1784.059694</td>
+      <td>[Vallikatu, Muurarinkuja, Kirjurinkuja, Säterinniitty, Läkkitori]</td>
+      <td>[Vallikatu, Muurarinkuja, Kirjurinkuja, Linnuntie, Leppävaaran urheilupuisto]</td>
+    </tr>
+    <tr>
+      <th>Armas Launiksen katu</th>
+      <td>Armas Launiksen katu 8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Muurarinkuja</th>
+      <td>Muurarinkuja 4</td>
+      <td>356</td>
+      <td>332</td>
+      <td>1645.355787</td>
+      <td>1444.656627</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Rummunlyöjänkatu, Muurarinkuja, Leppävaaran urheilupuisto]</td>
+      <td>[Leppävaarankäytävä, Ratsutori, Läkkitori, Muurarinkuja, Säteri]</td>
+    </tr>
+    <tr>
+      <th>Postipuun koulu</th>
+      <td>Mäkkylän puistotie 14</td>
+      <td>188</td>
+      <td>184</td>
+      <td>2331.930851</td>
+      <td>2163.255435</td>
+      <td>[Leppävaarankäytävä, Painiitty, Kalkkipellonmäki, Läkkitori, Jännetie]</td>
+      <td>[Leppävaarankäytävä, Painiitty, Jännetie, Kalkkipellonmäki, Mäkkylän asema]</td>
+    </tr>
+    <tr>
+      <th>Gransinmäki</th>
+      <td>Vanha maantie 6</td>
+      <td>65</td>
+      <td>77</td>
+      <td>1927.261538</td>
+      <td>2375.207792</td>
+      <td>[Kirjurinkuja, Rummunlyöjänkatu, Läkkitori, Leppävaaran urheilupuisto, Leppävaaran uimahalli]</td>
+      <td>[Läkkitori, Kirjurinkuja, Rummunlyöjänkatu, Vallikatu, Leppävaarankäytävä]</td>
+    </tr>
+    <tr>
+      <th>Leppävaaran urheilupuisto</th>
+      <td>Veräjäpellonkatu 17</td>
+      <td>298</td>
+      <td>308</td>
+      <td>2121.409396</td>
+      <td>2314.681818</td>
+      <td>[Leppävaarankäytävä, Rummunlyöjänkatu, Läkkitori, Kirjurinkuja, Leppävaaran urheilupuisto]</td>
+      <td>[Leppävaarankäytävä, Rummunlyöjänkatu, Kirjurinkuja, Läkkitori, Muurarinkuja]</td>
+    </tr>
+    <tr>
+      <th>Leppävaaran uimahalli</th>
+      <td>Veräjäpellonkatu 12</td>
+      <td>147</td>
+      <td>142</td>
+      <td>1780.959184</td>
+      <td>1523.725352</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Ratsutori, Muurarinkuja, Rummunlyöjänkatu]</td>
+      <td>[Leppävaarankäytävä, Rummunlyöjänkatu, Läkkitori, Muurarinkuja, Ratsutori]</td>
+    </tr>
+    <tr>
+      <th>Vallikatu</th>
+      <td>Vallikatu 19</td>
+      <td>363</td>
+      <td>289</td>
+      <td>1628.034904</td>
+      <td>1647.480969</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Linnuntie, Yhdyskunnankuja, Muurarinkuja]</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Kalkkipellonmäki, Linnuntie, Leppävaaran urheilupuisto]</td>
+    </tr>
+    <tr>
+      <th>Vallipolku</th>
+      <td>Vallikatu 12</td>
+      <td>143</td>
+      <td>109</td>
+      <td>2155.286713</td>
+      <td>2263.706422</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Vallikatu, Upseerinkatu, Painiitty]</td>
+      <td>[Leppävaarankäytävä, Säterinniitty, Tunnelitie, Läkkitori, Painiitty]</td>
+    </tr>
+    <tr>
+      <th>Linnuntie</th>
+      <td>Linnuntie 2</td>
+      <td>315</td>
+      <td>331</td>
+      <td>2764.774603</td>
+      <td>2709.360514</td>
+      <td>[Leppävaarankäytävä, Painiitty, Läkkitori, Huopalahdentie, Vallikatu]</td>
+      <td>[Leppävaarankäytävä, Vallikatu, Läkkitori, Huopalahdentie, Painiitty]</td>
+    </tr>
+    <tr>
+      <th>Kutsuntatie</th>
+      <td>Lintulaaksontie 2</td>
+      <td>104</td>
+      <td>88</td>
+      <td>2852.221154</td>
+      <td>2470.056818</td>
+      <td>[Leppävaarankäytävä, Linnuntie, Leppävaaran urheilupuisto, Läkkitori, Kalkkipellonmäki]</td>
+      <td>[Linnuntie, Leppävaarankäytävä, Painiitty, Läkkitori, Leppävaaran urheilupuisto]</td>
+    </tr>
+    <tr>
+      <th>Painiitty</th>
+      <td>Lotankatu 1</td>
+      <td>238</td>
+      <td>183</td>
+      <td>2616.10084</td>
+      <td>2822.786885</td>
+      <td>[Leppävaarankäytävä, Postipuun koulu, Pitäjänmäen asema, Linnuntie, Painiitty]</td>
+      <td>[Linnuntie, Leppävaarankäytävä, Jännetie, Painiitty, Postipuun koulu]</td>
+    </tr>
+    <tr>
+      <th>Mäkkylän asema</th>
+      <td>Perkkaantie 20</td>
+      <td>273</td>
+      <td>239</td>
+      <td>2618.076923</td>
+      <td>3353.075314</td>
+      <td>[Kirjurinkuja, Majurinkulma, Leppävaarankäytävä, Postipuun koulu, Ratsutori]</td>
+      <td>[Kirjurinkuja, Majurinkulma, Kalkkipellonmäki, Ratsutori, Mäkkylän asema]</td>
+    </tr>
+    <tr>
+      <th>Kalkkipellonmäki</th>
+      <td>Turuntie 22</td>
+      <td>324</td>
+      <td>258</td>
+      <td>2393.104938</td>
+      <td>2487.472868</td>
+      <td>[Leppävaarankäytävä, Vallikatu, Läkkitori, Postipuun koulu, Ratsutori]</td>
+      <td>[Leppävaarankäytävä, Läkkitori, Postipuun koulu, Ratsutori, Painiitty]</td>
+    </tr>
+    <tr>
+      <th>Ruutikatu</th>
+      <td>Ruutikatu 10</td>
+      <td>165</td>
+      <td>145</td>
+      <td>1968.09697</td>
+      <td>1444.903448</td>
+      <td>[Leppävaarankäytävä, Ratsutori, Läkkitori, Kalkkipellonmäki, Ruutikatu]</td>
+      <td>[Leppävaarankäytävä, Ratsutori, Läkkitori, Ruutikatu, Kalkkipellonmäki]</td>
+    </tr>
+    <tr>
+      <th>Tiurintie</th>
+      <td>Kurkijoentie 1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Orionintie</th>
+      <td>Orionintie 3-5</td>
+      <td>368</td>
+      <td>390</td>
+      <td>1480.503614</td>
+      <td>1528.382051</td>
+      <td>[Urheilupuisto (M), Niittykumpu (M), Niittymaa, Suomenlahdentie, Ruomelantie]</td>
+      <td>[Urheilupuisto (M), Niittymaa, Niittykumpu (M), Suomenlahdentie, Suurpellonaukio]</td>
+    </tr>
+    <tr>
+      <th>O'Bike Station</th>
+      <td>Rauhalanpuisto 11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Derby Business Park</th>
+      <td>Tarvonsalmenkatu 17</td>
+      <td>82</td>
+      <td>85</td>
+      <td>3343.792683</td>
+      <td>3099.717647</td>
+      <td>[Munkkivuoren ostoskeskus, Yhdyskunnankuja, Ratsutori, Rummunlyöjänkatu, Lehtisaarentie]</td>
+      <td>[Munkkivuoren ostoskeskus, Yhdyskunnankuja, Rummunlyöjänkatu, Muusantori, Ratsutori]</td>
+    </tr>
+    <tr>
+      <th>Kaivopuisto</th>
+      <td>Meritori 1</td>
+      <td>2620</td>
+      <td>2838</td>
+      <td>3099.186004</td>
+      <td>2986.659856</td>
+      <td>[Kanavaranta, Unioninkatu, Hietalahdentori, Itämerentori, Kaivopuisto]</td>
+      <td>[Itämerentori, Jätkäsaarenlaituri, Hietalahdentori, Kanavaranta, Hernesaarenranta]</td>
+    </tr>
+    <tr>
+      <th>Laivasillankatu</th>
+      <td>Laivasillankatu 14</td>
+      <td>925</td>
+      <td>907</td>
+      <td>2569.224865</td>
+      <td>2694.984939</td>
+      <td>[Kanavaranta, Unioninkatu, Erottajan aukio, Vanha Kauppahalli, Eteläesplanadi]</td>
+      <td>[Kanavaranta, Unioninkatu, Lintulahdenkatu, Kaivopuisto, Erottajan aukio]</td>
+    </tr>
+    <tr>
+      <th>Kapteeninpuistikko</th>
+      <td>Tehtaankatu 13</td>
+      <td>1795</td>
+      <td>1701</td>
+      <td>2541.657008</td>
+      <td>2458.236332</td>
+      <td>[Itämerentori, Kamppi (M), Hietalahdentori, Tyynenmerenkatu, Rautatientori / itä]</td>
+      <td>[Kamppi (M), Kapteeninpuistikko, Kanavaranta, Hietalahdentori, Erottajan aukio]</td>
+    </tr>
+    <tr>
+      <th>Viiskulma</th>
+      <td>Fredrikinkatu 19</td>
+      <td>2009</td>
+      <td>2015</td>
+      <td>2270.376799</td>
+      <td>2211.472124</td>
+      <td>[Kamppi (M), Itämerentori, Kaivopuisto, Erottajan aukio, Rautatientori / länsi]</td>
+      <td>[Kamppi (M), Erottajan aukio, Rautatientori / länsi, Mannerheimintie, Hietalahdentori]</td>
+    </tr>
+    <tr>
+      <th>Sepänkatu</th>
+      <td>Tehtaankatu 25</td>
+      <td>2282</td>
+      <td>2289</td>
+      <td>2504.354514</td>
+      <td>2432.07194</td>
+      <td>[Itämerentori, Tyynenmerenkatu, Hernesaarenranta, Sepänkatu, Jätkäsaarenlaituri]</td>
+      <td>[Itämerentori, Tyynenmerenkatu, Hietalahdentori, Jätkäsaarenlaituri, Sepänkatu]</td>
+    </tr>
+    <tr>
+      <th>Hietalahdentori</th>
+      <td>Hietalahdenkatu 2</td>
+      <td>3432</td>
+      <td>3475</td>
+      <td>2232.542544</td>
+      <td>2290.185614</td>
+      <td>[Itämerentori, Erottajan aukio, Tyynenmerenkatu, Länsisatamankuja, Kaivopuisto]</td>
+      <td>[Itämerentori, Erottajan aukio, Tyynenmerenkatu, Kaivopuisto, Kamppi (M)]</td>
+    </tr>
+    <tr>
+      <th>Designmuseo</th>
+      <td>Korkeavuorenkatu 23</td>
+      <td>1248</td>
+      <td>1241</td>
+      <td>2109.028309</td>
+      <td>2128.860596</td>
+      <td>[Töölönlahdenkatu, Kanavaranta, Rautatientori / itä, Rautatientori / länsi, Kapteeninpuistikko]</td>
+      <td>[Kanavaranta, Mannerheimintie, Jätkäsaarenlaituri, Töölönlahdenkatu, Rautatientori / itä]</td>
+    </tr>
+    <tr>
+      <th>Vanha kirkkopuisto</th>
+      <td>Annankatu 16</td>
+      <td>1959</td>
+      <td>2102</td>
+      <td>2319.069765</td>
+      <td>2273.874405</td>
+      <td>[Kanavaranta, Jätkäsaarenlaituri, Unioninkatu, Sepänkatu, Rautatientori / länsi]</td>
+      <td>[Kanavaranta, Ympyrätalo, Sepänkatu, Jätkäsaarenlaituri, Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Erottajan aukio</th>
+      <td>Eteläesplanadi 22</td>
+      <td>2708</td>
+      <td>2707</td>
+      <td>2328.111769</td>
+      <td>2144.537499</td>
+      <td>[Hietalahdentori, Kanavaranta, Liisanpuistikko, Kaivopuisto, Ympyrätalo]</td>
+      <td>[Hietalahdentori, Mastokatu, Ympyrätalo, Perämiehenkatu, Jätkäsaarenlaituri]</td>
+    </tr>
+    <tr>
+      <th>Kasarmitori</th>
+      <td>Fabianinkatu 13</td>
+      <td>1263</td>
+      <td>1229</td>
+      <td>2186.475059</td>
+      <td>2112.826957</td>
+      <td>[Töölönlahdenkatu, Kanavaranta, Rautatientori / itä, Ympyrätalo, Kaivopuisto]</td>
+      <td>[Töölönlahdenkatu, Ympyrätalo, Liisanpuistikko, Kaivopuisto, Rautatientori / itä]</td>
+    </tr>
+    <tr>
+      <th>Unioninkatu</th>
+      <td>Eteläesplanadi 1</td>
+      <td>1865</td>
+      <td>2344</td>
+      <td>2375.465769</td>
+      <td>2322.358358</td>
+      <td>[Hietalahdentori, Kaivopuisto, Itämerentori, Ehrenströmintie, Vanha kirkkopuisto]</td>
+      <td>[Kaivopuisto, Näkinsilta, Isoisänsilta, Ehrenströmintie, Hietalahdentori]</td>
+    </tr>
+    <tr>
+      <th>Kanavaranta</th>
+      <td>Kanavaranta 1</td>
+      <td>3405</td>
+      <td>3599</td>
+      <td>2531.125116</td>
+      <td>2541.223673</td>
+      <td>[Näkinsilta, Liisanpuistikko, Hakaniemi (M), Vilhonvuorenkatu, Ympyrätalo]</td>
+      <td>[Näkinsilta, Kaivopuisto, Liisanpuistikko, Lintulahdenkatu, Vilhonvuorenkatu]</td>
+    </tr>
+    <tr>
+      <th>Merisotilaantori</th>
+      <td>Merisotilaantori</td>
+      <td>1034</td>
+      <td>1037</td>
+      <td>2735.518056</td>
+      <td>2697.15621</td>
+      <td>[Kanavaranta, Senaatintori, Merisotilaantori, Näkinsilta, Erottajan aukio]</td>
+      <td>[Kanavaranta, Senaatintori, Merisotilaantori, Liisanpuistikko, Hakaniemi (M)]</td>
+    </tr>
+    <tr>
+      <th>Senaatintori</th>
+      <td>Aleksanterinkatu 22</td>
+      <td>999</td>
+      <td>988</td>
+      <td>2354.099099</td>
+      <td>2371.565789</td>
+      <td>[Merisotilaantori, Liisanpuistikko, Hakaniemi (M), Mastokatu, Ympyrätalo]</td>
+      <td>[Merisotilaantori, Ympyrätalo, Varsapuistikko, Liisanpuistikko, Hakaniemi (M)]</td>
+    </tr>
+    <tr>
+      <th>Ritarikatu</th>
+      <td>Ritarikatu 7</td>
+      <td>1124</td>
+      <td>1117</td>
+      <td>2277.537367</td>
+      <td>2220.165918</td>
+      <td>[Ritarikatu, Rautatientori / itä, Erottajan aukio, Eteläesplanadi, Vanha kirkkopuisto]</td>
+      <td>[Ritarikatu, Rautatientori / länsi, Ooppera, Erottajan aukio, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Liisanpuistikko</th>
+      <td>Liisankatu 1</td>
+      <td>2938</td>
+      <td>3012</td>
+      <td>2547.90288</td>
+      <td>2358.79427</td>
+      <td>[Kanavaranta, Isoisänsilta, Hakaniemi (M), Liisanpuistikko, Näkinsilta]</td>
+      <td>[Kanavaranta, Vilhonvuorenkatu, Liisanpuistikko, Näkinsilta, Isoisänsilta]</td>
+    </tr>
+    <tr>
+      <th>Varsapuistikko</th>
+      <td>Yrjö-Koskisen katu 1</td>
+      <td>2060</td>
+      <td>2039</td>
+      <td>2259.249675</td>
+      <td>2383.187185</td>
+      <td>[Hakaniemi (M), Ympyrätalo, Vilhonvuorenkatu, Liisanpuistikko, Rautatientori / länsi]</td>
+      <td>[Ympyrätalo, Hakaniemi (M), Näkinsilta, Lintulahdenkatu, Merihaka]</td>
+    </tr>
+    <tr>
+      <th>Porthania</th>
+      <td>Yliopistonkatu 3</td>
+      <td>756</td>
+      <td>792</td>
+      <td>2000.799378</td>
+      <td>2269.122475</td>
+      <td>[Ympyrätalo, Kanavaranta, Merisotilaantori, Näkinsilta, Liisanpuistikko]</td>
+      <td>[Välimerenkatu, Ympyrätalo, Näkinsilta, Töölönkatu, Viiskulma]</td>
+    </tr>
+    <tr>
+      <th>Rautatientori / itä</th>
+      <td>Rautatientori 1</td>
+      <td>3547</td>
+      <td>3765</td>
+      <td>2419.9485</td>
+      <td>2376.947761</td>
+      <td>[Ympyrätalo, Hakaniemi (M), Lintulahdenkatu, Näkinsilta, Toinen linja]</td>
+      <td>[Ympyrätalo, Hakaniemi (M), Näkinsilta, Lintulahdenkatu, Merihaka]</td>
+    </tr>
+    <tr>
+      <th>Kaisaniemenpuisto</th>
+      <td>Bergbominkuja 1</td>
+      <td>1570</td>
+      <td>1598</td>
+      <td>2126.435879</td>
+      <td>2172.864418</td>
+      <td>[Ympyrätalo, Hakaniemi (M), Näkinsilta, Liisanpuistikko, Merihaka]</td>
+      <td>[Ympyrätalo, Hakaniemi (M), Toinen linja, Näkinsilta, Merihaka]</td>
+    </tr>
+    <tr>
+      <th>Töölönlahdenkatu</th>
+      <td>Elielinaukio 5</td>
+      <td>4542</td>
+      <td>4641</td>
+      <td>2252.230731</td>
+      <td>2317.875602</td>
+      <td>[Baana, Marian sairaala, Jätkäsaarenlaituri, Itämerentori, Ooppera]</td>
+      <td>[Baana, Marian sairaala, Jätkäsaarenlaituri, Töölönkatu, Tyynenmerenkatu]</td>
+    </tr>
+    <tr>
+      <th>Rautatientori / länsi</th>
+      <td>Kaivokatu 1</td>
+      <td>3625</td>
+      <td>3749</td>
+      <td>2397.964692</td>
+      <td>2324.234641</td>
+      <td>[Ympyrätalo, Töölönkatu, Olympiastadion, Hakaniemi (M), Ooppera]</td>
+      <td>[Ympyrätalo, Olympiastadion, Hakaniemi (M), Töölönkatu, Marian sairaala]</td>
+    </tr>
+    <tr>
+      <th>Kiasma</th>
+      <td>Mannerheiminaukio 1</td>
+      <td>1807</td>
+      <td>1796</td>
+      <td>2591.904444</td>
+      <td>2490.568302</td>
+      <td>[Ooppera, Olympiastadion, Messeniuksenkatu, Töölönkatu, Ympyrätalo]</td>
+      <td>[Ooppera, Olympiastadion, Apollonkatu, Messeniuksenkatu, Korjaamo]</td>
+    </tr>
+    <tr>
+      <th>Mannerheimintie</th>
+      <td>Mannerheiminitie 18</td>
+      <td>2242</td>
+      <td>2277</td>
+      <td>2173.341811</td>
+      <td>2061.455424</td>
+      <td>[Apollonkatu, Töölönkatu, Annankatu, Viiskulma, Hietalahdentori]</td>
+      <td>[Apollonkatu, Töölönkatu, Annankatu, Cygnaeuksenkatu, Kauppakorkeakoulu]</td>
+    </tr>
+    <tr>
+      <th>Narinkka</th>
+      <td>Narinkka 1</td>
+      <td>2646</td>
+      <td>2595</td>
+      <td>2439.464097</td>
+      <td>2314.238405</td>
+      <td>[Olympiastadion, Töölönkatu, Korjaamo, Ympyrätalo, Ooppera]</td>
+      <td>[Töölönkatu, Olympiastadion, Ooppera, Apollonkatu, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Kamppi (M)</th>
+      <td>Fredrikinkatu 44</td>
+      <td>3845</td>
+      <td>3767</td>
+      <td>1918.028954</td>
+      <td>1977.037608</td>
+      <td>[Albertinkatu, Hietaniemenkatu, Apollonkatu, Itämerentori, Sammonpuistikko]</td>
+      <td>[Albertinkatu, Hietaniemenkatu, Viiskulma, Jätkäsaarenlaituri, Länsisatamankuja]</td>
+    </tr>
+    <tr>
+      <th>Eerikinkatu</th>
+      <td>Eerikinkatu 3</td>
+      <td>745</td>
+      <td>749</td>
+      <td>1791.407168</td>
+      <td>1896.060975</td>
+      <td>[Annankatu, Kapteeninpuistikko, Jätkäsaarenlaituri, Itämerentori, Viiskulma]</td>
+      <td>[Annankatu, Kapteeninpuistikko, Viiskulma, Ympyrätalo, Korjaamo]</td>
+    </tr>
+    <tr>
+      <th>Lastenlehto</th>
+      <td>Lapinrinne</td>
+      <td>1454</td>
+      <td>1416</td>
+      <td>2296.149477</td>
+      <td>2276.561674</td>
+      <td>[Itämerentori, Kamppi (M), Lastenlehto, Tyynenmerenkatu, Hietaniemenkatu]</td>
+      <td>[Kamppi (M), Itämerentori, Tyynenmerenkatu, Lastenlehto, Hietaniemenkatu]</td>
+    </tr>
+    <tr>
+      <th>Baana</th>
+      <td>Ruoholahdenkatu 23</td>
+      <td>2777</td>
+      <td>2898</td>
+      <td>2338.124717</td>
+      <td>2417.929603</td>
+      <td>[Töölönlahdenkatu, Itämerentori, Töölönlahden puisto, Länsisatamankuja, Tyynenmerenkatu]</td>
+      <td>[Töölönlahdenkatu, Itämerentori, Töölönlahden puisto, Länsisatamankuja, Baana]</td>
+    </tr>
+    <tr>
+      <th>Itämerentori</th>
+      <td>Itämerentori 1</td>
+      <td>6674</td>
+      <td>6671</td>
+      <td>2194.811259</td>
+      <td>2271.976614</td>
+      <td>[Tyynenmerenkatu, Länsisatamankuja, Hietalahdentori, Salmisaarenranta, Hietaniemenkatu]</td>
+      <td>[Tyynenmerenkatu, Länsisatamankuja, Hietaniemenkatu, Hietalahdentori, Salmisaarenranta]</td>
+    </tr>
+    <tr>
+      <th>Marian sairaala</th>
+      <td>Pohjoinen Rautatiekatu 33</td>
+      <td>2480</td>
+      <td>2475</td>
+      <td>2265.513573</td>
+      <td>2367.970234</td>
+      <td>[Töölönlahdenkatu, Itämerentori, Hietaniemenkatu, Rautatientori / länsi, Kamppi (M)]</td>
+      <td>[Töölönlahdenkatu, Itämerentori, Hietaniemenkatu, Marian sairaala, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Eläinmuseo</th>
+      <td>Pohjoinen Rautatiekatu 13</td>
+      <td>1278</td>
+      <td>1252</td>
+      <td>2003.092856</td>
+      <td>1978.84611</td>
+      <td>[Cygnaeuksenkatu, Töölönkatu, Apollonkatu, Rautatientori / itä, Itämerentori]</td>
+      <td>[Töölönkatu, Korjaamo, Cygnaeuksenkatu, Nordenskiöldinaukio, Apollonkatu]</td>
+    </tr>
+    <tr>
+      <th>Kauppakorkeakoulu</th>
+      <td>Lapuankatu 1</td>
+      <td>1622</td>
+      <td>1539</td>
+      <td>1939.689889</td>
+      <td>1971.504003</td>
+      <td>[Apollonkatu, Kamppi (M), Korjaamo, Itämerentori, Mannerheimintie]</td>
+      <td>[Tyynenmerenkatu, Itämerentori, Rautatientori / itä, Kamppi (M), Hietaniemenkatu]</td>
+    </tr>
+    <tr>
+      <th>Kansallismuseo</th>
+      <td>Mannerheimintie 30</td>
+      <td>889</td>
+      <td>881</td>
+      <td>2038.94901</td>
+      <td>2265.3042</td>
+      <td>[Mannerheimintie, Apollonkatu, Ooppera, Erottajan aukio, Korjaamo]</td>
+      <td>[Töölönlahdenkatu, Narinkka, Apollonkatu, Baana, Mannerheimintie]</td>
+    </tr>
+    <tr>
+      <th>Cygnaeuksenkatu</th>
+      <td>Cygnaeuksenkatu 1</td>
+      <td>1021</td>
+      <td>1020</td>
+      <td>1887.381645</td>
+      <td>1816.599667</td>
+      <td>[Töölönlahdenkatu, Mannerheimintie, Eläinmuseo, Narinkka, Apollonkatu]</td>
+      <td>[Eläinmuseo, Töölönlahdenkatu, Mannerheimintie, Kamppi (M), Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Apollonkatu</th>
+      <td>Runeberginkatu 43</td>
+      <td>2906</td>
+      <td>2897</td>
+      <td>2231.588441</td>
+      <td>2177.738692</td>
+      <td>[Itämerentori, Töölönlahdenkatu, Mannerheimintie, Kamppi (M), Apollonkatu]</td>
+      <td>[Kamppi (M), Töölönlahdenkatu, Apollonkatu, Itämerentori, Mannerheimintie]</td>
+    </tr>
+    <tr>
+      <th>Töölönkatu</th>
+      <td>Pohjoinen Hesperiankatu 3</td>
+      <td>2443</td>
+      <td>2450</td>
+      <td>2076.729292</td>
+      <td>2097.440404</td>
+      <td>[Töölönlahdenkatu, Mannerheimintie, Rautatientori / länsi, Narinkka, Eläinmuseo]</td>
+      <td>[Töölönlahdenkatu, Rautatientori / länsi, Narinkka, Ympyrätalo, Mannerheimintie]</td>
+    </tr>
+    <tr>
+      <th>Töölöntori</th>
+      <td>Töölöntorinkatu 11</td>
+      <td>1724</td>
+      <td>1721</td>
+      <td>2237.555296</td>
+      <td>2289.817931</td>
+      <td>[Töölönlahdenkatu, Narinkka, Nordenskiöldinaukio, Erottajan aukio, Korjaamo]</td>
+      <td>[Korjaamo, Nordenskiöldinaukio, Narinkka, Tilkanvierto, Messeniuksenkatu]</td>
+    </tr>
+    <tr>
+      <th>Ooppera</th>
+      <td>Mannerheimintie 62</td>
+      <td>2874</td>
+      <td>2929</td>
+      <td>2392.286712</td>
+      <td>2434.462048</td>
+      <td>[Töölönlahdenkatu, Ympyrätalo, Kiasma, Narinkka, Sörnäinen (M)]</td>
+      <td>[Töölönlahdenkatu, Brahen kenttä, Ympyrätalo, Kiasma, Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Hakaniemi (M)</th>
+      <td>John Stenberginranta 6</td>
+      <td>2802</td>
+      <td>2804</td>
+      <td>2390.003808</td>
+      <td>2484.666665</td>
+      <td>[Rautatientori / itä, Kalasatama (M), Kanavaranta, Vilhonvuorenkatu, Kaisaniemenpuisto]</td>
+      <td>[Kanavaranta, Rautatientori / itä, Liisanpuistikko, Merihaka, Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Ympyrätalo</th>
+      <td>Porthaninrinne 1</td>
+      <td>4949</td>
+      <td>5005</td>
+      <td>2554.979054</td>
+      <td>2559.580154</td>
+      <td>[Rautatientori / itä, Kaisaniemenpuisto, Rautatientori / länsi, Liisanpuistikko, Varsapuistikko]</td>
+      <td>[Rautatientori / itä, Kaisaniemenpuisto, Rautatientori / länsi, Ooppera, Kanavaranta]</td>
+    </tr>
+    <tr>
+      <th>Haapaniemenkatu</th>
+      <td>Haapaniemenkatu 2</td>
+      <td>1091</td>
+      <td>1029</td>
+      <td>2623.693859</td>
+      <td>2582.478455</td>
+      <td>[Rautatientori / itä, Kalasatama (M), Ympyrätalo, Kanavaranta, Isoisänsilta]</td>
+      <td>[Isoisänsilta, Kalasatama (M), Kanavaranta, Ympyrätalo, Brahen puistikko]</td>
+    </tr>
+    <tr>
+      <th>Karhupuisto</th>
+      <td>Agricolankatu 11</td>
+      <td>1299</td>
+      <td>1203</td>
+      <td>2478.340516</td>
+      <td>2382.748687</td>
+      <td>[Venttiilikuja, Pasilan asema, Ympyrätalo, Rautatientori / itä, Kalasatama (M)]</td>
+      <td>[Pasilan asema, Linnanmäki, Venttiilikuja, Ooppera, Liisanpuistikko]</td>
+    </tr>
+    <tr>
+      <th>Sörnäinen (M)</th>
+      <td>Vaasanpuistikko 1a</td>
+      <td>3717</td>
+      <td>3550</td>
+      <td>2462.286344</td>
+      <td>2507.570707</td>
+      <td>[Brahen kenttä, Kalasatama (M), Isoisänsilta, Linnanmäki, Fleminginkatu]</td>
+      <td>[Brahen kenttä, Pasilan asema, Linnanmäki, Isoisänsilta, Kalasatama (M)]</td>
+    </tr>
+    <tr>
+      <th>Brahen kenttä</th>
+      <td>Helsinginkatu 22</td>
+      <td>2373</td>
+      <td>2246</td>
+      <td>2550.763169</td>
+      <td>2614.02508</td>
+      <td>[Sörnäinen (M), Ooppera, Pasilan asema, Olympiastadion, Kalasatama (M)]</td>
+      <td>[Sörnäinen (M), Pasilan asema, Olympiastadion, Ooppera, Kalasatama (M)]</td>
+    </tr>
+    <tr>
+      <th>Diakoniapuisto</th>
+      <td>Josafatinkatu 12</td>
+      <td>1347</td>
+      <td>1275</td>
+      <td>2379.42118</td>
+      <td>2381.156863</td>
+      <td>[Pasilan asema, Olympiastadion, Ooppera, Sörnäinen (M), Korjaamo]</td>
+      <td>[Sörnäinen (M), Pasilan asema, Ooppera, Ympyrätalo, Isoisänsilta]</td>
+    </tr>
+    <tr>
+      <th>Vanha Kauppahalli</th>
+      <td>Pakkahuoneenlaituri</td>
+      <td>515</td>
+      <td>533</td>
+      <td>2568.499029</td>
+      <td>2457.17636</td>
+      <td>[Kaivopuisto, Ehrenströmintie, Liisanpuistikko, Laivasillankatu, Hernesaarenranta]</td>
+      <td>[Kaivopuisto, Ehrenströmintie, Laivasillankatu, Liisanpuistikko, Hernesaarenranta]</td>
+    </tr>
+    <tr>
+      <th>Mastokatu</th>
+      <td>Mastokatu 2</td>
+      <td>834</td>
+      <td>874</td>
+      <td>2490.976823</td>
+      <td>2576.045767</td>
+      <td>[Erottajan aukio, Unioninkatu, Kaivopuisto, Mannerheimintie, Rautatientori / itä]</td>
+      <td>[Erottajan aukio, Liisanpuistikko, Kaivopuisto, Mannerheimintie, Rautatientori / itä]</td>
+    </tr>
+    <tr>
+      <th>Annankatu</th>
+      <td>Annankatu 5</td>
+      <td>1768</td>
+      <td>1747</td>
+      <td>2203.992262</td>
+      <td>2204.959554</td>
+      <td>[Kamppi (M), Rautatientori / länsi, Mannerheimintie, Hietalahdentori, Eerikinkatu]</td>
+      <td>[Kamppi (M), Mannerheimintie, Hietalahdentori, Eerikinkatu, Länsisatamankuja]</td>
+    </tr>
+    <tr>
+      <th>Melkonkuja</th>
+      <td>Melkonkuja 1</td>
+      <td>892</td>
+      <td>891</td>
+      <td>3191.047085</td>
+      <td>2916.129439</td>
+      <td>[Gyldenintie, Melkonkuja, Lauttasaaren ostoskeskus, Heikkilänaukio, Heikkiläntie]</td>
+      <td>[Gyldenintie, Itämerentori, Lauttasaaren ostoskeskus, Melkonkuja, Heikkilänaukio]</td>
+    </tr>
+    <tr>
+      <th>Itälahdenkatu</th>
+      <td>Itälahdenkatu 15</td>
+      <td>1099</td>
+      <td>1100</td>
+      <td>2522.026087</td>
+      <td>2253.5594</td>
+      <td>[Gyldenintie, Heikkilänaukio, Puistokaari, Lauttasaaren ostoskeskus, Itälahdenkatu]</td>
+      <td>[Gyldenintie, Heikkilänaukio, Lauttasaaren ostoskeskus, Puistokaari, Lauttasaarensilta]</td>
+    </tr>
+    <tr>
+      <th>Heikkilänaukio</th>
+      <td>Heikkilänaukio 1</td>
+      <td>1413</td>
+      <td>1416</td>
+      <td>2651.191323</td>
+      <td>2860.59839</td>
+      <td>[Gyldenintie, Puistokaari, Itälahdenkatu, Luoteisväylä, Heikkilänaukio]</td>
+      <td>[Gyldenintie, Itälahdenkatu, Itämerentori, Puistokaari, Lauttasaaren ostoskeskus]</td>
+    </tr>
+    <tr>
+      <th>Heikkiläntie</th>
+      <td>Heikkiläntie 7</td>
+      <td>1481</td>
+      <td>1571</td>
+      <td>3022.076529</td>
+      <td>2842.655633</td>
+      <td>[Gyldenintie, Itämerentori, Heikkiläntie, Töölönlahdenkatu, Puistokaari]</td>
+      <td>[Gyldenintie, Itämerentori, Lauttasaaren ostoskeskus, Puistokaari, Hietalahdentori]</td>
+    </tr>
+    <tr>
+      <th>Gyldenintie</th>
+      <td>Gyldenintie 2</td>
+      <td>1905</td>
+      <td>1888</td>
+      <td>2113.623795</td>
+      <td>2009.876594</td>
+      <td>[Itälahdenkatu, Heikkilänaukio, Kuikkarinne, Heikkiläntie, Puistokaari]</td>
+      <td>[Itälahdenkatu, Heikkilänaukio, Kuikkarinne, Melkonkuja, Puistokaari]</td>
+    </tr>
+    <tr>
+      <th>Puistokaari</th>
+      <td>Isokaari 30</td>
+      <td>990</td>
+      <td>964</td>
+      <td>2663.009768</td>
+      <td>2670.51279</td>
+      <td>[Gyldenintie, Itälahdenkatu, Heikkiläntie, Heikkilänaukio, Lauttasaaren ostoskeskus]</td>
+      <td>[Gyldenintie, Heikkilänaukio, Kuikkarinne, Itälahdenkatu, Heikkiläntie]</td>
+    </tr>
+    <tr>
+      <th>Luoteisväylä</th>
+      <td>Luoteisväylä 17</td>
+      <td>1476</td>
+      <td>1493</td>
+      <td>3824.479668</td>
+      <td>3828.859565</td>
+      <td>[Lauttasaaren ostoskeskus, Itämerentori, Otaranta, Luoteisväylä, Heikkilänaukio]</td>
+      <td>[Lauttasaaren ostoskeskus, Itämerentori, Lehtisaarentie, Heikkilänaukio, Puistokaari]</td>
+    </tr>
+    <tr>
+      <th>Lauttasaaren ostoskeskus</th>
+      <td>Lauttasaarentie 26</td>
+      <td>2273</td>
+      <td>2225</td>
+      <td>3031.794545</td>
+      <td>3245.030108</td>
+      <td>[Itämerentori, Luoteisväylä, Salmisaarenranta, Lauttasaarensilta, Heikkiläntie]</td>
+      <td>[Luoteisväylä, Salmisaarenranta, Itämerentori, Puistokaari, Lauttasaarensilta]</td>
+    </tr>
+    <tr>
+      <th>Lauttasaarensilta</th>
+      <td>Lauttasaarentie 5</td>
+      <td>2079</td>
+      <td>2077</td>
+      <td>2999.101809</td>
+      <td>2876.890708</td>
+      <td>[Itämerentori, Salmisaarenranta, Itälahdenkatu, Lauttasaaren ostoskeskus, Kamppi (M)]</td>
+      <td>[Itämerentori, Salmisaarenranta, Lauttasaaren ostoskeskus, Kamppi (M), Hietalahdentori]</td>
+    </tr>
+    <tr>
+      <th>Salmisaarenranta</th>
+      <td>Salmisaarenranta 9</td>
+      <td>1785</td>
+      <td>1814</td>
+      <td>2330.781137</td>
+      <td>2384.296224</td>
+      <td>[Itämerentori, Länsisatamankuja, Lauttasaarensilta, Lauttasaaren ostoskeskus, Töölönlahdenkatu]</td>
+      <td>[Itämerentori, Länsisatamankuja, Lauttasaarensilta, Lauttasaaren ostoskeskus, Töölönlahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Kaapelitehdas</th>
+      <td>Tammasaarenlaituri 7</td>
+      <td>1054</td>
+      <td>1055</td>
+      <td>2521.570835</td>
+      <td>2403.339649</td>
+      <td>[Itämerentori, Länsisatamankuja, Ympyrätalo, Lauttasaaren ostoskeskus, Hietalahdentori]</td>
+      <td>[Itämerentori, Hietalahdentori, Länsisatamankuja, Lauttasaarensilta, Lauttasaaren ostoskeskus]</td>
+    </tr>
+    <tr>
+      <th>Länsisatamankatu</th>
+      <td>Länsisatamankatu 19</td>
+      <td>1386</td>
+      <td>1379</td>
+      <td>2500.842229</td>
+      <td>2481.422777</td>
+      <td>[Itämerentori, Länsisatamankatu, Salmisaarenranta, Töölönlahdenkatu, Rautatientori / länsi]</td>
+      <td>[Itämerentori, Länsisatamankatu, Salmisaarenranta, Hietalahdentori, Töölönlahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Välimerenkatu</th>
+      <td>Välimerenkatu 9</td>
+      <td>2319</td>
+      <td>2286</td>
+      <td>2529.842609</td>
+      <td>2446.925486</td>
+      <td>[Itämerentori, Töölönlahdenkatu, Välimerenkatu, Kamppi (M), Salmisaarenranta]</td>
+      <td>[Itämerentori, Töölönlahdenkatu, Välimerenkatu, Hietalahdentori, Kamppi (M)]</td>
+    </tr>
+    <tr>
+      <th>Jätkäsaarenlaituri</th>
+      <td>Jätkäsaarenlaituri 1</td>
+      <td>3190</td>
+      <td>3235</td>
+      <td>2228.646918</td>
+      <td>2349.221227</td>
+      <td>[Töölönlahdenkatu, Kamppi (M), Tyynenmerenkatu, Kaivopuisto, Länsisatamankuja]</td>
+      <td>[Töölönlahdenkatu, Tyynenmerenkatu, Kamppi (M), Itämerentori, Hietalahdentori]</td>
+    </tr>
+    <tr>
+      <th>Tyynenmerenkatu</th>
+      <td>Rionkatu 6</td>
+      <td>3117</td>
+      <td>3178</td>
+      <td>2273.829323</td>
+      <td>2319.137511</td>
+      <td>[Itämerentori, Töölönlahdenkatu, Tyynenmerenkatu, Hietalahdentori, Jätkäsaarenlaituri]</td>
+      <td>[Itämerentori, Töölönlahdenkatu, Hietalahdentori, Tyynenmerenkatu, Sepänkatu]</td>
+    </tr>
+    <tr>
+      <th>Hernesaarenranta</th>
+      <td>Hylkeenpyytäjänkatu 1a</td>
+      <td>1380</td>
+      <td>1669</td>
+      <td>2826.220051</td>
+      <td>2796.537448</td>
+      <td>[Kaivopuisto, Hietalahdentori, Sepänkatu, Kanavaranta, Viiskulma]</td>
+      <td>[Hietalahdentori, Jätkäsaarenlaituri, Itämerentori, Sepänkatu, Kaivopuisto]</td>
+    </tr>
+    <tr>
+      <th>Ehrenströmintie</th>
+      <td>Ehrenströmintie 3</td>
+      <td>1002</td>
+      <td>1005</td>
+      <td>3089.186627</td>
+      <td>2911.574129</td>
+      <td>[Kaivopuisto, Unioninkatu, Kanavaranta, Vanha Kauppahalli, Rautatientori / itä]</td>
+      <td>[Unioninkatu, Kaivopuisto, Liisanpuistikko, Eteläesplanadi, Kanavaranta]</td>
+    </tr>
+    <tr>
+      <th>Perämiehenkatu</th>
+      <td>Punavuorenkatu 22</td>
+      <td>1811</td>
+      <td>1774</td>
+      <td>2241.619359</td>
+      <td>2391.954904</td>
+      <td>[Itämerentori, Tyynenmerenkatu, Erottajan aukio, Jätkäsaarenlaituri, Välimerenkatu]</td>
+      <td>[Itämerentori, Tyynenmerenkatu, Jätkäsaarenlaituri, Kamppi (M), Erottajan aukio]</td>
+    </tr>
+    <tr>
+      <th>Albertinkatu</th>
+      <td>Albertinkatu 17</td>
+      <td>1880</td>
+      <td>1851</td>
+      <td>2315.248404</td>
+      <td>2115.859535</td>
+      <td>[Kamppi (M), Itämerentori, Erottajan aukio, Rautatientori / itä, Albertinkatu]</td>
+      <td>[Kamppi (M), Itämerentori, Kalevankatu, Albertinkatu, Mannerheimintie]</td>
+    </tr>
+    <tr>
+      <th>Kalevankatu</th>
+      <td>Lapinlahdenkatu 1</td>
+      <td>1851</td>
+      <td>1855</td>
+      <td>1982.962361</td>
+      <td>2126.548065</td>
+      <td>[Albertinkatu, Itämerentori, Jätkäsaarenlaituri, Kalevankatu, Rautatientori / länsi]</td>
+      <td>[Itämerentori, Kamppi (M), Hietaniemenkatu, Apollonkatu, Kalevankatu]</td>
+    </tr>
+    <tr>
+      <th>Sammonpuistikko</th>
+      <td>Sammonkatu 3</td>
+      <td>1420</td>
+      <td>1376</td>
+      <td>2030.411972</td>
+      <td>2087.603924</td>
+      <td>[Kamppi (M), Itämerentori, Mannerheimintie, Jätkäsaarenlaituri, Kalevankatu]</td>
+      <td>[Kamppi (M), Itämerentori, Mannerheimintie, Hietalahdentori, Albertinkatu]</td>
+    </tr>
+    <tr>
+      <th>Hietaniemenkatu</th>
+      <td>Hiekkarannantie 9</td>
+      <td>2717</td>
+      <td>2716</td>
+      <td>2637.769352</td>
+      <td>2631.002452</td>
+      <td>[Itämerentori, Kamppi (M), Marian sairaala, Kalevankatu, Leppäsuonaukio]</td>
+      <td>[Itämerentori, Kamppi (M), Marian sairaala, Hietalahdentori, Hietaniemenkatu]</td>
+    </tr>
+    <tr>
+      <th>Eteläinen Hesperiankatu</th>
+      <td>Eteläinen Hesperiankatu 38</td>
+      <td>2352</td>
+      <td>2370</td>
+      <td>2623.142857</td>
+      <td>2679.699717</td>
+      <td>[Itämerentori, Rajasaarentie, Eteläinen Hesperiankatu, Jätkäsaarenlaituri, Munkkiniemen aukio]</td>
+      <td>[Itämerentori, Rajasaarentie, Seurasaari, Eteläinen Hesperiankatu, Kamppi (M)]</td>
+    </tr>
+    <tr>
+      <th>Kesäkatu</th>
+      <td>Kesäkatu 8</td>
+      <td>1160</td>
+      <td>1141</td>
+      <td>2810.969828</td>
+      <td>2836.437046</td>
+      <td>[Itämerentori, Hietaniemenkatu, Seurasaari, Kamppi (M), Eteläinen Hesperiankatu]</td>
+      <td>[Seurasaari, Itämerentori, Hietaniemenkatu, Laajalahden aukio, Eteläinen Hesperiankatu]</td>
+    </tr>
+    <tr>
+      <th>Rajasaarentie</th>
+      <td>Rajasaarentie 6</td>
+      <td>1562</td>
+      <td>1561</td>
+      <td>2837.115237</td>
+      <td>2836.655561</td>
+      <td>[Eteläinen Hesperiankatu, Itämerentori, Seurasaari, Hietaniemenkatu, Länsisatamankuja]</td>
+      <td>[Eteläinen Hesperiankatu, Itämerentori, Seurasaari, Hietaniemenkatu, Laajalahden aukio]</td>
+    </tr>
+    <tr>
+      <th>Korjaamo</th>
+      <td>Töölönkatu 51a</td>
+      <td>2307</td>
+      <td>2311</td>
+      <td>2505.595288</td>
+      <td>2448.113085</td>
+      <td>[Rautatientori / länsi, Itämerentori, Narinkka, Korjaamo, Töölönlahdenkatu]</td>
+      <td>[Narinkka, Töölönlahdenkatu, Kamppi (M), Korjaamo, Itämerentori]</td>
+    </tr>
+    <tr>
+      <th>Olympiastadion</th>
+      <td>Toivonkatu 3</td>
+      <td>2581</td>
+      <td>2590</td>
+      <td>2442.544363</td>
+      <td>2504.762421</td>
+      <td>[Rautatientori / länsi, Töölönlahdenkatu, Narinkka, Ympyrätalo, Kiasma]</td>
+      <td>[Rautatientori / länsi, Töölönlahdenkatu, Narinkka, Brahen kenttä, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Nordenskiöldinaukio</th>
+      <td>Linnankoskenkatu 15-17</td>
+      <td>1804</td>
+      <td>1788</td>
+      <td>2595.891724</td>
+      <td>2490.433445</td>
+      <td>[Itämerentori, Pasilan asema, Töölöntori, Narinkka, Eläinmuseo]</td>
+      <td>[Itämerentori, Töölöntori, Seurasaari, Pasilan asema, Hietaniemenkatu]</td>
+    </tr>
+    <tr>
+      <th>Messeniuksenkatu</th>
+      <td>Messeniuksenkatu 1a</td>
+      <td>2277</td>
+      <td>2274</td>
+      <td>2604.551603</td>
+      <td>2535.630167</td>
+      <td>[Pasilan asema, Linnanmäki, Rautatientori / länsi, Laajalahden aukio, Brahen kenttä]</td>
+      <td>[Pasilan asema, Kiasma, Ympyrätalo, Esterinportti, Apollonkatu]</td>
+    </tr>
+    <tr>
+      <th>Uimastadion</th>
+      <td>Hammarskjöldintie 5</td>
+      <td>902</td>
+      <td>888</td>
+      <td>2728.786031</td>
+      <td>2871.954955</td>
+      <td>[Ympyrätalo, Ooppera, Brahen kenttä, Toinen linja, Olympiastadion]</td>
+      <td>[Ympyrätalo, Sörnäinen (M), Ooppera, Olympiastadion, Tunnelitie]</td>
+    </tr>
+    <tr>
+      <th>Jäähalli</th>
+      <td>Nordenskiöldinkatu 11</td>
+      <td>1636</td>
+      <td>1645</td>
+      <td>2625.208851</td>
+      <td>2661.337185</td>
+      <td>[Pasilan asema, Linnanmäki, Esterinportti, Olympiastadion, Töölönlahdenkatu]</td>
+      <td>[Pasilan asema, Linnanmäki, Näkinsilta, Olympiastadion, Kiasma]</td>
+    </tr>
+    <tr>
+      <th>Stenbäckinkatu</th>
+      <td>Stenbäckinkatu 9</td>
+      <td>1109</td>
+      <td>1113</td>
+      <td>2743.370298</td>
+      <td>2726.489066</td>
+      <td>[Eteläinen Hesperiankatu, Itämerentori, Pasilan asema, Töölönlahdenkatu, Töölöntori]</td>
+      <td>[Eteläinen Hesperiankatu, Pasilan asema, Linnanmäki, Tilkanvierto, Seurasaari]</td>
+    </tr>
+    <tr>
+      <th>Töölöntulli</th>
+      <td>Mannerheimintie 112</td>
+      <td>2006</td>
+      <td>1895</td>
+      <td>2688.593883</td>
+      <td>2796.750222</td>
+      <td>[Kuusitie, Messeniuksenkatu, Ympyrätalo, Tilkanvierto, Munkkiniemen aukio]</td>
+      <td>[Pasilan asema, Kuusitie, Ympyrätalo, Linnanmäki, Laajalahden aukio]</td>
+    </tr>
+    <tr>
+      <th>Meilahden sairaala</th>
+      <td>Haartmaninkatu 4</td>
+      <td>1370</td>
+      <td>1339</td>
+      <td>2853.239657</td>
+      <td>2928.403786</td>
+      <td>[Huopalahdentie, Tenholantie, Tilkanvierto, Itämerentori, Nordenskiöldinaukio]</td>
+      <td>[Tenholantie, Tilkanvierto, Huopalahdentie, Pasilan asema, Esterinportti]</td>
+    </tr>
+    <tr>
+      <th>Paciuksenkatu</th>
+      <td>Mäntytie 2</td>
+      <td>1171</td>
+      <td>1111</td>
+      <td>2846.984347</td>
+      <td>2939.864383</td>
+      <td>[Laajalahden aukio, Munkkiniemen aukio, Eteläinen Hesperiankatu, Munkkivuoren ostoskeskus, Itämerentori]</td>
+      <td>[Eteläinen Hesperiankatu, Linnanmäki, Töölöntulli, Paciuksenkatu, Apollonkatu]</td>
+    </tr>
+    <tr>
+      <th>Jalavatie</th>
+      <td>Jalavatie 10</td>
+      <td>1186</td>
+      <td>1154</td>
+      <td>2935.058179</td>
+      <td>2881.846906</td>
+      <td>[Tilkanvierto, Pasilan asema, Messeniuksenkatu, Narinkka, Jalavatie]</td>
+      <td>[Tilkanvierto, Ooppera, Pasilan asema, Esterinportti, Fleminginkatu]</td>
+    </tr>
+    <tr>
+      <th>Kuusitie</th>
+      <td>Mannerheimintie 152</td>
+      <td>1459</td>
+      <td>1428</td>
+      <td>2943.808088</td>
+      <td>2960.330532</td>
+      <td>[Pasilan asema, Töölöntulli, Kiasma, Esterinportti, Korjaamo]</td>
+      <td>[Pasilan asema, Töölöntulli, Esterinportti, Ooppera, Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Kustaankatu</th>
+      <td>Kustaankatu 4b</td>
+      <td>1206</td>
+      <td>1077</td>
+      <td>2653.991434</td>
+      <td>2619.460854</td>
+      <td>[Pasilan asema, Kalasatama (M), Isoisänsilta, Linnanmäki, Ooppera]</td>
+      <td>[Pasilan asema, Kalasatama (M), Linnanmäki, Isoisänsilta, Liisanpuistikko]</td>
+    </tr>
+    <tr>
+      <th>Kiskontie</th>
+      <td>Mannerheimintie 99</td>
+      <td>755</td>
+      <td>737</td>
+      <td>3178.382781</td>
+      <td>3118.027137</td>
+      <td>[Esterinportti, Pasilan asema, Jalavatie, Meilahden sairaala, Töölöntulli]</td>
+      <td>[Esterinportti, Pasilan asema, Olympiastadion, Töölönlahdenkatu, Ooppera]</td>
+    </tr>
+    <tr>
+      <th>Tilkanvierto</th>
+      <td>Tilkankatu 41</td>
+      <td>2214</td>
+      <td>2229</td>
+      <td>2682.669228</td>
+      <td>2889.155375</td>
+      <td>[Tilkantori, Pasilan asema, Esterinportti, Laajalahden aukio, Meilahden sairaala]</td>
+      <td>[Tilkantori, Laajalahden aukio, Pasilan asema, Esterinportti, Seurasaari]</td>
+    </tr>
+    <tr>
+      <th>Paciuksenkaari</th>
+      <td>Johannesbergintie 6</td>
+      <td>1556</td>
+      <td>1582</td>
+      <td>3137.243361</td>
+      <td>3315.195746</td>
+      <td>[Seurasaari, Laajalahden aukio, Munkkivuoren ostoskeskus, Eteläinen Hesperiankatu, Pajamäki]</td>
+      <td>[Laajalahden aukio, Seurasaari, Munkkivuoren ostoskeskus, Tilkanvierto, Pajamäki]</td>
+    </tr>
+    <tr>
+      <th>Seurasaari</th>
+      <td>Seurasaarentie 15</td>
+      <td>1619</td>
+      <td>1575</td>
+      <td>3237.13218</td>
+      <td>3140.876825</td>
+      <td>[Eteläinen Hesperiankatu, Kesäkatu, Tilkanvierto, Paciuksenkaari, Rajasaarentie]</td>
+      <td>[Paciuksenkaari, Rajasaarentie, Eteläinen Hesperiankatu, Tilkanvierto, Munkkiniemen aukio]</td>
+    </tr>
+    <tr>
+      <th>Saunalahdentie</th>
+      <td>Saunalahdentie 1</td>
+      <td>825</td>
+      <td>826</td>
+      <td>3451.757976</td>
+      <td>4102.59201</td>
+      <td>[Lehtisaarentie, Otaranta, Seurasaari, Paciuksenkaari, Luoteisväylä]</td>
+      <td>[Luoteisväylä, Lehtisaarentie, Otaranta, Aalto-yliopisto (M), Korkeakouluaukio, Välimerenkatu]</td>
+    </tr>
+    <tr>
+      <th>Torpanranta</th>
+      <td>Laajalahdentie 1</td>
+      <td>871</td>
+      <td>920</td>
+      <td>3189.203984</td>
+      <td>3030.142391</td>
+      <td>[Laajalahden aukio, Munkkivuoren ostoskeskus, Gallen-Kallelan tie, Tilkanvierto, Torpanranta]</td>
+      <td>[Laajalahden aukio, Gallen-Kallelan tie, Munkkivuoren ostoskeskus, Munkkiniemen aukio, Seurasaari]</td>
+    </tr>
+    <tr>
+      <th>Laajalahden aukio</th>
+      <td>Munkkiniemen puistotie 21</td>
+      <td>2299</td>
+      <td>2573</td>
+      <td>3103.868347</td>
+      <td>3005.973443</td>
+      <td>[Muusantori, Munkkivuoren ostoskeskus, Paciuksenkaari, Laajalahden aukio, Tilkanvierto]</td>
+      <td>[Muusantori, Munkkivuoren ostoskeskus, Ulvilantie, Munkkiniemen aukio, Teljäntie]</td>
+    </tr>
+    <tr>
+      <th>Munkkiniemen aukio</th>
+      <td>Munkkiniemen puistotie 1</td>
+      <td>1786</td>
+      <td>1908</td>
+      <td>2985.385778</td>
+      <td>3116.21978</td>
+      <td>[Munkkivuoren ostoskeskus, Laajalahden aukio, Tilkanvierto, Ulvilantie, Seurasaari]</td>
+      <td>[Munkkivuoren ostoskeskus, Laajalahden aukio, Eteläinen Hesperiankatu, Tilkanvierto, Paciuksenkatu]</td>
+    </tr>
+    <tr>
+      <th>Huopalahdentie</th>
+      <td>Huopalahdentie 13</td>
+      <td>1283</td>
+      <td>1384</td>
+      <td>2833.506882</td>
+      <td>2702.27698</td>
+      <td>[Munkkivuoren ostoskeskus, Meilahden sairaala, Vanha Viertotie, Tilkantori, Huopalahdentie]</td>
+      <td>[Munkkivuoren ostoskeskus, Meilahden sairaala, Tilkantori, Vanha Viertotie, Huopalahdentie]</td>
+    </tr>
+    <tr>
+      <th>Ulvilantie</th>
+      <td>Porintie 1</td>
+      <td>674</td>
+      <td>638</td>
+      <td>2807.515831</td>
+      <td>2875.652038</td>
+      <td>[Laajalahden aukio, Munkkivuoren ostoskeskus, Munkkiniemen aukio, Ulvilantie, Paciuksenkaari]</td>
+      <td>[Laajalahden aukio, Munkkiniemen aukio, Munkkivuoren ostoskeskus, Ulvilantie, Vihdintie]</td>
+    </tr>
+    <tr>
+      <th>Muusantori</th>
+      <td>Muusantori 5</td>
+      <td>633</td>
+      <td>717</td>
+      <td>2951.532385</td>
+      <td>2785.058577</td>
+      <td>[Laajalahden aukio, Munkkivuoren ostoskeskus, Munkkiniemen aukio, Muusantori, Ratsutori]</td>
+      <td>[Munkkivuoren ostoskeskus, Laajalahden aukio, Munkkiniemen aukio, Muusantori, Valimotie]</td>
+    </tr>
+    <tr>
+      <th>Teljäntie</th>
+      <td>Ulvilantie 21</td>
+      <td>674</td>
+      <td>674</td>
+      <td>2854.825415</td>
+      <td>2874.920371</td>
+      <td>[Laajalahden aukio, Teljäntie, Valimotie, Munkkivuoren ostoskeskus, Takomotie]</td>
+      <td>[Laajalahden aukio, Teljäntie, Munkkivuoren ostoskeskus, Valimotie, Ratsutori]</td>
+    </tr>
+    <tr>
+      <th>Munkkivuoren ostoskeskus</th>
+      <td>Huopalahdentie 20b</td>
+      <td>2025</td>
+      <td>2037</td>
+      <td>2632.046257</td>
+      <td>2717.930619</td>
+      <td>[Huopalahdentie, Muusantori, Laajalahden aukio, Munkkiniemen aukio, Vanha Viertotie]</td>
+      <td>[Huopalahdentie, Laajalahden aukio, Vihdintie, Munkkiniemen aukio, Vanha Viertotie]</td>
+    </tr>
+    <tr>
+      <th>Vihdintie</th>
+      <td>Vihdintie 2</td>
+      <td>1158</td>
+      <td>1153</td>
+      <td>2773.433212</td>
+      <td>2951.868742</td>
+      <td>[Munkkivuoren ostoskeskus, Laajalahden aukio, Tilkanvierto, Tilkantori, Huopalahdentie]</td>
+      <td>[Munkkivuoren ostoskeskus, Tilkantori, Tilkanvierto, Laajalahden aukio, Koskelantie]</td>
+    </tr>
+    <tr>
+      <th>Kriikunakuja</th>
+      <td>Korppaanmäentie 26</td>
+      <td>662</td>
+      <td>658</td>
+      <td>2533.468792</td>
+      <td>2588.75076</td>
+      <td>[Tilkanvierto, Munkkivuoren ostoskeskus, Korppaanmäentie, Kriikunakuja, Valimotie]</td>
+      <td>[Tilkanvierto, Korppaanmäentie, Munkkivuoren ostoskeskus, Kriikunakuja, Seurasaari]</td>
+    </tr>
+    <tr>
+      <th>Tilkantori</th>
+      <td>Tilkantori 3</td>
+      <td>1240</td>
+      <td>1268</td>
+      <td>2777.504839</td>
+      <td>2778.02944</td>
+      <td>[Tilkanvierto, Vihdintie, Huopalahdentie, Tilkantori, Munkkivuoren ostoskeskus]</td>
+      <td>[Tilkanvierto, Tilkantori, Huopalahdentie, Vihdintie, Munkkivuoren ostoskeskus]</td>
+    </tr>
+    <tr>
+      <th>Korppaanmäentie</th>
+      <td>Mannerheimintie 170</td>
+      <td>882</td>
+      <td>884</td>
+      <td>2811.465227</td>
+      <td>2618.960781</td>
+      <td>[Kriikunakuja, Pasilan asema, Haagan tori, Tilkanvierto, Töölöntulli]</td>
+      <td>[Ruskeasuon varikko, Pasilan asema, Tilkanvierto, Kriikunakuja, Haagan tori]</td>
+    </tr>
+    <tr>
+      <th>Tenholantie</th>
+      <td>Kiskontie 22</td>
+      <td>1112</td>
+      <td>1113</td>
+      <td>2916.682554</td>
+      <td>2806.907161</td>
+      <td>[Meilahden sairaala, Pasilan asema, Maistraatintori, Esterinportti, Tenholantie]</td>
+      <td>[Pasilan asema, Esterinportti, Meilahden sairaala, Tilkanvierto, Tenholantie]</td>
+    </tr>
+    <tr>
+      <th>Radiokatu</th>
+      <td>Kuuluttajankatu 2</td>
+      <td>339</td>
+      <td>296</td>
+      <td>2952.011799</td>
+      <td>2704.358108</td>
+      <td>[Esterinportti, Pasilan asema, Maistraatintori, Radiokatu, Vihdintie]</td>
+      <td>[Esterinportti, Maistraatintori, Radiokatu, Pasilan asema, Töölönlahden puisto]</td>
+    </tr>
+    <tr>
+      <th>Hertanmäenkatu</th>
+      <td>Radiokuja 2</td>
+      <td>997</td>
+      <td>825</td>
+      <td>2848.023741</td>
+      <td>2537.030303</td>
+      <td>[Pasilan asema, Esterinportti, Rautatieläisenkatu, Koskelantie, Maistraatintori]</td>
+      <td>[Pasilan asema, Esterinportti, Ilmalan asema, Rautatieläisenkatu, Maistraatintori]</td>
+    </tr>
+    <tr>
+      <th>Maistraatintori</th>
+      <td>Pasilanraitio 10</td>
+      <td>1064</td>
+      <td>1019</td>
+      <td>2860.638778</td>
+      <td>2788.516516</td>
+      <td>[Kalasatama (M), Pasilan asema, Tilkantori, Radiokatu, Ympyrätalo]</td>
+      <td>[Pasilan asema, Tenholantie, Tilkanvierto, Hertanmäenkatu, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Esterinportti</th>
+      <td>Pasilanraitio 5</td>
+      <td>1826</td>
+      <td>1726</td>
+      <td>2660.945602</td>
+      <td>2729.706837</td>
+      <td>[Tenholantie, Tilkanvierto, Hertanmäenkatu, Kuusitie, Messeniuksenkatu]</td>
+      <td>[Tilkanvierto, Pasilan asema, Hertanmäenkatu, Tenholantie, Jäähalli]</td>
+    </tr>
+    <tr>
+      <th>Rautatieläisenkatu</th>
+      <td>Ratapihantie 13</td>
+      <td>1649</td>
+      <td>1679</td>
+      <td>3236.845967</td>
+      <td>3070.71352</td>
+      <td>[Koskelantie, Fleminginkatu, Ympyrätalo, Käpylän asema, Käpyläntie]</td>
+      <td>[Koskelantie, Fleminginkatu, Hertanmäenkatu, Pohjolankatu, Käpyläntie]</td>
+    </tr>
+    <tr>
+      <th>Pasilan asema</th>
+      <td>Pasilan asema-aukio</td>
+      <td>5151</td>
+      <td>4370</td>
+      <td>2538.522679</td>
+      <td>2511.028222</td>
+      <td>[Fleminginkatu, Linnanmäki, Sörnäinen (M), Brahen puistikko, Kalasatama (M)]</td>
+      <td>[Fleminginkatu, Linnanmäki, Jäähalli, Venttiilikuja, Tilkanvierto]</td>
+    </tr>
+    <tr>
+      <th>Ratapihantie</th>
+      <td>Ratapihantie 1</td>
+      <td>1136</td>
+      <td>1098</td>
+      <td>2716.524938</td>
+      <td>2764.590164</td>
+      <td>[Fleminginkatu, Sörnäinen (M), Brahen puistikko, Kalasatama (M), Gebhardinaukio]</td>
+      <td>[Fleminginkatu, Kalasatama (M), Pasilan asema, Linnanmäki, Jäähalli]</td>
+    </tr>
+    <tr>
+      <th>Venttiilikuja</th>
+      <td>Venttiilikuja  1 &amp; 2</td>
+      <td>1493</td>
+      <td>1447</td>
+      <td>2414.70998</td>
+      <td>2447.117028</td>
+      <td>[Pasilan asema, Fleminginkatu, Karhupuisto, Venttiilikuja, Kalasatama (M)]</td>
+      <td>[Pasilan asema, Fleminginkatu, Karhupuisto, Venttiilikuja, Sörnäinen (M)]</td>
+    </tr>
+    <tr>
+      <th>Linnanmäki</th>
+      <td>Viipurinkatu 20</td>
+      <td>2639</td>
+      <td>2437</td>
+      <td>2554.995203</td>
+      <td>2498.273972</td>
+      <td>[Pasilan asema, Sörnäinen (M), Ympyrätalo, Jäähalli, Linnanmäki]</td>
+      <td>[Pasilan asema, Sörnäinen (M), Ympyrätalo, Jäähalli, Linnanmäki]</td>
+    </tr>
+    <tr>
+      <th>Brahen puistikko</th>
+      <td>Sturenkatu 12</td>
+      <td>1987</td>
+      <td>1949</td>
+      <td>2434.646205</td>
+      <td>2464.951939</td>
+      <td>[Pasilan asema, Ympyrätalo, Sörnäinen (M), Arabian kauppakeskus, Kalasatama (M)]</td>
+      <td>[Pasilan asema, Sörnäinen (M), Arabian kauppakeskus, Ympyrätalo, Ratapihantie]</td>
+    </tr>
+    <tr>
+      <th>Fleminginkatu</th>
+      <td>Aleksis Kiven katu 30</td>
+      <td>2359</td>
+      <td>2266</td>
+      <td>2396.273421</td>
+      <td>2312.702705</td>
+      <td>[Pasilan asema, Kalasatama (M), Sörnäinen (M), Venttiilikuja, Rautatieläisenkatu]</td>
+      <td>[Pasilan asema, Kalasatama (M), Sörnäinen (M), Venttiilikuja, Ratapihantie]</td>
+    </tr>
+    <tr>
+      <th>Gebhardinaukio</th>
+      <td>Teollisuuskatu 3</td>
+      <td>847</td>
+      <td>780</td>
+      <td>2498.150732</td>
+      <td>2533.726923</td>
+      <td>[Pasilan asema, Kalasatama (M), Sörnäinen (M), Hollolantie, Isoisänsilta]</td>
+      <td>[Pasilan asema, Kalasatama (M), Sörnäinen (M), Isoisänsilta, Ratapihantie]</td>
+    </tr>
+    <tr>
+      <th>Mäkelänkatu</th>
+      <td>Mäkelänkatu 2</td>
+      <td>1047</td>
+      <td>958</td>
+      <td>2381.857689</td>
+      <td>2537.082474</td>
+      <td>[Kalasatama (M), Pasilan asema, Arabiankatu, Arabian kauppakeskus, Pernajantie]</td>
+      <td>[Pasilan asema, Velodrominrinne, Kalasatama (M), Arabian kauppakeskus, Mäkelänkatu]</td>
+    </tr>
+    <tr>
+      <th>Vilhonvuorenkatu</th>
+      <td>Vilhonvuorenkatu 12</td>
+      <td>3037</td>
+      <td>3097</td>
+      <td>2577.878278</td>
+      <td>2574.206758</td>
+      <td>[Isoisänsilta, Kalasatama (M), Liisanpuistikko, Näkinsilta, Kanavaranta]</td>
+      <td>[Isoisänsilta, Kalasatama (M), Kanavaranta, Näkinsilta, Hakaniemi (M)]</td>
+    </tr>
+    <tr>
+      <th>Lintulahdenkatu</th>
+      <td>Lintulahdenkuja 6</td>
+      <td>2886</td>
+      <td>2872</td>
+      <td>2441.16378</td>
+      <td>2402.419102</td>
+      <td>[Kalasatama (M), Isoisänsilta, Arielinkatu, Kanavaranta, Rautatientori / itä]</td>
+      <td>[Kalasatama (M), Isoisänsilta, Arielinkatu, Kanavaranta, Rautatientori / itä]</td>
+    </tr>
+    <tr>
+      <th>Näkinsilta</th>
+      <td>Sörnäisten rantatie 9</td>
+      <td>2999</td>
+      <td>2983</td>
+      <td>2406.241637</td>
+      <td>2493.754499</td>
+      <td>[Kanavaranta, Kalasatama (M), Isoisänsilta, Rautatientori / itä, Vilhonvuorenkatu]</td>
+      <td>[Kanavaranta, Isoisänsilta, Kalasatama (M), Vilhonvuorenkatu, Liisanpuistikko]</td>
+    </tr>
+    <tr>
+      <th>Isoisänsilta</th>
+      <td>Capellan puistotie 2</td>
+      <td>3204</td>
+      <td>3337</td>
+      <td>2787.704532</td>
+      <td>2676.110578</td>
+      <td>[Vilhonvuorenkatu, Näkinsilta, Lintulahdenkatu, Kalasatama (M), Isoisänsilta]</td>
+      <td>[Vilhonvuorenkatu, Kalasatama (M), Lintulahdenkatu, Näkinsilta, Isoisänsilta]</td>
+    </tr>
+    <tr>
+      <th>Arielinkatu</th>
+      <td>Englantilaisaukio</td>
+      <td>2251</td>
+      <td>2291</td>
+      <td>2880.054642</td>
+      <td>2810.061253</td>
+      <td>[Lintulahdenkatu, Isoisänsilta, Näkinsilta, Merihaka, Mustikkamaa]</td>
+      <td>[Lintulahdenkatu, Isoisänsilta, Mustikkamaa, Vilhonvuorenkatu, Petter Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Kalasatama (M)</th>
+      <td>Hermannin rantatie 2b</td>
+      <td>5282</td>
+      <td>5566</td>
+      <td>2443.798686</td>
+      <td>2576.15337</td>
+      <td>[Haukilahdenkatu, Lintulahdenkatu, Vilhonvuorenkatu, Isoisänsilta, Arabian kauppakeskus]</td>
+      <td>[Haukilahdenkatu, Lintulahdenkatu, Arabian kauppakeskus, Vilhonvuorenkatu, Arabiankatu]</td>
+    </tr>
+    <tr>
+      <th>Teurastamo</th>
+      <td>Työpajankatu 2a</td>
+      <td>1755</td>
+      <td>1813</td>
+      <td>2597.34833</td>
+      <td>2491.614446</td>
+      <td>[Kalasatama (M), Isoisänsilta, Näkinsilta, Arabian kauppakeskus, Lintulahdenkatu]</td>
+      <td>[Kalasatama (M), Lintulahdenkatu, Fleminginkatu, Haukilahdenkatu, Näkinsilta]</td>
+    </tr>
+    <tr>
+      <th>Päijänteentie</th>
+      <td>Päijänteentie 1</td>
+      <td>822</td>
+      <td>763</td>
+      <td>2273.390109</td>
+      <td>2414.930105</td>
+      <td>[Kalasatama (M), Arabian kauppakeskus, Sörnäinen (M), Päijänteentie, Arabiankatu]</td>
+      <td>[Kalasatama (M), Sörnäinen (M), Päijänteentie, Pasilan asema, Arabian kauppakeskus]</td>
+    </tr>
+    <tr>
+      <th>Pernajantie</th>
+      <td>Mäkelänkatu 25</td>
+      <td>1380</td>
+      <td>1241</td>
+      <td>2593.863768</td>
+      <td>2530.941708</td>
+      <td>[Kalasatama (M), Sörnäinen (M), Pasilan asema, Arabian kauppakeskus, Linnanmäki]</td>
+      <td>[Kalasatama (M), Sörnäinen (M), Pasilan asema, Linnanmäki, Arabian kauppakeskus]</td>
+    </tr>
+    <tr>
+      <th>Teollisuuskatu</th>
+      <td>Teollisuuskatu 16</td>
+      <td>621</td>
+      <td>601</td>
+      <td>2511.690821</td>
+      <td>2356.069884</td>
+      <td>[Kalasatama (M), Pasilan asema, Sörnäinen (M), Isoisänsilta, Ympyrätalo]</td>
+      <td>[Pasilan asema, Kalasatama (M), Sörnäinen (M), Teurastamo, Ympyrätalo]</td>
+    </tr>
+    <tr>
+      <th>Elimäenkatu</th>
+      <td>Elimäenkatu 24</td>
+      <td>1105</td>
+      <td>1090</td>
+      <td>2783.204824</td>
+      <td>2723.977064</td>
+      <td>[Pasilan asema, Fleminginkatu, Kalasatama (M), Sörnäinen (M), Lintulahdenkatu]</td>
+      <td>[Pasilan asema, Fleminginkatu, Linnanmäki, Brahen puistikko, Jäähalli]</td>
+    </tr>
+    <tr>
+      <th>Hollolantie</th>
+      <td>Hollolantie 2</td>
+      <td>999</td>
+      <td>891</td>
+      <td>2707.725726</td>
+      <td>2369.045645</td>
+      <td>[Pasilan asema, Koskelantie, Haukilahdenkatu, Sörnäinen (M), Arabian kauppakeskus]</td>
+      <td>[Pasilan asema, Arabian kauppakeskus, Haukilahdenkatu, Koskelantie, Sörnäinen (M)]</td>
+    </tr>
+    <tr>
+      <th>Paavalinpuisto</th>
+      <td>Hämeentie 96</td>
+      <td>1600</td>
+      <td>1555</td>
+      <td>2441.179581</td>
+      <td>2419.861093</td>
+      <td>[Arabian kauppakeskus, Kalasatama (M), Sörnäinen (M), Pasilan asema, Paavalinpuisto]</td>
+      <td>[Arabian kauppakeskus, Verkatehtaanpuisto, Kalasatama (M), Sörnäinen (M), Paavalinpuisto]</td>
+    </tr>
+    <tr>
+      <th>Velodrominrinne</th>
+      <td>Mäkelänkatu 70</td>
+      <td>1152</td>
+      <td>1157</td>
+      <td>2699.421875</td>
+      <td>2789.73178</td>
+      <td>[Koskelantie, Haukilahdenkatu, Arabian kauppakeskus, Paavalinpuisto, Pasilan asema]</td>
+      <td>[Arabian kauppakeskus, Haukilahdenkatu, Koskelantie, Velodrominrinne, Pasilan asema]</td>
+    </tr>
+    <tr>
+      <th>Sofianlehdonkatu</th>
+      <td>Isonniitynkatu 7</td>
+      <td>572</td>
+      <td>571</td>
+      <td>2339.645105</td>
+      <td>2216.854641</td>
+      <td>[Koskelantie, Kalasatama (M), Intiankatu, Arabian kauppakeskus, Paavalinpuisto]</td>
+      <td>[Koskelantie, Arabian kauppakeskus, Rautatieläisenkatu, Pasilan asema, Intiankatu]</td>
+    </tr>
+    <tr>
+      <th>Arabian kauppakeskus</th>
+      <td>Hämeentie 111</td>
+      <td>3240</td>
+      <td>3302</td>
+      <td>2562.273765</td>
+      <td>2676.382093</td>
+      <td>[Kalasatama (M), Paavalinpuisto, Intiankatu, Verkatehtaanpuisto, Arabiankatu]</td>
+      <td>[Kalasatama (M), Intiankatu, Paavalinpuisto, Verkatehtaanpuisto, Arabiankatu]</td>
+    </tr>
+    <tr>
+      <th>Arabiankatu</th>
+      <td>Arabiankatu 7</td>
+      <td>1800</td>
+      <td>1928</td>
+      <td>2974.7937</td>
+      <td>2827.385892</td>
+      <td>[Kalasatama (M), Arabian kauppakeskus, Arabiankatu, Viikin tiedepuisto, Katariina Saksilaisen katu]</td>
+      <td>[Kalasatama (M), Arabian kauppakeskus, Intiankatu, Arabiankatu, Käpyläntie]</td>
+    </tr>
+    <tr>
+      <th>Muotoilijankatu</th>
+      <td>Arabiankatu 21</td>
+      <td>892</td>
+      <td>922</td>
+      <td>3054.501121</td>
+      <td>2951.308395</td>
+      <td>[Arabian kauppakeskus, Kalasatama (M), Arabiankatu, Muotoilijankatu, Teurastamo]</td>
+      <td>[Arabian kauppakeskus, Kalasatama (M), Arabiankatu, Muotoilijankatu, Haukilahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Verkatehtaanpuisto</th>
+      <td>Hämeentie 159</td>
+      <td>1419</td>
+      <td>1399</td>
+      <td>3249.96007</td>
+      <td>3376.392659</td>
+      <td>[Arabian kauppakeskus, Kalasatama (M), Viikin tiedepuisto, Paavalinpuisto, Verkatehtaanpuisto]</td>
+      <td>[Arabian kauppakeskus, Viikin tiedepuisto, Verkatehtaanpuisto, Kalasatama (M), Haukilahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Intiankatu</th>
+      <td>Intiankatu 20</td>
+      <td>1362</td>
+      <td>1346</td>
+      <td>2526.130448</td>
+      <td>2474.96211</td>
+      <td>[Arabian kauppakeskus, Arabiankatu, Kalasatama (M), Intiankatu, Paavalinpuisto]</td>
+      <td>[Arabian kauppakeskus, Pasilan asema, Intiankatu, Arabiankatu, Käpyläntie]</td>
+    </tr>
+    <tr>
+      <th>Koskelantie</th>
+      <td>Sofianlehdonkatu 13</td>
+      <td>1769</td>
+      <td>1763</td>
+      <td>2877.799322</td>
+      <td>2779.663642</td>
+      <td>[Juhana Herttuan tie, Rautatieläisenkatu, Käpyläntie, Sofianlehdonkatu, Arabian kauppakeskus]</td>
+      <td>[Juhana Herttuan tie, Haukilahdenkatu, Rautatieläisenkatu, Käpyläntie, Arabian kauppakeskus]</td>
+    </tr>
+    <tr>
+      <th>Kuikkarinne</th>
+      <td>Isokaari 10</td>
+      <td>1042</td>
+      <td>1026</td>
+      <td>2789.333013</td>
+      <td>2949.103314</td>
+      <td>[Gyldenintie, Puistokaari, Heikkilänaukio, Lauttasaaren ostoskeskus, Luoteisväylä]</td>
+      <td>[Gyldenintie, Puistokaari, Lauttasaaren ostoskeskus, Heikkilänaukio, Luoteisväylä]</td>
+    </tr>
+    <tr>
+      <th>Käpyläntie</th>
+      <td>Käpyläntie 1</td>
+      <td>1036</td>
+      <td>995</td>
+      <td>2697.13417</td>
+      <td>2569.442211</td>
+      <td>[Juhana Herttuan tie, Koskelantie, Arabiankatu, Arabian kauppakeskus, Intiankatu]</td>
+      <td>[Koskelantie, Arabiankatu, Juhana Herttuan tie, Intiankatu, Rautatieläisenkatu]</td>
+    </tr>
+    <tr>
+      <th>Pohjolankatu</th>
+      <td>Pohjolankatu 1</td>
+      <td>468</td>
+      <td>442</td>
+      <td>2616.254274</td>
+      <td>2518.540724</td>
+      <td>[Pohjolanaukio, Rautatieläisenkatu, Käpylän asema, Pohjolankatu, Sofianlehdonkatu]</td>
+      <td>[Käpylän asema, Rautatieläisenkatu, Pohjolanaukio, Pohjolankatu, Kylävoudintie]</td>
+    </tr>
+    <tr>
+      <th>Pohjolanaukio</th>
+      <td>Pohjolankatu 40</td>
+      <td>692</td>
+      <td>671</td>
+      <td>2712.674855</td>
+      <td>2449.358674</td>
+      <td>[Juhana Herttuan tie, Koskelantie, Pohjolankatu, Käpylän asema, Intiankatu]</td>
+      <td>[Juhana Herttuan tie, Pohjolankatu, Käpylän asema, Koskelantie, Intiankatu]</td>
+    </tr>
+    <tr>
+      <th>Käpylän asema</th>
+      <td>Panuntie 4</td>
+      <td>739</td>
+      <td>724</td>
+      <td>2514.728011</td>
+      <td>2666.925414</td>
+      <td>[Pohjolanaukio, Pohjolankatu, Kylävoudintie, Postipuisto, Juhana Herttuan tie]</td>
+      <td>[Rautatieläisenkatu, Kylävoudintie, Kustaankartano, Postipuisto, Pohjolankatu]</td>
+    </tr>
+    <tr>
+      <th>Juhana Herttuan tie</th>
+      <td>Antti Korpin tie 3a</td>
+      <td>959</td>
+      <td>960</td>
+      <td>2688.931877</td>
+      <td>2471.091667</td>
+      <td>[Koskelantie, Koskelan varikko, Pohjolanaukio, Arabian kauppakeskus, Käpyläntie]</td>
+      <td>[Koskelantie, Käpyläntie, Pohjolanaukio, Arabian kauppakeskus, Juhana Herttuan tie]</td>
+    </tr>
+    <tr>
+      <th>Toinen linja</th>
+      <td>Toinen linja 25</td>
+      <td>1655</td>
+      <td>1564</td>
+      <td>2508.900103</td>
+      <td>2496.532398</td>
+      <td>[Kaisaniemenpuisto, Ympyrätalo, Rautatientori / itä, Töölönlahdenkatu, Pasilan asema]</td>
+      <td>[Rautatientori / itä, Pasilan asema, Ympyrätalo, Rautatientori / länsi, Töölönlahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Töölönlahden puisto</th>
+      <td>Karamzininranta 4</td>
+      <td>2046</td>
+      <td>2128</td>
+      <td>2564.985821</td>
+      <td>2724.859337</td>
+      <td>[Baana, Töölönlahden puisto, Itämerentori, Olympiastadion, Jätkäsaarenlaituri]</td>
+      <td>[Baana, Töölönlahden puisto, Olympiastadion, Ooppera, Töölönlahdenkatu]</td>
+    </tr>
+    <tr>
+      <th>Eteläesplanadi</th>
+      <td>Eteläesplanadi 14</td>
+      <td>1404</td>
+      <td>1619</td>
+      <td>2325.921652</td>
+      <td>2228.640729</td>
+      <td>[Hietalahdentori, Jätkäsaarenlaituri, Vilhonvuorenkatu, Ehrenströmintie, Kaivopuisto]</td>
+      <td>[Kaivopuisto, Näkinsilta, Hietalahdentori, Lintulahdenkatu, Ritarikatu]</td>
+    </tr>
+    <tr>
+      <th>Leppäsuonaukio</th>
+      <td>Leppäsuonaukio 1</td>
+      <td>1479</td>
+      <td>1464</td>
+      <td>2065.632184</td>
+      <td>2243.107008</td>
+      <td>[Töölönlahdenkatu, Hietaniemenkatu, Apollonkatu, Itämerentori, Länsisatamankuja]</td>
+      <td>[Hietaniemenkatu, Töölönlahdenkatu, Itämerentori, Jätkäsaarenlaituri, Tyynenmerenkatu]</td>
+    </tr>
+    <tr>
+      <th>Lehtisaarentie</th>
+      <td>Liljasaarentie 1a</td>
+      <td>1163</td>
+      <td>1226</td>
+      <td>3533.325021</td>
+      <td>3975.195212</td>
+      <td>[Aalto-yliopisto (M), Korkeakouluaukio, Otaranta, Luoteisväylä, Jämeräntaival, Keilaniemi (M)]</td>
+      <td>[Saunalahdentie, Aalto-yliopisto (M), Korkeakouluaukio, Keilaniemi (M), Otaranta, Luoteisväylä]</td>
+    </tr>
+    <tr>
+      <th>Länsiterminaali</th>
+      <td>Sammonlaituri</td>
+      <td>233</td>
+      <td>230</td>
+      <td>2819.300429</td>
+      <td>2755.808696</td>
+      <td>[Töölönkatu, Itämerentori, Tyynenmerenkatu, Töölönlahdenkatu, Jätkäsaarenlaituri]</td>
+      <td>[Tyynenmerenkatu, Töölönkatu, Itämerentori, Hietalahdentori, Välimerenkatu]</td>
+    </tr>
+    <tr>
+      <th>Länsisatamankuja</th>
+      <td>Länsisatamankatu 26</td>
+      <td>2698</td>
+      <td>2773</td>
+      <td>2465.600319</td>
+      <td>2405.952636</td>
+      <td>[Itämerentori, Kamppi (M), Töölönlahdenkatu, Salmisaarenranta, Länsisatamankuja]</td>
+      <td>[Itämerentori, Salmisaarenranta, Hietalahdentori, Länsisatamankuja, Jätkäsaarenlaituri]</td>
+    </tr>
+    <tr>
+      <th>Merihaka</th>
+      <td>Hakaniemenranta 10</td>
+      <td>1800</td>
+      <td>1788</td>
+      <td>2358.651478</td>
+      <td>2489.50764</td>
+      <td>[Hakaniemi (M), Kalasatama (M), Kanavaranta, Rautatientori / itä, Rautatientori / länsi]</td>
+      <td>[Kalasatama (M), Hakaniemi (M), Isoisänsilta, Arielinkatu, Rautatientori / länsi]</td>
+    </tr>
+    <tr>
+      <th>Opastinsilta</th>
+      <td>Opastinsilta 10</td>
+      <td>842</td>
+      <td>771</td>
+      <td>3146.145689</td>
+      <td>3088.320363</td>
+      <td>[Töölönlahden puisto, Esterinportti, Arabian kauppakeskus, Sörnäinen (M), Kalasatama (M)]</td>
+      <td>[Fleminginkatu, Esterinportti, Töölönlahden puisto, Muotoilijankatu, Arabian kauppakeskus]</td>
+    </tr>
+    <tr>
+      <th>A.I. Virtasen aukio</th>
+      <td>Gustaf Hällströmin katu 1</td>
+      <td>715</td>
+      <td>649</td>
+      <td>2764.117483</td>
+      <td>2785.504361</td>
+      <td>[Kalasatama (M), Arabiankatu, Koskelantie, Pasilan asema, Arabian kauppakeskus]</td>
+      <td>[Kalasatama (M), Pasilan asema, Koskelantie, Juhana Herttuan tie, Arabiankatu]</td>
+    </tr>
+    <tr>
+      <th>Ilmalan asema</th>
+      <td>Ilmalantori 1</td>
+      <td>448</td>
+      <td>323</td>
+      <td>3288.331853</td>
+      <td>3468.77192</td>
+      <td>[Hertanmäenkatu, Rautatieläisenkatu, Sörnäinen (M), Pasilan asema, Huopalahden asema]</td>
+      <td>[Rautatieläisenkatu, Ida Aalbergin tie, Pasilan asema, Sörnäinen (M), Huopalahden asema]</td>
+    </tr>
+    <tr>
+      <th>Ruskeasuon varikko</th>
+      <td>Mannerheimintie 117</td>
+      <td>509</td>
+      <td>499</td>
+      <td>2778.834971</td>
+      <td>2915.531062</td>
+      <td>[Korppaanmäentie, Vihdintie, Munkkivuoren ostoskeskus, Tunnelitie, Töölönlahdenkatu]</td>
+      <td>[Munkkivuoren ostoskeskus, Korppaanmäentie, Pajamäki, Töölöntulli, Kuusitie]</td>
+    </tr>
+    <tr>
+      <th>Vanha Viertotie</th>
+      <td>Vanha Viertotie 23</td>
+      <td>983</td>
+      <td>981</td>
+      <td>2908.742625</td>
+      <td>2849.150866</td>
+      <td>[Munkkivuoren ostoskeskus, Huopalahdentie, Vanha Viertotie, Laajalahden aukio, Vihdintie]</td>
+      <td>[Munkkivuoren ostoskeskus, Huopalahdentie, Vanha Viertotie, Munkkiniemen aukio, Vihdintie]</td>
+    </tr>
+    <tr>
+      <th>Valimotie</th>
+      <td>Valimotie 1</td>
+      <td>767</td>
+      <td>794</td>
+      <td>2891.640156</td>
+      <td>2626.957179</td>
+      <td>[Teljäntie, Munkkivuoren ostoskeskus, Ida Aalbergin tie, Pajamäki, Huopalahdentie]</td>
+      <td>[Teljäntie, Ida Aalbergin tie, Vihdintie, Huopalahdentie, Kriikunakuja]</td>
+    </tr>
+    <tr>
+      <th>Takomotie</th>
+      <td>Takomotie 29</td>
+      <td>739</td>
+      <td>753</td>
+      <td>2716.105995</td>
+      <td>2880.108459</td>
+      <td>[Jännetie, Valimon asema, Pajamäki, Munkkivuoren ostoskeskus, Kirjurinkuja]</td>
+      <td>[Kirjurinkuja, Pajamäki, Jännetie, Teljäntie, Munkkivuoren ostoskeskus]</td>
+    </tr>
+    <tr>
+      <th>Pajamäki</th>
+      <td>Pajamäentie 12</td>
+      <td>591</td>
+      <td>585</td>
+      <td>3109.027073</td>
+      <td>3092.650701</td>
+      <td>[Ratsutori, Pajamäki, Takomotie, Paciuksenkaari, Valimotie]</td>
+      <td>[Ratsutori, Pajamäki, Paciuksenkaari, Takomotie, Laajalahden aukio]</td>
+    </tr>
+    <tr>
+      <th>Haagan tori</th>
+      <td>Haagan tori 1</td>
+      <td>842</td>
+      <td>829</td>
+      <td>3344.131437</td>
+      <td>3248.706864</td>
+      <td>[Haagan tori, Tunnelitie, Huopalahden asema, Korppaanmäentie, Huopalahdentie]</td>
+      <td>[Huopalahden asema, Tunnelitie, Haagan tori, Korppaanmäentie, Vanha Viertotie]</td>
+    </tr>
+    <tr>
+      <th>Tunnelitie</th>
+      <td>Tunnelitie 3</td>
+      <td>992</td>
+      <td>969</td>
+      <td>3391.628357</td>
+      <td>3252.905057</td>
+      <td>[Pohjois-Haagan asema, Haagan tori, Huopalahden asema, Tunnelitie, Pasilan asema]</td>
+      <td>[Huopalahden asema, Pohjois-Haagan asema, Haagan tori, Pasilan asema, Ida Aalbergin tie]</td>
+    </tr>
+    <tr>
+      <th>Huopalahden asema</th>
+      <td>Huopalahden aseman itäinen raittisilta</td>
+      <td>951</td>
+      <td>919</td>
+      <td>3063.06204</td>
+      <td>3099.704026</td>
+      <td>[Huovitie, Tunnelitie, Haagan tori, Pohjois-Haagan asema, Näyttelijäntie]</td>
+      <td>[Huovitie, Näyttelijäntie, Tunnelitie, Pohjois-Haagan asema, Haagan tori]</td>
+    </tr>
+    <tr>
+      <th>Valimon asema</th>
+      <td>Valimopolku 3</td>
+      <td>375</td>
+      <td>372</td>
+      <td>3056.056</td>
+      <td>2642.669355</td>
+      <td>[Pohjois-Haagan asema, Jännetie, Pitäjänmäen asema, Takomotie, Pajamäki]</td>
+      <td>[Takomotie, Pitäjänmäen asema, Jännetie, Munkkivuoren ostoskeskus, Pohjois-Haagan asema]</td>
+    </tr>
+    <tr>
+      <th>Pitäjänmäen asema</th>
+      <td>Pitäjänmäentie 21</td>
+      <td>468</td>
+      <td>448</td>
+      <td>2764.504274</td>
+      <td>2957.571429</td>
+      <td>[Jännetie, Valimon asema, Takomotie, Pohjois-Haagan asema, Näyttelijäntie]</td>
+      <td>[Jännetie, Pohjois-Haagan asema, Näyttelijäntie, Marttila, Pajamäki]</td>
+    </tr>
+    <tr>
+      <th>Jännetie</th>
+      <td>Konalantie 6</td>
+      <td>475</td>
+      <td>496</td>
+      <td>3269.718589</td>
+      <td>3202.802419</td>
+      <td>[Pitäjänmäen asema, Takomotie, Valimon asema, Leppävaarankäytävä, Jännetie]</td>
+      <td>[Takomotie, Pitäjänmäen asema, Valimon asema, Jännetie, Pajamäki]</td>
+    </tr>
+    <tr>
+      <th>Marttila</th>
+      <td>Vihdintie 302</td>
+      <td>339</td>
+      <td>344</td>
+      <td>3539.026549</td>
+      <td>3573.329448</td>
+      <td>[Pitäjänmäen asema, Pohjois-Haagan asema, Vihdintie, Rautatieläisenkatu, Munkkivuoren ostoskeskus]</td>
+      <td>[Munkkivuoren ostoskeskus, Pitäjänmäen asema, Pohjois-Haagan asema, Vihdintie, Huopalahdentie]</td>
+    </tr>
+    <tr>
+      <th>Pohjois-Haagan asema</th>
+      <td>Pennikuja 2</td>
+      <td>747</td>
+      <td>747</td>
+      <td>3069.978581</td>
+      <td>2949.70593</td>
+      <td>[Ida Aalbergin tie, Pohjois-Haagan asema, Tunnelitie, Huopalahden asema, Huovitie]</td>
+      <td>[Ida Aalbergin tie, Tunnelitie, Pohjois-Haagan asema, Huopalahden asema, Huovitie]</td>
+    </tr>
+    <tr>
+      <th>Näyttelijäntie</th>
+      <td>Kaupintie 3</td>
+      <td>462</td>
+      <td>462</td>
+      <td>3739.80303</td>
+      <td>3644.344156</td>
+      <td>[Huopalahden asema, Ida Aalbergin tie, Pitäjänmäen asema, Takomotie, Thalianaukio]</td>
+      <td>[Huopalahden asema, Ida Aalbergin tie, Thalianaukio, Takomotie, Pitäjänmäen asema]</td>
+    </tr>
+    <tr>
+      <th>Ida Aalbergin tie</th>
+      <td>Näyttelijäntie 14</td>
+      <td>650</td>
+      <td>612</td>
+      <td>3193.621538</td>
+      <td>3195.321895</td>
+      <td>[Pohjois-Haagan asema, Valimotie, Thalianaukio, Ida Aalbergin tie, Tunnelitie]</td>
+      <td>[Pohjois-Haagan asema, Valimotie, Thalianaukio, Ida Aalbergin tie, Näyttelijäntie]</td>
+    </tr>
+    <tr>
+      <th>Thalianaukio</th>
+      <td>Aino Ackten tie 1</td>
+      <td>619</td>
+      <td>628</td>
+      <td>3443.541195</td>
+      <td>3410.61465</td>
+      <td>[Huopalahden asema, Thalianaukio, Ida Aalbergin tie, Pohjois-Haagan asema, Vanha Viertotie]</td>
+      <td>[Ida Aalbergin tie, Thalianaukio, Pohjois-Haagan asema, Tunnelitie, Vanha Viertotie]</td>
+    </tr>
+    <tr>
+      <th>Huovitie</th>
+      <td>Huovitie 10</td>
+      <td>591</td>
+      <td>570</td>
+      <td>3191.09758</td>
+      <td>3061.105263</td>
+      <td>[Huopalahden asema, Huovitie, Pohjois-Haagan asema, Tunnelitie, Thalianaukio]</td>
+      <td>[Huopalahden asema, Huovitie, Pohjois-Haagan asema, Haagan tori, Tunnelitie]</td>
+    </tr>
+    <tr>
+      <th>Hämeenlinnanväylä</th>
+      <td>Teuvo Pakkalan tie 2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Vesakkotie</th>
+      <td>Männikkötie 11</td>
+      <td>439</td>
+      <td>451</td>
+      <td>3979.99164</td>
+      <td>4094.824834</td>
+      <td>[Vesakkotie, Lepolantie, Maunula, Postipuisto, Rautatieläisenkatu]</td>
+      <td>[Vesakkotie, Postipuisto, Rautatieläisenkatu, Pasilan asema, Maunula]</td>
+    </tr>
+    <tr>
+      <th>Maunula</th>
+      <td>Maunulanmäki 2</td>
+      <td>345</td>
+      <td>344</td>
+      <td>3826.815449</td>
+      <td>3537.337209</td>
+      <td>[Postipuisto, Thalianaukio, Rautatieläisenkatu, Kustaankartano, Maunula]</td>
+      <td>[Postipuisto, Vesakkotie, Rautatieläisenkatu, Maunula, Koskelantie]</td>
+    </tr>
+    <tr>
+      <th>Lepolantie</th>
+      <td>Lepolantie 61</td>
+      <td>323</td>
+      <td>370</td>
+      <td>4586.73065</td>
+      <td>4711.786486</td>
+      <td>[Lepolantie, Thalianaukio, Ida Aalbergin tie, Paloheinäntie, Kylävoudintie]</td>
+      <td>[Lepolantie, Vesakkotie, Thalianaukio, Postipuisto, Haagan tori]</td>
+    </tr>
+    <tr>
+      <th>Kylävoudintie</th>
+      <td>Kylävoudintie 6</td>
+      <td>428</td>
+      <td>397</td>
+      <td>3426.25</td>
+      <td>3322.420655</td>
+      <td>[Käpylän asema, Rautatieläisenkatu, Oulunkylän asema, Kylävoudintie, Pohjolankatu]</td>
+      <td>[Käpylän asema, Rautatieläisenkatu, Kylävoudintie, Oulunkylän asema, Sofianlehdonkatu]</td>
+    </tr>
+    <tr>
+      <th>Kustaankartano</th>
+      <td>Maapadontie 3</td>
+      <td>332</td>
+      <td>265</td>
+      <td>2971.123494</td>
+      <td>2870.363509</td>
+      <td>[Käpylän asema, Käskynhaltijantie, Siltavoudintie, Kustaankartano, Intiankatu]</td>
+      <td>[Käskynhaltijantie, Rautatieläisenkatu, Käpylän asema, Kustaankartano, Siltavoudintie]</td>
+    </tr>
+    <tr>
+      <th>Käskynhaltijantie</th>
+      <td>Hirsipadontie 2</td>
+      <td>290</td>
+      <td>255</td>
+      <td>2622.262069</td>
+      <td>2615.529412</td>
+      <td>[Oulunkylän asema, Kustaankartano, Käpylän asema, Otto Brandtin tie, Siltavoudintie]</td>
+      <td>[Oulunkylän asema, Kustaankartano, Siltavoudintie, Otto Brandtin tie, Koskelantie]</td>
+    </tr>
+    <tr>
+      <th>Mäkitorpantie</th>
+      <td>Kylänvanhimmantie 29</td>
+      <td>161</td>
+      <td>160</td>
+      <td>3275.985528</td>
+      <td>3104.3</td>
+      <td>[Pohjolanaukio, Kustaankartano, Mäkitorpantie, Velodrominrinne, Rautatieläisenkatu]</td>
+      <td>[Käpylän asema, Kylävoudintie, Mäkitorpantie, Kustaankartano, Otto Brandtin tie]</td>
+    </tr>
+    <tr>
+      <th>Siltavoudintie</th>
+      <td>Käskynhaltijantie 22</td>
+      <td>372</td>
+      <td>350</td>
+      <td>3427.905914</td>
+      <td>3658.962857</td>
+      <td>[Oulunkylän asema, Otto Brandtin tie, Siltavoudintie, Käpylän asema, Kustaankartano]</td>
+      <td>[Oulunkylän asema, Siltavoudintie, Kustaankartano, Otto Brandtin tie, Maunula]</td>
+    </tr>
+    <tr>
+      <th>Oulunkylän asema</th>
+      <td>Oulunkyläntori 2</td>
+      <td>687</td>
+      <td>689</td>
+      <td>2999.159636</td>
+      <td>2748.825835</td>
+      <td>[Otto Brandtin tie, Käskynhaltijantie, Siltavoudintie, Juhana Herttuan tie, Rautatieläisenkatu]</td>
+      <td>[Otto Brandtin tie, Käskynhaltijantie, Siltavoudintie, Juhana Herttuan tie, Käpyläntie]</td>
+    </tr>
+    <tr>
+      <th>Kirkkoherrantie</th>
+      <td>Kirkkoherrantie 5</td>
+      <td>305</td>
+      <td>301</td>
+      <td>2999.744262</td>
+      <td>2943.384286</td>
+      <td>[Juhana Herttuan tie, Pohjolanaukio, Kirkkoherrantie, Käpylän asema, Päijänteentie]</td>
+      <td>[Arabiankatu, Pohjolanaukio, Koskelantie, Juhana Herttuan tie, Käpylän asema]</td>
+    </tr>
+    <tr>
+      <th>Otto Brandtin tie</th>
+      <td>Tulvaniityntie 2</td>
+      <td>631</td>
+      <td>699</td>
+      <td>3526.5758</td>
+      <td>3411.497854</td>
+      <td>[Oulunkylän asema, Viikin tiedepuisto, Otto Brandtin tie, Rautatieläisenkatu, Aulangontie]</td>
+      <td>[Oulunkylän asema, Viikin tiedepuisto, Rautatieläisenkatu, Siltavoudintie, Otto Brandtin tie]</td>
+    </tr>
+    <tr>
+      <th>Katariina Saksilaisen katu</th>
+      <td>Katariina Saksilaisen katu 6</td>
+      <td>754</td>
+      <td>789</td>
+      <td>3541.675066</td>
+      <td>3477.78327</td>
+      <td>[Arabian kauppakeskus, Viikin tiedepuisto, Verkatehtaanpuisto, Arabiankatu, Kalasatama (M)]</td>
+      <td>[Arabian kauppakeskus, Arabiankatu, Viikin tiedepuisto, Verkatehtaanpuisto, Koskelantie]</td>
+    </tr>
+    <tr>
+      <th>Hernepellontie</th>
+      <td>Harjannetie 44</td>
+      <td>419</td>
+      <td>417</td>
+      <td>3491.688138</td>
+      <td>3437.443645</td>
+      <td>[Koskelantie, Viikin tiedepuisto, Arabian kauppakeskus, Pihlajamäki, Esterinportti]</td>
+      <td>[Koskelantie, Arabian kauppakeskus, Viikin tiedepuisto, Viikin normaalikoulu, Verkatehtaanpuisto]</td>
+    </tr>
+    <tr>
+      <th>Aulangontie</th>
+      <td>Harjannetie 2</td>
+      <td>335</td>
+      <td>308</td>
+      <td>3443.283582</td>
+      <td>3567.627695</td>
+      <td>[Viikin tiedepuisto, Pihlajamäki, Otto Brandtin tie, Arabian kauppakeskus, Hernepellontie]</td>
+      <td>[Viikin tiedepuisto, Otto Brandtin tie, Pihlajamäki, Oulunkylän asema, Verkatehtaanpuisto]</td>
+    </tr>
+    <tr>
+      <th>Pihlajamäki</th>
+      <td>Meripihkatie 3</td>
+      <td>417</td>
+      <td>394</td>
+      <td>3140.335731</td>
+      <td>3178.284264</td>
+      <td>[Viikin tiedepuisto, Agronominkatu, Pihlajamäki, Aulangontie, Rapakiventie]</td>
+      <td>[Viikin tiedepuisto, Aulangontie, Agronominkatu, Hernepellontie, Verkatehtaanpuisto]</td>
+    </tr>
+    <tr>
+      <th>Viikin tiedepuisto</th>
+      <td>Viikintori</td>
+      <td>1465</td>
+      <td>1453</td>
+      <td>3366.633222</td>
+      <td>3578.097275</td>
+      <td>[Viikin normaalikoulu, Agronominkatu, Pihlajamäki, Verkatehtaanpuisto, Arabian kauppakeskus]</td>
+      <td>[Viikin normaalikoulu, Pihlajamäki, Agronominkatu, Verkatehtaanpuisto, Arabian kauppakeskus]</td>
+    </tr>
+    <tr>
+      <th>Viikin normaalikoulu</th>
+      <td>Kevättori</td>
+      <td>749</td>
+      <td>823</td>
+      <td>3718.878064</td>
+      <td>3541.705553</td>
+      <td>[Viikin tiedepuisto, Agronominkatu, Viikin normaalikoulu, Verkatehtaanpuisto, Arabian kauppakeskus]</td>
+      <td>[Viikin tiedepuisto, Agronominkatu, Viikin normaalikoulu, Siilitie (M), Von Daehnin katu]</td>
+    </tr>
+    <tr>
+      <th>Agronominkatu</th>
+      <td>Latokartanontori</td>
+      <td>492</td>
+      <td>545</td>
+      <td>3564.808943</td>
+      <td>3375.113761</td>
+      <td>[Viikin tiedepuisto, Viikin normaalikoulu, Agronominkatu, Pihlajamäki, Von Daehnin katu]</td>
+      <td>[Viikin tiedepuisto, Viikin normaalikoulu, Agronominkatu, Pihlajamäki, Verkatehtaanpuisto]</td>
+    </tr>
+    <tr>
+      <th>Von Daehnin katu</th>
+      <td>Von Daehnin katu 14</td>
+      <td>203</td>
+      <td>219</td>
+      <td>3385.704433</td>
+      <td>3257.508356</td>
+      <td>[Von Daehnin katu, Viikin tiedepuisto, Viikin normaalikoulu, Agronominkatu, Myllypuro (M)]</td>
+      <td>[Von Daehnin katu, Viikin tiedepuisto, Myllypuro (M), Viikin normaalikoulu, Agronominkatu]</td>
+    </tr>
+    <tr>
+      <th>Mustikkamaa</th>
+      <td>Mustikkamaantie 8</td>
+      <td>1181</td>
+      <td>1180</td>
+      <td>2645.993218</td>
+      <td>2663.614415</td>
+      <td>[Relanderinaukio, Arielinkatu, Isoisänsilta, Vilhonvuorenkatu, Kulosaari (M)]</td>
+      <td>[Relanderinaukio, Kalasatama (M), Isoisänsilta, Kulosaari (M), Arielinkatu]</td>
+    </tr>
+    <tr>
+      <th>Relanderinaukio</th>
+      <td>Ståhlbergintie 6</td>
+      <td>745</td>
+      <td>737</td>
+      <td>2937.852349</td>
+      <td>3101.387598</td>
+      <td>[Mustikkamaa, Petter Wetterin tie, Isoisänsilta, Arielinkatu, Kalasatama (M)]</td>
+      <td>[Mustikkamaa, Isoisänsilta, Vilhonvuorenkatu, Petter Wetterin tie, Arielinkatu]</td>
+    </tr>
+    <tr>
+      <th>Kulosaari (M)</th>
+      <td>Ukko-Pekan porras</td>
+      <td>1471</td>
+      <td>1460</td>
+      <td>3273.108545</td>
+      <td>3787.996123</td>
+      <td>[Petter Wetterin tie, Mustikkamaa, Tupasaarentie, Arielinkatu, Vilhonvuorenkatu]</td>
+      <td>[Mustikkamaa, Kulosaari (M), Kalasatama (M), Hakaniemi (M), Arielinkatu]</td>
+    </tr>
+    <tr>
+      <th>Tupasaarentie</th>
+      <td>Risto Rytin tie 30</td>
+      <td>475</td>
+      <td>467</td>
+      <td>3162.644905</td>
+      <td>3043.391156</td>
+      <td>[Petter Wetterin tie, Kulosaari (M), Mustikkamaa, Herttoniemenranta, Abraham Wetterin tie]</td>
+      <td>[Kulosaari (M), Petter Wetterin tie, Isoisänsilta, Herttoniemi (M), Kalasatama (M)]</td>
+    </tr>
+    <tr>
+      <th>Haakoninlahdenkatu</th>
+      <td>Koirasaarentie 33</td>
+      <td>276</td>
+      <td>286</td>
+      <td>3684.362319</td>
+      <td>3376.398601</td>
+      <td>[Gunillantie, Petter Wetterin tie, Haakoninlahdenkatu, Laajasalon ostoskeskus, Herttoniemi (M)]</td>
+      <td>[Gunillantie, Laajasalon ostoskeskus, Haakoninlahdenkatu, Isosaarentie, Petter Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Gunillantie</th>
+      <td>Koirasaarentie 32</td>
+      <td>407</td>
+      <td>431</td>
+      <td>2882.218673</td>
+      <td>2821.902552</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Haakoninlahdenkatu, Gunillantie, Herttoniemi (M)]</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Haakoninlahdenkatu, Gunillantie, Isosaarentie]</td>
+    </tr>
+    <tr>
+      <th>Isosaarentie</th>
+      <td>Köökarinkuja 3</td>
+      <td>471</td>
+      <td>460</td>
+      <td>3121.389236</td>
+      <td>3055.510152</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Haakoninlahdenkatu, Herttoniemi (M), Gunillantie]</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Herttoniemi (M), Haakoninlahdenkatu, Herttoniemenranta]</td>
+    </tr>
+    <tr>
+      <th>Reiherintie</th>
+      <td>Laajasalontie 13</td>
+      <td>302</td>
+      <td>296</td>
+      <td>3320.107053</td>
+      <td>3040.890743</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Herttoniemi (M), Reiherintie, Jollas]</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Reiherintie, Humalniementie, Isosaarentie]</td>
+    </tr>
+    <tr>
+      <th>Laajasalon ostoskeskus</th>
+      <td>Yliskylän puistokatu 4</td>
+      <td>870</td>
+      <td>874</td>
+      <td>2434.358621</td>
+      <td>2713.733032</td>
+      <td>[Gunillantie, Reiherintie, Isosaarentie, Petter Wetterin tie, Herttoniemi (M)]</td>
+      <td>[Gunillantie, Isosaarentie, Reiherintie, Herttoniemi (M), Petter Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Humalniementie</th>
+      <td>Ryytikuja 2</td>
+      <td>336</td>
+      <td>321</td>
+      <td>3253.257946</td>
+      <td>3095.227414</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Laajasalon ostoskeskus, Humalniementie, Reiherintie]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Kulosaari (M), Humalniementie, Margareetankuja]</td>
+    </tr>
+    <tr>
+      <th>Tammisalon aukio</th>
+      <td>Väylänrinne 1</td>
+      <td>340</td>
+      <td>346</td>
+      <td>3055.502941</td>
+      <td>2902.615607</td>
+      <td>[Petter Wetterin tie, Tammisalon aukio, Herttoniemi (M), Laajasalon ostoskeskus, Itäkeskus (M)]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Tammisalon aukio, Laajasalon ostoskeskus, Porolahden koulu]</td>
+    </tr>
+    <tr>
+      <th>Agnetankuja</th>
+      <td>Laivalahdenkaari 24</td>
+      <td>690</td>
+      <td>710</td>
+      <td>2591.001928</td>
+      <td>2235.661028</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Agnetankuja, Kalasatama (M), Porolahden koulu]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Herttoniemenranta, Porolahden koulu, Agnetankuja]</td>
+    </tr>
+    <tr>
+      <th>Laivalahden puistotie</th>
+      <td>Laivalahden puistotie 10</td>
+      <td>826</td>
+      <td>848</td>
+      <td>2290.267954</td>
+      <td>2165.308184</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Laivalahden puistotie, Herttoniemenranta, Laajasalon ostoskeskus]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Laivalahden puistotie, Herttoniemenranta, Kulosaari (M)]</td>
+    </tr>
+    <tr>
+      <th>Herttoniemenranta</th>
+      <td>Paasivaarankatu 1</td>
+      <td>729</td>
+      <td>715</td>
+      <td>3312.149067</td>
+      <td>3074.94965</td>
+      <td>[Petter Wetterin tie, Laivalahden puistotie, Herttoniemi (M), Agnetankuja, Arielinkatu]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Laivalahden puistotie, Kulosaari (M), Kalasatama (M)]</td>
+    </tr>
+    <tr>
+      <th>Margareetankuja</th>
+      <td>Margareetankuja 4</td>
+      <td>372</td>
+      <td>355</td>
+      <td>2472.561828</td>
+      <td>2184.715493</td>
+      <td>[Petter Wetterin tie, Porolahden koulu, Herttoniemi (M), Agnetankuja, Laajasalon ostoskeskus]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Herttoniemenranta, Laajasalon ostoskeskus, Agnetankuja]</td>
+    </tr>
+    <tr>
+      <th>Abraham Wetterin tie</th>
+      <td>Sorvaajankatu 1</td>
+      <td>871</td>
+      <td>836</td>
+      <td>2970.995029</td>
+      <td>3122.261974</td>
+      <td>[Herttoniemi (M), Petter Wetterin tie, Abraham Wetterin tie, Porolahden koulu, Roihupelto]</td>
+      <td>[Herttoniemi (M), Petter Wetterin tie, Abraham Wetterin tie, Kulosaari (M), Roihupelto]</td>
+    </tr>
+    <tr>
+      <th>Petter Wetterin tie</th>
+      <td>Hitsaajankatu 16</td>
+      <td>2478</td>
+      <td>2522</td>
+      <td>2738.554076</td>
+      <td>2773.940389</td>
+      <td>[Laivalahden puistotie, Agnetankuja, Porolahden koulu, Arielinkatu, Herttoniemenranta]</td>
+      <td>[Laivalahden puistotie, Agnetankuja, Porolahden koulu, Kulosaari (M), Margareetankuja]</td>
+    </tr>
+    <tr>
+      <th>Herttoniemi (M)</th>
+      <td>Hiihtäjäntie 2</td>
+      <td>1516</td>
+      <td>1487</td>
+      <td>2643.537164</td>
+      <td>2556.303067</td>
+      <td>[Laivalahden puistotie, Abraham Wetterin tie, Porolahden koulu, Agnetankuja, Laajasalon ostoskeskus]</td>
+      <td>[Eränkävijäntori, Abraham Wetterin tie, Laivalahden puistotie, Herttoniemen kirkko, Porolahden koulu]</td>
+    </tr>
+    <tr>
+      <th>Asentajanpuisto</th>
+      <td>Asentajankatu 8</td>
+      <td>487</td>
+      <td>478</td>
+      <td>3145.11499</td>
+      <td>3139.537657</td>
+      <td>[Herttoniemi (M), Siilitie (M), Petter Wetterin tie, Roihupelto, Siilitie 9]</td>
+      <td>[Petter Wetterin tie, Siilitie (M), Herttoniemi (M), Kulosaari (M), Siilitie 9]</td>
+    </tr>
+    <tr>
+      <th>Siilitie (M)</th>
+      <td>Siilitie 2</td>
+      <td>959</td>
+      <td>963</td>
+      <td>2232.009739</td>
+      <td>2071.444787</td>
+      <td>[Roihupelto, Siilitie 9, Prinsessantie, Tulisuontie, Eränkävijäntori]</td>
+      <td>[Siilitie 9, Roihupelto, Prinsessantie, Tulisuontie, Eränkävijäntori]</td>
+    </tr>
+    <tr>
+      <th>Herttoniemen kirkko</th>
+      <td>Karhutie 11</td>
+      <td>366</td>
+      <td>336</td>
+      <td>2763.131148</td>
+      <td>2888.075387</td>
+      <td>[Herttoniemi (M), Siilitie 9, Eränkävijäntori, Petter Wetterin tie, Arielinkatu]</td>
+      <td>[Herttoniemi (M), Arielinkatu, Siilitie 9, Eränkävijäntori, Kulosaari (M)]</td>
+    </tr>
+    <tr>
+      <th>Eränkävijäntori</th>
+      <td>Hiihtomäentie 39</td>
+      <td>520</td>
+      <td>483</td>
+      <td>2556.435885</td>
+      <td>2875.421677</td>
+      <td>[Herttoniemi (M), Siilitie (M), Siilitie 9, Petter Wetterin tie, Herttoniemen kirkko]</td>
+      <td>[Herttoniemi (M), Siilitie (M), Petter Wetterin tie, Herttoniemen kirkko, Siilitie 9]</td>
+    </tr>
+    <tr>
+      <th>Siilitie 9</th>
+      <td>Siilitie 12</td>
+      <td>591</td>
+      <td>576</td>
+      <td>2753.492961</td>
+      <td>2588.183455</td>
+      <td>[Siilitie (M), Herttoniemi (M), Petter Wetterin tie, Roihupelto, Siilitie 9]</td>
+      <td>[Siilitie (M), Herttoniemi (M), Petter Wetterin tie, Roihupelto, Eränkävijäntori]</td>
+    </tr>
+    <tr>
+      <th>Siilitie 13</th>
+      <td>Sopulirinne 2</td>
+      <td>206</td>
+      <td>188</td>
+      <td>2576.936893</td>
+      <td>2782.457447</td>
+      <td>[Siilitie (M), Itäkeskus Metrovarikko, Herttoniemi (M), Itäkeskus (M), Viikin tiedepuisto]</td>
+      <td>[Siilitie (M), Siilitie 9, Herttoniemi (M), Roihupelto, Itäkeskus Metrovarikko]</td>
+    </tr>
+    <tr>
+      <th>Roihupelto</th>
+      <td>Viilarintie 6</td>
+      <td>601</td>
+      <td>618</td>
+      <td>2553.249584</td>
+      <td>2572.616505</td>
+      <td>[Siilitie (M), Siilitie 9, Abraham Wetterin tie, Petter Wetterin tie, Porolahden koulu]</td>
+      <td>[Siilitie (M), Abraham Wetterin tie, Itäkeskus (M), Petter Wetterin tie, Siilitie 9]</td>
+    </tr>
+    <tr>
+      <th>Porolahden koulu</th>
+      <td>Roihuvuorentie 6b</td>
+      <td>735</td>
+      <td>846</td>
+      <td>2893.710204</td>
+      <td>2861.20331</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Tulisuontie, Agnetankuja, Laajasalon ostoskeskus]</td>
+      <td>[Petter Wetterin tie, Herttoniemi (M), Abraham Wetterin tie, Tulisuontie, Kulosaari (M)]</td>
+    </tr>
+    <tr>
+      <th>Peukaloisentie</th>
+      <td>Untuvaisentie 2</td>
+      <td>345</td>
+      <td>327</td>
+      <td>2944.686957</td>
+      <td>2609.198777</td>
+      <td>[Herttoniemi (M), Petter Wetterin tie, Siilitie (M), Voikukantie, Agnetankuja]</td>
+      <td>[Siilitie (M), Laajasalon ostoskeskus, Petter Wetterin tie, Herttoniemi (M), Roihupelto]</td>
+    </tr>
+    <tr>
+      <th>Tulisuontie</th>
+      <td>Roihuvuorentie 25</td>
+      <td>507</td>
+      <td>473</td>
+      <td>2582.364892</td>
+      <td>2828.716702</td>
+      <td>[Siilitie (M), Porolahden koulu, Itäkeskus (M), Voikukantie, Marjaniementie]</td>
+      <td>[Siilitie (M), Itäkeskus (M), Petter Wetterin tie, Abraham Wetterin tie, Porolahden koulu]</td>
+    </tr>
+    <tr>
+      <th>Prinsessantie</th>
+      <td>Prinsessantie 2</td>
+      <td>228</td>
+      <td>212</td>
+      <td>1896.453202</td>
+      <td>1955.965425</td>
+      <td>[Siilitie (M), Itäkeskus (M), Voikukantie, Puotila (M), Porolahden koulu]</td>
+      <td>[Siilitie (M), Itäkeskus (M), Petter Wetterin tie, Voikukantie, Puotila (M)]</td>
+    </tr>
+    <tr>
+      <th>Marjaniementie</th>
+      <td>Rakettipolku 5</td>
+      <td>630</td>
+      <td>726</td>
+      <td>2272.543921</td>
+      <td>2222.704766</td>
+      <td>[Itäkeskus (M), Voikukantie, Myllypuro (M), Puotilan ostoskeskus, Agnetankuja]</td>
+      <td>[Itäkeskus (M), Voikukantie, Tulisuontie, Puotilan ostoskeskus, Marjaniementie]</td>
+    </tr>
+    <tr>
+      <th>Voikukantie</th>
+      <td>Kauppakartanonkatu 10</td>
+      <td>896</td>
+      <td>899</td>
+      <td>2562.291674</td>
+      <td>2764.345573</td>
+      <td>[Marjaniementie, Puotilan ostoskeskus, Puotilantie, Puotinkylän kartano, Tulisuontie]</td>
+      <td>[Marjaniementie, Puotilan ostoskeskus, Puotilantie, Puotila (M), Rastila (M)]</td>
+    </tr>
+    <tr>
+      <th>Itäkeskus (M)</th>
+      <td>Tallinnanaukio 2</td>
+      <td>1137</td>
+      <td>1125</td>
+      <td>2187.648487</td>
+      <td>2230.865484</td>
+      <td>[Marjaniementie, Itäkeskus Metrovarikko, Marjaniemi, Tulisuontie, Voikukantie]</td>
+      <td>[Itäkeskus Metrovarikko, Marjaniementie, Mamsellimyllynkatu, Marjaniemi, Tulisuontie]</td>
+    </tr>
+    <tr>
+      <th>Puotinharju</th>
+      <td>Turunlinnantie 4</td>
+      <td>392</td>
+      <td>382</td>
+      <td>2757.755102</td>
+      <td>2625.243455</td>
+      <td>[Karhulantie, Puotila (M), Petter Wetterin tie, Puotilantie, Puotilan ostoskeskus]</td>
+      <td>[Karhulantie, Puotilan ostoskeskus, Alakiventie, Puotilantie, Myllypuro (M)]</td>
+    </tr>
+    <tr>
+      <th>Marjaniemi</th>
+      <td>Marjaniementie 23</td>
+      <td>189</td>
+      <td>205</td>
+      <td>3194.031746</td>
+      <td>3131.009756</td>
+      <td>[Itäkeskus (M), Voikukantie, Tulisuontie, Eränkävijäntori, Laivalahden puistotie]</td>
+      <td>[Itäkeskus (M), Voikukantie, Marjaniementie, Marjaniemi, Petter Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Puotilantie</th>
+      <td>Puotilantie 4</td>
+      <td>362</td>
+      <td>383</td>
+      <td>2056.198895</td>
+      <td>2265.164491</td>
+      <td>[Puotilan ostoskeskus, Puotila (M), Voikukantie, Puotinharju, Itäkeskus (M)]</td>
+      <td>[Puotilan ostoskeskus, Puotila (M), Voikukantie, Puotinharju, Itäkeskus (M)]</td>
+    </tr>
+    <tr>
+      <th>Puotinkylän kartano</th>
+      <td>Puotilantie 12</td>
+      <td>227</td>
+      <td>248</td>
+      <td>2222.09837</td>
+      <td>2152.53496</td>
+      <td>[Puotila (M), Puotilan ostoskeskus, Voikukantie, Puotinkylän kartano, Puotinharju]</td>
+      <td>[Puotila (M), Voikukantie, Puotilan ostoskeskus, Karhulantie, Puotinkylän kartano]</td>
+    </tr>
+    <tr>
+      <th>Puotilan ostoskeskus</th>
+      <td>Klaavuntie 11</td>
+      <td>441</td>
+      <td>449</td>
+      <td>2193.469388</td>
+      <td>2158.108396</td>
+      <td>[Puotilantie, Voikukantie, Puotinharju, Puotinkylän kartano, Marjaniementie]</td>
+      <td>[Puotilantie, Voikukantie, Marjaniementie, Puotinkylän kartano, Puotilan ostoskeskus]</td>
+    </tr>
+    <tr>
+      <th>Puotila (M)</th>
+      <td>Vanhanlinnantori</td>
+      <td>526</td>
+      <td>590</td>
+      <td>2341.050703</td>
+      <td>2235.195475</td>
+      <td>[Karhulantie, Puotilantie, Puotinkylän kartano, Voikukantie, Myllypuro (M)]</td>
+      <td>[Karhulantie, Puotilantie, Puotinkylän kartano, Puotinharju, Voikukantie]</td>
+    </tr>
+    <tr>
+      <th>Karhulantie</th>
+      <td>Kiviportintie 2</td>
+      <td>309</td>
+      <td>305</td>
+      <td>2251.417476</td>
+      <td>2390.580328</td>
+      <td>[Puotila (M), Puotinharju, Karhulantie, Puotinkylän kartano, Voikukantie]</td>
+      <td>[Puotila (M), Puotinharju, Karhulantie, Itäkeskus (M), Voikukantie]</td>
+    </tr>
+    <tr>
+      <th>Alakiventie</th>
+      <td>Alakiventie 4</td>
+      <td>192</td>
+      <td>181</td>
+      <td>2867.020833</td>
+      <td>2608.893204</td>
+      <td>[Puotinharju, Myllypuro (M), Itäkeskus (M), Voikukantie, Puotila (M)]</td>
+      <td>[Myllypuro (M), Puotila (M), Itäkeskus (M), Puotinharju, Alakiventie]</td>
+    </tr>
+    <tr>
+      <th>Myllypuro (M)</th>
+      <td>Kivensilmänkuja 1</td>
+      <td>584</td>
+      <td>539</td>
+      <td>2538.633562</td>
+      <td>2482.115028</td>
+      <td>[Orpaanporras, Mamsellimyllynkatu, Myllypuro (M), Alakiventie, Von Daehnin katu]</td>
+      <td>[Orpaanporras, Mamsellimyllynkatu, Myllypuro (M), Marjaniementie, Viikin normaalikoulu]</td>
+    </tr>
+    <tr>
+      <th>Orpaanporras</th>
+      <td>Orpaanporras 14</td>
+      <td>364</td>
+      <td>328</td>
+      <td>2065.81044</td>
+      <td>2230.871951</td>
+      <td>[Myllypuro (M), Itäkeskus (M), Orpaanporras, Mamsellimyllynkatu, Abraham Wetterin tie]</td>
+      <td>[Myllypuro (M), Orpaanporras, Itäkeskus (M), Puotila (M), Abraham Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Mamsellimyllynkatu</th>
+      <td>Mamsellimyllynkatu 26</td>
+      <td>247</td>
+      <td>240</td>
+      <td>2370.757085</td>
+      <td>2556.088875</td>
+      <td>[Itäkeskus (M), Myllypuro (M), Roihupelto, Siilitie (M), Mamsellimyllynkatu]</td>
+      <td>[Myllypuro (M), Itäkeskus (M), Orpaanporras, Roihupelto, Mamsellimyllynkatu]</td>
+    </tr>
+    <tr>
+      <th>Vallilan varikko</th>
+      <td>Hämeentie 86</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Itäkeskus Metrovarikko</th>
+      <td>Metrovarikonkuja 6</td>
+      <td>289</td>
+      <td>267</td>
+      <td>1493.986159</td>
+      <td>1790.958801</td>
+      <td>[Itäkeskus (M), Siilitie (M), Siilitie 13, Roihupelto, Lokitie]</td>
+      <td>[Itäkeskus (M), Siilitie 13, Humalniementie, Agnetankuja, Siilitie (M)]</td>
+    </tr>
+    <tr>
+      <th>Koskelan varikko</th>
+      <td>Valtimontie 10</td>
+      <td>596</td>
+      <td>590</td>
+      <td>3001.098993</td>
+      <td>2780.872322</td>
+      <td>[Juhana Herttuan tie, Intiankatu, Käpyläntie, Elimäenkatu, Arabian kauppakeskus]</td>
+      <td>[Juhana Herttuan tie, Arabian kauppakeskus, Paavalinpuisto, Käpyläntie, Verkatehtaanpuisto]</td>
+    </tr>
+    <tr>
+      <th>Korkeasaari</th>
+      <td>Mustikkamaanpolku 12</td>
+      <td>696</td>
+      <td>685</td>
+      <td>2347.75431</td>
+      <td>2203.625299</td>
+      <td>[Kalasatama (M), Arielinkatu, Vilhonvuorenkatu, Lintulahdenkatu, Isoisänsilta]</td>
+      <td>[Kalasatama (M), Arielinkatu, Vilhonvuorenkatu, Lintulahdenkatu, Isoisänsilta]</td>
+    </tr>
+    <tr>
+      <th>Postipuisto</th>
+      <td>Niittylänpolku 16</td>
+      <td>460</td>
+      <td>452</td>
+      <td>3131.765217</td>
+      <td>3478.783916</td>
+      <td>[Käpylän asema, Maunula, Esterinportti, Rautatieläisenkatu, Vesakkotie]</td>
+      <td>[Käpylän asema, Maunula, Pasilan asema, Rautatieläisenkatu, Vesakkotie]</td>
+    </tr>
+    <tr>
+      <th>Aurinkotuulenkatu</th>
+      <td>Solvikinkatu 21</td>
+      <td>354</td>
+      <td>363</td>
+      <td>2345.995282</td>
+      <td>2343.022948</td>
+      <td>[Kauppakeskus Columbus, Aurinkotuulenkatu, Meri-Rastilan tori, Mosaiikkitori, Aurinkolahdenaukio]</td>
+      <td>[Kauppakeskus Columbus, Aurinkotuulenkatu, Mosaiikkitori, Ramsinniementie, Aurinkolahdenaukio]</td>
+    </tr>
+    <tr>
+      <th>Sumukuja</th>
+      <td>Sumukuja 2</td>
+      <td>213</td>
+      <td>211</td>
+      <td>2271.57277</td>
+      <td>2561.515024</td>
+      <td>[Kauppakeskus Columbus, Mosaiikkitori, Itäkeskus (M), Rastila (M), Sumukuja]</td>
+      <td>[Kauppakeskus Columbus, Mosaiikkitori, Haapasaarentie, Itäkeskus (M), Sumukuja]</td>
+    </tr>
+    <tr>
+      <th>Leikosaarentie</th>
+      <td>Leikosaarentie 25</td>
+      <td>201</td>
+      <td>180</td>
+      <td>2669.363184</td>
+      <td>2692.966667</td>
+      <td>[Kauppakeskus Columbus, Leikosaarentie, Rastila (M), Mosaiikkitori, Vuosaaren puistopolku]</td>
+      <td>[Kauppakeskus Columbus, Leikosaarentie, Vuosaaren puistopolku, Aurinkotuulenkatu, Mosaiikkitori]</td>
+    </tr>
+    <tr>
+      <th>Aurinkolahdenaukio</th>
+      <td>Aurinkoranta 8</td>
+      <td>201</td>
+      <td>247</td>
+      <td>2430.253731</td>
+      <td>2148.206478</td>
+      <td>[Kauppakeskus Columbus, Aurinkotuulenkatu, Aurinkolahdenaukio, Ulappasilta, Rastila (M)]</td>
+      <td>[Kauppakeskus Columbus, Aurinkotuulenkatu, Aurinkolahdenaukio, Rastila (M), Mosaiikkitori]</td>
+    </tr>
+    <tr>
+      <th>Kalkkihiekantie</th>
+      <td>Kalkkihiekantie 1</td>
+      <td>288</td>
+      <td>337</td>
+      <td>1773.270833</td>
+      <td>1701.305638</td>
+      <td>[Ulappasilta, Kauppakeskus Columbus, Kalkkihiekantie, Aurinkotuulenkatu, Mosaiikkitori]</td>
+      <td>[Ulappasilta, Kauppakeskus Columbus, Mosaiikkitori, Kalkkihiekantie, Aurinkotuulenkatu]</td>
+    </tr>
+    <tr>
+      <th>Kauppakeskus Columbus</th>
+      <td>Valkopaadentie 1</td>
+      <td>410</td>
+      <td>402</td>
+      <td>1578.968293</td>
+      <td>1862.69403</td>
+      <td>[Aurinkotuulenkatu, Kalkkihiekantie, Sumukuja, Aurinkolahdenaukio, Kaivonkatsojanpuisto]</td>
+      <td>[Aurinkotuulenkatu, Kalkkihiekantie, Sumukuja, Kaivonkatsojanpuisto, Leikosaarentie]</td>
+    </tr>
+    <tr>
+      <th>Vuosaaren liikuntapuisto</th>
+      <td>Pallokuja 4</td>
+      <td>91</td>
+      <td>84</td>
+      <td>1791.461538</td>
+      <td>1943.52381</td>
+      <td>[Mosaiikkitori, Sumukuja, Meri-Rastilan tori, Kauppakeskus Columbus, Aurinkotuulenkatu]</td>
+      <td>[Mosaiikkitori, Kauppakeskus Columbus, Halkaisijantie, Sumukuja, Koukkusaarentie]</td>
+    </tr>
+    <tr>
+      <th>Mosaiikkitori</th>
+      <td>Mosaiikkitori 1</td>
+      <td>560</td>
+      <td>539</td>
+      <td>1583.983929</td>
+      <td>1719.424861</td>
+      <td>[Haapasaarentie, Vuosaaren puistopolku, Punakiventie, Koukkusaarentie, Kalkkihiekantie]</td>
+      <td>[Punakiventie, Vuosaaren puistopolku, Haapasaarentie, Koukkusaarentie, Vuosaaren liikuntapuisto]</td>
+    </tr>
+    <tr>
+      <th>Kaivonkatsojanpuisto</th>
+      <td>Kaivonkatsojantie 5</td>
+      <td>246</td>
+      <td>244</td>
+      <td>2153.386179</td>
+      <td>2183.35791</td>
+      <td>[Kaivonkatsojanpuisto, Kauppakeskus Columbus, Voikukantie, Ulappasilta, Mosaiikkitori]</td>
+      <td>[Kauppakeskus Columbus, Kaivonkatsojanpuisto, Mosaiikkitori, Ulappasilta, Voikukantie]</td>
+    </tr>
+    <tr>
+      <th>Halkaisijantie</th>
+      <td>Halkaisijantie 4</td>
+      <td>187</td>
+      <td>166</td>
+      <td>2589.588235</td>
+      <td>2108.590361</td>
+      <td>[Meri-Rastilan tori, Rastila (M), Puotilan ostoskeskus, Kauppakeskus Columbus, Halkaisijantie]</td>
+      <td>[Meri-Rastilan tori, Rastila (M), Halkaisijantie, Ramsinniementie, Kauppakeskus Columbus]</td>
+    </tr>
+    <tr>
+      <th>Ramsinniementie</th>
+      <td>Ramsinniementie 1</td>
+      <td>338</td>
+      <td>311</td>
+      <td>2262.680473</td>
+      <td>2031.263666</td>
+      <td>[Rastila (M), Ramsinniementie, Meri-Rastilan tori, Aurinkotuulenkatu, Kauppakeskus Columbus]</td>
+      <td>[Rastila (M), Ramsinniementie, Meri-Rastilan tori, Aurinkotuulenkatu, Voikukantie]</td>
+    </tr>
+    <tr>
+      <th>Meri-Rastilan tori</th>
+      <td>Meri-Rastilan kuja 2</td>
+      <td>263</td>
+      <td>260</td>
+      <td>2495.365019</td>
+      <td>2755.446154</td>
+      <td>[Ramsinniementie, Halkaisijantie, Voikukantie, Abraham Wetterin tie, Aurinkotuulenkatu]</td>
+      <td>[Halkaisijantie, Ramsinniementie, Aurinkotuulenkatu, Voikukantie, Abraham Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Rastila (M)</th>
+      <td>Karavaanisilta 3</td>
+      <td>492</td>
+      <td>478</td>
+      <td>2710.056911</td>
+      <td>2615.585774</td>
+      <td>[Ramsinniementie, Voikukantie, Rastila (M), Tulisuontie, Aurinkotuulenkatu]</td>
+      <td>[Ramsinniementie, Rastila (M), Halkaisijantie, Voikukantie, Purjetie]</td>
+    </tr>
+    <tr>
+      <th>Lokitie</th>
+      <td>Vuosaarentie 1</td>
+      <td>190</td>
+      <td>186</td>
+      <td>2433.414053</td>
+      <td>2343.686398</td>
+      <td>[Voikukantie, Koukkusaarentie, Mosaiikkitori, Aurinkotuulenkatu, Vuosaaren puistopolku]</td>
+      <td>[Mosaiikkitori, Vuosaaren puistopolku, Voikukantie, Koukkusaarentie, Lokitie]</td>
+    </tr>
+    <tr>
+      <th>Punakiventie</th>
+      <td>Punakiventie 12</td>
+      <td>149</td>
+      <td>143</td>
+      <td>1577.986577</td>
+      <td>1937.944056</td>
+      <td>[Mosaiikkitori, Punakiventie, Kauppakeskus Columbus, Vuosaaren puistopolku, Lokitie]</td>
+      <td>[Mosaiikkitori, Voikukantie, Aurinkotuulenkatu, Sumukuja, Punakiventie]</td>
+    </tr>
+    <tr>
+      <th>Haapasaarentie</th>
+      <td>Marielundinaukio 1</td>
+      <td>168</td>
+      <td>179</td>
+      <td>2003.688512</td>
+      <td>1867.687151</td>
+      <td>[Mosaiikkitori, Haapasaarentie, Sumukuja, Vuosaaren puistopolku, Lokitie]</td>
+      <td>[Mosaiikkitori, Haapasaarentie, Kauppakeskus Columbus, Vuosaaren puistopolku, Sumukuja]</td>
+    </tr>
+    <tr>
+      <th>Vuosaaren puistopolku</th>
+      <td>Mustalahdenpolku 2</td>
+      <td>295</td>
+      <td>289</td>
+      <td>2391.876847</td>
+      <td>2305.798166</td>
+      <td>[Mosaiikkitori, Vuosaaren puistopolku, Ulappasilta, Purjetie, Aurinkotuulenkatu]</td>
+      <td>[Mosaiikkitori, Ulappasilta, Vuosaaren puistopolku, Koukkusaarentie, Haapasaarentie]</td>
+    </tr>
+    <tr>
+      <th>Purjetie</th>
+      <td>Kallvikintie</td>
+      <td>171</td>
+      <td>166</td>
+      <td>2632.02924</td>
+      <td>2248.0</td>
+      <td>[Mosaiikkitori, Rastila (M), Ulappasilta, Koukkusaarentie, Vuosaaren puistopolku]</td>
+      <td>[Mosaiikkitori, Rastila (M), Ulappasilta, Vuosaaren puistopolku, Lokitie]</td>
+    </tr>
+    <tr>
+      <th>Koukkusaarentie</th>
+      <td>Kallvikintie</td>
+      <td>251</td>
+      <td>246</td>
+      <td>1983.904382</td>
+      <td>2050.195122</td>
+      <td>[Mosaiikkitori, Ulappasilta, Vuosaaren puistopolku, Rastila (M), Voikukantie]</td>
+      <td>[Mosaiikkitori, Ulappasilta, Lokitie, Rastila (M), Vuosaaren puistopolku]</td>
+    </tr>
+    <tr>
+      <th>Vartioharjuntie</th>
+      <td>Vartioharjuntie 13</td>
+      <td>43</td>
+      <td>42</td>
+      <td>2048.325581</td>
+      <td>2575.928571</td>
+      <td>[Puotila (M), Puotilantie, Karhulantie, Puotilan ostoskeskus, Vartioharjuntie]</td>
+      <td>[Puotilan ostoskeskus, Rukatunturintie, Puotila (M), Vartioharjuntie, Puotinkylän kartano]</td>
+    </tr>
+    <tr>
+      <th>Rukatunturintie</th>
+      <td>Mellunmäentie 27</td>
+      <td>49</td>
+      <td>53</td>
+      <td>3092.204082</td>
+      <td>3648.113208</td>
+      <td>[Vartioharjuntie, Mellunmäki (M), Puotilan ostoskeskus, Roihupelto, Lokitie]</td>
+      <td>[Mellunmäki (M), Puotinharju, Puotila (M), Sallatunturintie, Purjetie]</td>
+    </tr>
+    <tr>
+      <th>Sallatunturintie</th>
+      <td>Sallatunturintie 2</td>
+      <td>29</td>
+      <td>24</td>
+      <td>3471.551724</td>
+      <td>3931.125</td>
+      <td>[Mellunmäki (M), Puotila (M), Rukatunturintie, Kontula (M), Viikin tiedepuisto]</td>
+      <td>[Mellunmäki (M), Voikukantie, Vuosaaren puistopolku, Puotinharju, Kontula (M)]</td>
+    </tr>
+    <tr>
+      <th>Mellunmäki (M)</th>
+      <td>Pallaksentie 3</td>
+      <td>66</td>
+      <td>68</td>
+      <td>2877.621212</td>
+      <td>2714.102941</td>
+      <td>[Sinkilätie, Kontula (M), Rukatunturintie, Mellunmäki (M), Puotilan ostoskeskus]</td>
+      <td>[Sinkilätie, Sallatunturintie, Puotilan ostoskeskus, Myllypuro (M), Mellunmäki (M)]</td>
+    </tr>
+    <tr>
+      <th>Sinkilätie</th>
+      <td>Untamalantie 2</td>
+      <td>36</td>
+      <td>32</td>
+      <td>2107.888889</td>
+      <td>1451.875</td>
+      <td>[Mellunmäki (M), Sinkilätie, Vuosaaren puistopolku, Karhulantie, Rukatunturintie]</td>
+      <td>[Mellunmäki (M), Sinkilätie, Rukatunturintie, Vuosaaren puistopolku, Karhulantie]</td>
+    </tr>
+    <tr>
+      <th>Humikkalankuja</th>
+      <td>Rintinpolku 2</td>
+      <td>28</td>
+      <td>24</td>
+      <td>2536.214286</td>
+      <td>2872.708333</td>
+      <td>[Puotinharju, Puotila (M), Kontula (M), Karhulantie, Puotilan ostoskeskus]</td>
+      <td>[Puotinharju, Puotila (M), Karhulantie, Varustuksentie, Kontula (M)]</td>
+    </tr>
+    <tr>
+      <th>Lallukankuja</th>
+      <td>Lallukankuja 1</td>
+      <td>34</td>
+      <td>27</td>
+      <td>4172.911765</td>
+      <td>4402.592593</td>
+      <td>[Lallukankuja, Roihupelto, Kontula (M), Itäkeskus (M), Lokitie]</td>
+      <td>[Myllypuro (M), Lallukankuja, Tammisalon aukio, Kurkimäentie, Siilitie (M)]</td>
+    </tr>
+    <tr>
+      <th>Kurkimäki</th>
+      <td>Kurkimäentie 3</td>
+      <td>44</td>
+      <td>45</td>
+      <td>3091.204545</td>
+      <td>2427.844444</td>
+      <td>[Myllypuro (M), Orpaanporras, Ala-Malmin tori, Puotinharju, Itäkeskus (M)]</td>
+      <td>[Myllypuro (M), Orpaanporras, Viikin tiedepuisto, Kontula (M), Helluntairaitti]</td>
+    </tr>
+    <tr>
+      <th>Kontula (M)</th>
+      <td>Kontulankaari 1</td>
+      <td>192</td>
+      <td>176</td>
+      <td>1856.126719</td>
+      <td>2109.598466</td>
+      <td>[Kivikonkaari, Varustuksentie, Tuukkalantie, Lettopolku, Kontulankaari]</td>
+      <td>[Kivikonkaari, Varustuksentie, Kontulankaari, Kontula (M), Mellunmäki (M)]</td>
+    </tr>
+    <tr>
+      <th>Tuukkalantie</th>
+      <td>Aarteenetsijäntie 10</td>
+      <td>38</td>
+      <td>36</td>
+      <td>3511.131579</td>
+      <td>2023.361111</td>
+      <td>[Kontula (M), Mellunmäki (M), Tuukkalantie, Aurinkolahdenaukio, Voikukantie]</td>
+      <td>[Kontula (M), Tuukkalantie, Mellunmäki (M), Voikukantie, Myllypuro (M)]</td>
+    </tr>
+    <tr>
+      <th>Lettopolku</th>
+      <td>Lettopolku 2</td>
+      <td>26</td>
+      <td>31</td>
+      <td>2910.846154</td>
+      <td>1785.548387</td>
+      <td>[Kontula (M), Kontulankaari, Orpaanporras, Kivikon liikuntapuisto, Kauppakeskus Columbus]</td>
+      <td>[Kontula (M), Orpaanporras, Kivikonlaita, Kontulankaari, Lettopolku]</td>
+    </tr>
+    <tr>
+      <th>Kontulankaari</th>
+      <td>Kontulankaari 7</td>
+      <td>39</td>
+      <td>35</td>
+      <td>2505.410256</td>
+      <td>1872.657143</td>
+      <td>[Kontula (M), Kivikonkaari, Lettopolku, Orpaanporras, Myllypuro (M)]</td>
+      <td>[Kontula (M), Kurkimäentie, Kivikonkaari, Lettopolku, Humikkalankuja]</td>
+    </tr>
+    <tr>
+      <th>Kivikonkaari</th>
+      <td>Kontulankaari 8, toinen puoli</td>
+      <td>76</td>
+      <td>68</td>
+      <td>1720.263158</td>
+      <td>1313.661765</td>
+      <td>[Kontula (M), Kurkimäentie, Kontulankaari, Kivikonlaita, Varustuksentie]</td>
+      <td>[Kontula (M), Kontulankaari, Kivikonlaita, Kurkimäentie, Lettopolku]</td>
+    </tr>
+    <tr>
+      <th>Varustuksentie</th>
+      <td>Varustuksentie 1</td>
+      <td>55</td>
+      <td>47</td>
+      <td>2300.818182</td>
+      <td>2013.680851</td>
+      <td>[Kontula (M), Kurkimäentie, Kivikon liikuntapuisto, Humikkalankuja, Varustuksentie]</td>
+      <td>[Kontula (M), Kurkimäentie, Varustuksentie, Viikin tiedepuisto, Kivikonkaari]</td>
+    </tr>
+    <tr>
+      <th>Kurkimäentie</th>
+      <td>Kivikonkaari 30</td>
+      <td>73</td>
+      <td>74</td>
+      <td>2495.164384</td>
+      <td>2454.513514</td>
+      <td>[Myllypuro (M), Varustuksentie, Kontulankaari, Kontula (M), Viikin tiedepuisto]</td>
+      <td>[Kontula (M), Myllypuro (M), Kivikonkaari, Varustuksentie, Kivikon liikuntapuisto]</td>
+    </tr>
+    <tr>
+      <th>Kivikonlaita</th>
+      <td>Kivikonlaita 2</td>
+      <td>57</td>
+      <td>44</td>
+      <td>2278.017544</td>
+      <td>2358.909091</td>
+      <td>[Von Daehnin katu, Agronominkatu, Viikin normaalikoulu, Kivikonkaari, Myllypuro (M)]</td>
+      <td>[Agronominkatu, Kivikonkaari, Kivikonlaita, Kurkimäentie, Myllypuro (M)]</td>
+    </tr>
+    <tr>
+      <th>Kivikon liikuntapuisto</th>
+      <td>Savikiekontie 6</td>
+      <td>42</td>
+      <td>35</td>
+      <td>2796.285714</td>
+      <td>2735.428571</td>
+      <td>[Kontula (M), Agronominkatu, Kurkimäentie, Puotila (M), Viikin normaalikoulu]</td>
+      <td>[Kurkimäentie, Varustuksentie, Kontula (M), Viikin tiedepuisto, Von Daehnin katu]</td>
+    </tr>
+    <tr>
+      <th>Jakomäentie</th>
+      <td>Jakomäentie 18</td>
+      <td>3</td>
+      <td>6</td>
+      <td>2234.0</td>
+      <td>3630.0</td>
+      <td>[Jakomäki, Kontula (M)]</td>
+      <td>[Jakomäki, Kivikonkaari, Paavalinpuisto]</td>
+    </tr>
+    <tr>
+      <th>Jakomäki</th>
+      <td>Jakomäenkuja 2</td>
+      <td>11</td>
+      <td>14</td>
+      <td>3763.727273</td>
+      <td>4350.285714</td>
+      <td>[Jakomäentie, Kontula (M), Viikin tiedepuisto, Puistolan asema, Heikinlaakso]</td>
+      <td>[Ala-Malmin tori, Tapanilan asema, Jakomäentie, Viikin tiedepuisto, Puistolan asema]</td>
+    </tr>
+    <tr>
+      <th>Alppikylä</th>
+      <td>Tattariharjuntie 51</td>
+      <td>3</td>
+      <td>3</td>
+      <td>6534.333333</td>
+      <td>4293.0</td>
+      <td>[Väärämäentie, Saniaiskuja, Koskelantie]</td>
+      <td>[Väärämäentie, Teerisuontie, Ala-Malmin tori]</td>
+    </tr>
+    <tr>
+      <th>Heikinlaakso</th>
+      <td>Vanha Porvoontie 32</td>
+      <td>3</td>
+      <td>4</td>
+      <td>2133.333333</td>
+      <td>2959.75</td>
+      <td>[Helluntairaitti, Puistolan VPK]</td>
+      <td>[Helluntairaitti, Puistolan asema, Jakomäki, Ala-Malmin tori]</td>
+    </tr>
+    <tr>
+      <th>Puistolan VPK</th>
+      <td>Puistolan raitti 5</td>
+      <td>5</td>
+      <td>7</td>
+      <td>2243.4</td>
+      <td>3929.428571</td>
+      <td>[Tapanilan asema, Puistolan asema, Puistolantori]</td>
+      <td>[Helluntairaitti, Puistolan asema, Kivikonlaita, Heikinlaakso, Koskelantie]</td>
+    </tr>
+    <tr>
+      <th>Puistolantori</th>
+      <td>Puistolantori 1</td>
+      <td>3</td>
+      <td>8</td>
+      <td>1286.0</td>
+      <td>2828.75</td>
+      <td>[Puistolantori, Sateenkaarentie, Puistolan asema]</td>
+      <td>[Karviaistie, Puistolantori, Puistolan VPK, Agronominkatu, Sateenkaarentie]</td>
+    </tr>
+    <tr>
+      <th>Puistolan asema</th>
+      <td>Tapulikaupungintie 1</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2619.939394</td>
+      <td>2419.606061</td>
+      <td>[Maatullinkuja, Sateenkaarentie, Teerisuontie, Töyrynummi, Jakomäki]</td>
+      <td>[Maatullinkuja, Porvarintie, Saniaiskuja, Ala-Malmin tori, Helluntairaitti]</td>
+    </tr>
+    <tr>
+      <th>Maatullinkuja</th>
+      <td>Maatullinkuja 17</td>
+      <td>31</td>
+      <td>24</td>
+      <td>2027.322581</td>
+      <td>2126.875</td>
+      <td>[Puistolan asema, Maatullinkuja, Kotinummentie, Syystie, Vanha Tapanilantie]</td>
+      <td>[Puistolan asema, Maatullinkuja, Tapanilan asema, Vanha Tapanilantie, Ala-Malmin tori]</td>
+    </tr>
+    <tr>
+      <th>Sateenkaarentie</th>
+      <td>Suutarilantie 60</td>
+      <td>4</td>
+      <td>7</td>
+      <td>2650.0</td>
+      <td>2527.285714</td>
+      <td>[Siltamäki, Puistolantori, Ala-Malmin tori, Puistolan asema]</td>
+      <td>[Puistolan asema, Töyrynummentie, Puistolantori, Ala-Malmin tori]</td>
+    </tr>
+    <tr>
+      <th>Siltamäki</th>
+      <td>Jousimiehentie 3</td>
+      <td>21</td>
+      <td>28</td>
+      <td>4564.0</td>
+      <td>4422.464286</td>
+      <td>[Syystie, Siltamäki, Töyrynummi, Malmin asema, Aulangontie]</td>
+      <td>[Karviaistie, Siltamäki, Töyrynummi, Syystie, Rapakiventie]</td>
+    </tr>
+    <tr>
+      <th>Töyrynummentie</th>
+      <td>Töyrynummentie 2</td>
+      <td>17</td>
+      <td>14</td>
+      <td>3167.470588</td>
+      <td>3971.142857</td>
+      <td>[Tapanilan asema, Otto Brandtin tie, Kotinummentie, Töyrynummentie, Vanha Tapanilantie]</td>
+      <td>[Siltavoudintie, Malmin asema, Kotinummentie, Töyrynummentie, Vanha Tapanilantie]</td>
+    </tr>
+    <tr>
+      <th>Töyrynummi</th>
+      <td>Pertunpellontie 4</td>
+      <td>9</td>
+      <td>11</td>
+      <td>2603.888889</td>
+      <td>3754.363636</td>
+      <td>[Malmin asema, Siltamäki, Helluntairaitti, Syystie, Halmetie]</td>
+      <td>[Puistolan asema, Siltamäki, Malmin asema, Kotinummentie, Viikin tiedepuisto]</td>
+    </tr>
+    <tr>
+      <th>Kotinummentie</th>
+      <td>Kotinummentie 68</td>
+      <td>30</td>
+      <td>26</td>
+      <td>4279.066667</td>
+      <td>4407.730769</td>
+      <td>[Helluntairaitti, Kotinummentie, Vanha Tapanilantie, Halmetie, Töyrynummentie]</td>
+      <td>[Kotinummentie, Malmin asema, Maatullinkuja, Halmetie, Tapanilan asema]</td>
+    </tr>
+    <tr>
+      <th>Porvarintie</th>
+      <td>Porvarintie 8-10</td>
+      <td>3</td>
+      <td>1</td>
+      <td>514.666667</td>
+      <td>914.0</td>
+      <td>[Puistolan asema]</td>
+      <td>[Maatullinkuja]</td>
+    </tr>
+    <tr>
+      <th>Helluntairaitti</th>
+      <td>Tasankotie 14</td>
+      <td>114</td>
+      <td>129</td>
+      <td>3567.947368</td>
+      <td>3778.310078</td>
+      <td>[Helluntairaitti, Ala-Malmin tori, Aulangontie, Malmin asema, Rapakiventie]</td>
+      <td>[Helluntairaitti, Ala-Malmin tori, Aulangontie, Teerisuontie, Kotinummentie]</td>
+    </tr>
+    <tr>
+      <th>Tapanilan asema</th>
+      <td>Sompiontori 1</td>
+      <td>35</td>
+      <td>33</td>
+      <td>3780.742857</td>
+      <td>3163.454545</td>
+      <td>[Helluntairaitti, Halmetie, Otto Brandtin tie, Jakomäki, Laulurastaantie]</td>
+      <td>[Halmetie, Töyrynummentie, Helluntairaitti, Puistolan VPK, Fleminginkatu]</td>
+    </tr>
+    <tr>
+      <th>Saniaiskuja</th>
+      <td>Saniaiskuja 1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>1628.555556</td>
+      <td>3994.4</td>
+      <td>[Puistolan asema, Ala-Malmin tori, Teerisuontie, Tapanilan asema, Malmin asema]</td>
+      <td>[Lepolantie, Ala-Malmin tori, Mäkitorpantie, Tapanilan asema, Alppikylä]</td>
+    </tr>
+    <tr>
+      <th>Halmetie</th>
+      <td>Vanha Tapaninlantie 70</td>
+      <td>27</td>
+      <td>24</td>
+      <td>2220.037037</td>
+      <td>1955.375</td>
+      <td>[Tapanilan asema, Malmin asema, Halmetie, Kotinummentie, Syystie]</td>
+      <td>[Tapanilan asema, Halmetie, Malmin asema, Kotinummentie, Helluntairaitti]</td>
+    </tr>
+    <tr>
+      <th>Laulurastaantie</th>
+      <td>Laulurastaantie 25</td>
+      <td>21</td>
+      <td>21</td>
+      <td>2329.666667</td>
+      <td>1561.380952</td>
+      <td>[Malmin asema, Laulurastaantie, Tapanilan asema, Tilketori, Mäkitorpantie]</td>
+      <td>[Malmin asema, Laulurastaantie, Tapanilan asema, Syystie, Tilketori]</td>
+    </tr>
+    <tr>
+      <th>Vanha Tapanilantie</th>
+      <td>Kirkonkyläntie 79</td>
+      <td>25</td>
+      <td>29</td>
+      <td>3930.16</td>
+      <td>3077.62069</td>
+      <td>[Kylävoudintie, Siltavoudintie, Ala-Malmin tori, Tilketori, Rapakiventie]</td>
+      <td>[Malmin asema, Malmin sairaala, Kotinummentie, Tilketori, Kylävoudintie]</td>
+    </tr>
+    <tr>
+      <th>Syystie</th>
+      <td>Kirkonkyläntie 34</td>
+      <td>166</td>
+      <td>155</td>
+      <td>3137.13253</td>
+      <td>3569.464516</td>
+      <td>[Malmin asema, Syystie, Pihlajamäki, Tilketori, Teerisuontie]</td>
+      <td>[Malmin asema, Syystie, Tilketori, Ala-Malmin tori, Rapakiventie]</td>
+    </tr>
+    <tr>
+      <th>Malmin sairaala</th>
+      <td>Kirkonkyläntie 23</td>
+      <td>64</td>
+      <td>61</td>
+      <td>3104.104219</td>
+      <td>2215.754098</td>
+      <td>[Malmin asema, Syystie, Ala-Malmin tori, Vanha Tapanilantie, Helluntairaitti]</td>
+      <td>[Malmin asema, Viikin tiedepuisto, Teerisuontie, Syystie, Malmin sairaala]</td>
+    </tr>
+    <tr>
+      <th>Malmin asema</th>
+      <td>Ylä-Malmin tori 3</td>
+      <td>223</td>
+      <td>205</td>
+      <td>2306.636771</td>
+      <td>2302.385366</td>
+      <td>[Malmin sairaala, Malmin asema, Syystie, Tilketori, Karviaistie]</td>
+      <td>[Syystie, Malmin asema, Malmin sairaala, Tilketori, Karviaistie]</td>
+    </tr>
+    <tr>
+      <th>Huhtakuja</th>
+      <td>Kotinummentie 5</td>
+      <td>10</td>
+      <td>13</td>
+      <td>1527.5</td>
+      <td>2913.846154</td>
+      <td>[Malmin asema, Huhtakuja, Verkatehtaanpuisto, Tapanilan asema, Ala-Malmin tori]</td>
+      <td>[Malmin asema, Huhtakuja, Vanha Tapanilantie, Halmetie, Haapaniemenkatu]</td>
+    </tr>
+    <tr>
+      <th>Teerisuontie</th>
+      <td>Teerisuontie 27</td>
+      <td>118</td>
+      <td>119</td>
+      <td>3208.347458</td>
+      <td>2996.882353</td>
+      <td>[Ala-Malmin tori, Teerisuontie, Malmin asema, Helluntairaitti, Syystie]</td>
+      <td>[Ala-Malmin tori, Teerisuontie, Syystie, Malmin asema, Väärämäentie]</td>
+    </tr>
+    <tr>
+      <th>Ala-Malmin tori</th>
+      <td>Pikkalankatu 5</td>
+      <td>271</td>
+      <td>273</td>
+      <td>3043.162362</td>
+      <td>2828.065934</td>
+      <td>[Karviaistie, Teerisuontie, Helluntairaitti, Viikin tiedepuisto, Pihlajamäki]</td>
+      <td>[Karviaistie, Teerisuontie, Helluntairaitti, Väärämäentie, Viikin tiedepuisto]</td>
+    </tr>
+    <tr>
+      <th>Väärämäentie</th>
+      <td>Väärämäentie 2-4</td>
+      <td>76</td>
+      <td>66</td>
+      <td>2998.078947</td>
+      <td>3470.727273</td>
+      <td>[Ala-Malmin tori, Agronominkatu, Väärämäentie, Teerisuontie, Otto Brandtin tie]</td>
+      <td>[Ala-Malmin tori, Väärämäentie, Agronominkatu, Otto Brandtin tie, Teerisuontie]</td>
+    </tr>
+    <tr>
+      <th>Karviaistie</th>
+      <td>Karviaistie 3</td>
+      <td>107</td>
+      <td>103</td>
+      <td>2201.943925</td>
+      <td>2685.883495</td>
+      <td>[Ala-Malmin tori, Malmin asema, Viikin tiedepuisto, Pihlajamäki, Helluntairaitti]</td>
+      <td>[Ala-Malmin tori, Malmin asema, Pihlajamäki, Otto Brandtin tie, Karviaistie]</td>
+    </tr>
+    <tr>
+      <th>Tilketori</th>
+      <td>Tilketori 1</td>
+      <td>111</td>
+      <td>123</td>
+      <td>3541.414414</td>
+      <td>3383.658537</td>
+      <td>[Malmin asema, Tilketori, Syystie, Ala-Malmin tori, Viikin tiedepuisto]</td>
+      <td>[Malmin asema, Tilketori, Syystie, Pihlajamäki, Ala-Malmin tori]</td>
+    </tr>
+    <tr>
+      <th>Karhusuontie</th>
+      <td>Karhusuontie 27</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Jokipellontie</th>
+      <td>Jokipellontie 10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Pukinmäen liikuntapuisto</th>
+      <td>Kenttätie 10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Pukinmäen asema</th>
+      <td>Pukinmäenaukio 4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Rapakiventie</th>
+      <td>Lucina Hagmanin kuja 1</td>
+      <td>215</td>
+      <td>208</td>
+      <td>3758.967442</td>
+      <td>3610.350962</td>
+      <td>[Verkatehtaanpuisto, Rapakiventie, Pihlajamäki, Viikin tiedepuisto, Arabian kauppakeskus]</td>
+      <td>[Verkatehtaanpuisto, Pihlajamäki, Rapakiventie, A.I. Virtasen aukio, Viikin tiedepuisto]</td>
+    </tr>
+    <tr>
+      <th>Tollinpolku</th>
+      <td>Luutnantinpolku 7a</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Mikkolantie</th>
+      <td>Mikkolantie 12</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2517.0</td>
+      <td>6444.0</td>
+      <td>[Maunula]</td>
+      <td>[Mamsellimyllynkatu]</td>
+    </tr>
+    <tr>
+      <th>Etupellonpuisto</th>
+      <td>Yhdyskunnantie 22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Piikintie</th>
+      <td>Yhdyskunnantie 54</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Torpparinmäentie</th>
+      <td>Kuusmiehenkaari 5</td>
+      <td>46</td>
+      <td>49</td>
+      <td>5274.717391</td>
+      <td>4711.938776</td>
+      <td>[Torpparinmäentie, Paloheinäntie, Paloheinän maja, Thalianaukio, Käskynhaltijantie]</td>
+      <td>[Paloheinäntie, Torpparinmäentie, Paloheinän kirjasto, Oulunkylän asema, Näyttelijäntie]</td>
+    </tr>
+    <tr>
+      <th>Paloheinän kirjasto</th>
+      <td>Paloheinäntie 22</td>
+      <td>34</td>
+      <td>42</td>
+      <td>4296.647059</td>
+      <td>4050.714286</td>
+      <td>[Torpparinmäentie, Paloheinäntie, Käpylän asema, Ida Aalbergin tie, Paavalinpuisto]</td>
+      <td>[Lepolantie, Paloheinäntie, Thalianaukio, Pohjolanaukio, Huopalahden asema]</td>
+    </tr>
+    <tr>
+      <th>Paloheinän maja</th>
+      <td>Pakilantie 124</td>
+      <td>60</td>
+      <td>65</td>
+      <td>4080.75</td>
+      <td>4311.246154</td>
+      <td>[Paloheinäntie, Paloheinän maja, Maunula, Lepolantie, Postipuisto]</td>
+      <td>[Paloheinäntie, Paloheinän maja, Vesakkotie, Lepolantie, Torpparinmäentie]</td>
+    </tr>
+    <tr>
+      <th>Paloheinäntie</th>
+      <td>Pakilantie 91</td>
+      <td>81</td>
+      <td>104</td>
+      <td>3923.530864</td>
+      <td>4221.035288</td>
+      <td>[Paloheinän maja, Torpparinmäentie, Thalianaukio, Paloheinäntie, Käpylän asema]</td>
+      <td>[Paloheinän maja, Lepolantie, Postipuisto, Paloheinäntie, Torpparinmäentie]</td>
+    </tr>
+    <tr>
+      <th>Pirkkolan liikuntapuisto</th>
+      <td>Pirkkolan metsätie 6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Maununneva</th>
+      <td>Kaarelantie 14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Ulappasilta</th>
+      <td>Ulappasilta 1</td>
+      <td>291</td>
+      <td>286</td>
+      <td>1645.292096</td>
+      <td>1507.629371</td>
+      <td>[Kalkkihiekantie, Vuosaaren puistopolku, Kaivonkatsojanpuisto, Koukkusaarentie, Purjetie]</td>
+      <td>[Kalkkihiekantie, Koukkusaarentie, Vuosaaren puistopolku, Kaivonkatsojanpuisto, Purjetie]</td>
+    </tr>
+    <tr>
+      <th>Hakuninmaa</th>
+      <td>Perhekunnantie 8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kuninkaantammi</th>
+      <td>Kuninkaantammenkierto 22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kalannintie</th>
+      <td>Kalanninpolku</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kannelmäen liikuntapuisto</th>
+      <td>Kanneltie 12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Pajupillintie</th>
+      <td>Vanhaistentie 3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kauppakeskus Kaari</th>
+      <td>Kantelettarentie 1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kaustisentie</th>
+      <td>Pelimannintie</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Kannelmäen asema</th>
+      <td>Sitratori 2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Savela</th>
+      <td>Ratavallintie 6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Trumpettikuja</th>
+      <td>Trumpettitie 3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Viljelijäntie</th>
+      <td>Viljelijäntie 5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Malminkartanon asema</th>
+      <td>Luutnantinaukio</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Tuohipolku</th>
+      <td>Tuohipolku 1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Honkasuo</th>
+      <td>Naapuripellontie 27</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Malminkartanonhuippu</th>
+      <td>Naapuripellontie 7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Hankasuontie</th>
+      <td>Malminkartanontie 2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Ajomiehentie</th>
+      <td>Ajomiehentie 1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>11192.0</td>
+      <td>9762.0</td>
+      <td>[Itämerentori]</td>
+      <td>[Töölönkatu]</td>
+    </tr>
+    <tr>
+      <th>Vähäntuvantie</th>
+      <td>Kylväjäntie 12</td>
+      <td>0</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>790.0</td>
+      <td>[]</td>
+      <td>[Jännetie]</td>
+    </tr>
+    <tr>
+      <th>Kuusisaari</th>
+      <td>Kuusisaarenpolku 1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>Koivusaari (M)</th>
+      <td>Sotkatie 11</td>
+      <td>2</td>
+      <td>7</td>
+      <td>3201.0</td>
+      <td>3268.142857</td>
+      <td>[Heikkilänaukio, Jätkäsaarenlaituri]</td>
+      <td>[Puistokaari, Mellstenintie, Westendinasema, Kaivopuisto, Keilalahti]</td>
+    </tr>
+    <tr>
+      <th>Bermudankuja</th>
+      <td>Atlantinkatu 10</td>
+      <td>0</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>2964.0</td>
+      <td>[]</td>
+      <td>[Messeniuksenkatu, Itämerentori, Välimerenkatu, Opastinsilta]</td>
+    </tr>
+    <tr>
+      <th>Verkkosaari</th>
+      <td>Tukkutorinkuja 3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2413.5</td>
+      <td>4040.0</td>
+      <td>[Venttiilikuja, Diakoniapuisto]</td>
+      <td>[Erottajan aukio, Petter Wetterin tie]</td>
+    </tr>
+    <tr>
+      <th>Sompasaari</th>
+      <td>Sompasaarenlaituri 2</td>
+      <td>4</td>
+      <td>8</td>
+      <td>1772.25</td>
+      <td>1435.5</td>
+      <td>[Arielinkatu, Vanha kirkkopuisto, Pernajantie]</td>
+      <td>[Arielinkatu, Kalasatama (M), Brahen kenttä, Kanavaranta, Relanderinaukio]</td>
+    </tr>
+    <tr>
+      <th>Jollas</th>
+      <td>Jollaksentie 33</td>
+      <td>126</td>
+      <td>163</td>
+      <td>3713.380952</td>
+      <td>3780.233129</td>
+      <td>[Laajasalon ostoskeskus, Herttoniemi (M), Jollas, Petter Wetterin tie, Reiherintie]</td>
+      <td>[Laajasalon ostoskeskus, Petter Wetterin tie, Jollas, Reiherintie, Gunillantie]</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}
