@@ -8,18 +8,18 @@ The data is uploaded from the databased.
 
 The app includes the steps below.
 
-Data import:
+# Data import:
 Import data from the CSV files 
 Validate data before importing (checking abnormal data points and cleaning the data by 
 removing journeys that lasted for less than ten seconds or covered distances shorter than 10 meters.
 
-Part one: 
+# Part one: 
 Journey list view (1000 items) incluidng departure and return stations, covered distance in kilometers and duration in minutes
 
-Part two:
+# Part two:
 List all the stations with address.
 
-Part three: 
+# Part three: 
 List all the stations
 address
 Total number of journeys starting from the station
@@ -32,7 +32,7 @@ Top 5 most popular departure stations for journeys ending at the station
 
 
 
-Technologies Used:
+# Technologies Used:
 Python
 Django
 Bootstrap
