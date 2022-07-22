@@ -8,9 +8,9 @@ The data is uploaded from the databased.
 
 The app includes the steps below.
 
-# Data import:
-Import data from the CSV files 
-Validate data before importing (checking abnormal data points and cleaning the data by 
+# Implementation:
+pythonfile.py inside bicyle folder Imports data from the CSV files, 
+Validates data (checking if it is nor empty, abnormal data points and cleaning the data by 
 removing journeys that lasted for less than ten seconds or covered distances shorter than 10 meters.
 
 # Part one: 
